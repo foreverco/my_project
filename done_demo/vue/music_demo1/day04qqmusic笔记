@@ -1,0 +1,45 @@
+音乐播放内核开发
+  我们的音乐播放组件是一个公共组件,可以在多个地方打开我们的播放器,所以我们控制播放的状态是全局的.
+  所以说我们通过vuex来管理播放器的状态
+  state:
+    (1) 播放/暂停 : 设置播放器的播放状态
+          playing : true/false
+    (2) 全局/mini页面 : fillScreen: true/false
+    (3) playList(播放列表) : []-数组
+    (4) 播放模式:playMode: 0  |  1  |  2
+                        order random loop
+    (5) orderList播放顺序列表
+    (6) currentIndex(当前播放索引): -1
+
+创建播放器组件 components / player.vue
+播放器组件不能在任何路下,任何路由下都有可能会触发播放组件,所以我们把他放在根组件下,这样全局都可以触发
+
+- 播放进度条
+  实现思路:播放进度条有三个部分,当前播放时间,总时长,播放进度显示样式
+  1.当前播放时间 : currentTime
+  2.获取当前播放时间：
+
+  JS 语法核心 (ES5+ES6)
+    函数 对象 继承(原型) call bind
+
+  HTTP 协议
+    从输入url到看到页面,发生了什么
+
+  框架相关(Vue)
+
+  node.js 服务端知识
+
+  CSS 布局 动画
+
+热门搜索关键字
+ https://c.y.qq.com/splcloud/fcgi-bin
+
+g_tk: 5381
+uin: 0
+format: json
+inCharset: utf-8
+outCharset: utf-8
+notice: 0
+platform: h5
+needNewCode: 1
+
