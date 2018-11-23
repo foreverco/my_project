@@ -1,0 +1,48 @@
+第二章 CSS
+第五节
+一、CSS样式：定位 position
+	1)position:relative; 	相对定位
+		*参照物:它本身位置 占位置
+		(离家留坑)
+	2)position:absolute;	绝对定位
+		*参照物：
+		默认浏览器首屏窗口  
+		修改参照物：
+		指定父元素，添加position:relative;定位
+		如果多个父元素都有定位，采取就近原则
+		*[不占位置]
+	3)position:fixed; 		固定定位
+		*参照物：浏览器窗口
+		*[不占位置]
+		不会被滚动条拖拽走
+
+	位移：
+	1) top:20px;		距离顶部:20px;
+	2) bottom:30px;		距离底部:30px;
+	3) left:20px;		距离左边:20px;
+	4) right:30px;		距离右边:30px;
+
+	注意：在定位的前提下，才可以使用
+	-------------------------------------
+	定位实现居中效果
+	<style>
+		.login_box{
+			border:2px solid red;
+			width:400px;
+			height:200px;
+			background:blue;
+			opacity:0.5;
+			/* 定位在浏览器窗口居中位置 */
+			position:fixed;
+			left:50%;/*多往右移了宽度的一半*/
+			margin-left:-200px;
+			top:50%;/*多往下移了宽度的一半*/
+			margin-top:-100px;
+		}
+	</style>
+
+	纵深：
+	z-index:数值;
+	原理：数值越大，图层越靠上
+
+课下练习

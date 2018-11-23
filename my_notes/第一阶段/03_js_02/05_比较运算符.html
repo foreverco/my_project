@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//比较的结果存储到变量里
+				
+
+		var num1 = 25,num2 = 30;
+		var rs = num1 > num2;
+		console.log(rs);
+
+		//检验rs的数据类型
+		console.log(typeof rs);//boolean	布尔类型
+
+		//数据类型转换
+		console.log("20" <= 10+10);//true
+					//"20"转换成数值20
+					//然后在做比较运算
+		console.log(20-false);//20
+		console.log(20+true);//21
+		//计算机自动把布尔类型转换成数值类型
+		//隐士转换
+		//
+		var a = '11';
+		console.log(typeof a);
+		var a = '11';
+		console.log(typeof a);
+
+		console.log(20+'10');
+		//显示转换(强制类型转换)
+		//String() Number() Boolean()
+		
+		console.log(20+Number('10'));//30
+
+		//字符串-->boolean
+		console.log(Boolean('apple'));//true
+		console.log(Boolean('banana'));//true
+		console.log(Boolean(''));//false
+		//结论：空字符串==>Boolean的false
+		//		非空字符串==>Boolean的true
+				
+		//数值-->boolean
+		
+		console.log(Boolean(0));//false
+		console.log(Boolean(2));//true
+		console.log(Boolean(-2));//true
+		console.log(Boolean());//false
+		//结论：数值0==>boolean的false
+		
+		//boolean==>String
+		//true-->'true'
+		//false-->'false'
+		
+		//boolean-->Number
+		//true-->1
+		//false-->0
+
+	</script>
+</body>
+</html>

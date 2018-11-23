@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background:url(img/background.jpg) center 0;
+			background-attachment:fixed;
+			background-repeat:no-repeat;
+			background-size:100%;
+
+		}
+		input{
+			outline:0;
+		}
+		.box1{
+			width:510px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:120px;
+		}
+		.box2{
+			text-align:center;
+		}
+
+		.box3{
+			height:56px;
+			line-height:56px;
+			width:250px;
+			background:white;
+			text-align:center;
+			font-size:20px;
+			font-family:"微软雅黑";
+			display:inline-block;
+		}
+		.box3{
+			height:56px;
+			line-height:56px;
+			width:250px;
+			background:white;
+			text-align:center;
+			font-size:20px;
+			font-family:"微软雅黑";
+			display:inline-block;
+		}
+		.box4{
+			height:56px;
+			line-height:56px;
+			width:250px;
+			background:#C8C1D5;
+			text-align:center;
+			font-size:20px;
+			font-family:"微软雅黑";
+			display:inline-block;
+			color:white;
+		}
+		.box5 img{
+			float:left;
+		}
+		input[type=text]{
+			height:39px;
+			/* float:left; */
+			width:455px;
+			font-size:20px;
+			font-family:"微软雅黑";
+			color:#808080;
+
+		}
+		input[type=password]{
+			height:39px;
+			/* float:left; */
+			width:455px;
+			font-size:20px;
+			font-family:"微软雅黑";
+			color:#808080;
+
+		}
+		select[name=province]{
+			height:44px;
+			/* float:left; */
+			width:225px;
+			font-size:20px;
+			font-family:"微软雅黑";
+			color:#808080;
+		}
+		select[name=city]{
+			height:44px;
+			/* float:left; */
+			width:225px;
+			font-size:20px;
+			font-family:"微软雅黑";
+			color:#808080;
+		}
+		.box5 div{
+			margin-top:10px;
+		}
+		.sexbox{
+			height:40px;
+			line-height:40px;
+			width:500px;
+			background:white;
+			color:#808080;
+			font-size:20px;
+			font-family:"微软雅黑";
+		}
+		.sexbox a{
+			margin-left:20px;
+			margin-right:80px;
+		}
+		.agree{
+			color:white;
+			margin-top:20px;
+			margin-bottom:20px;
+			font-family:"微软雅黑";
+			font-size:13px;
+		}
+		.but{
+			background:#2ED049;
+			width:500px;
+			height:60px;
+			font-family:"微软雅黑";
+			font-size:20px;
+			color:white;
+
+		}
+		.box1 .box2 img{
+			border-radius:100px;
+		}
+		.box1 .box2{
+			margin-bottom:30px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2"><img src="img/touxiang.jpg" height="120" width="120" alt=""></div>
+		<div class="box3">普通注册</div><div class="box4">手机注册</div>
+		<div class="box5">
+			<form action="index.php">
+			<div>
+				<img src="img/user.jpg" height="44px">
+				<input type="text" name="uname" value="用户名">
+			</div>
+			<div>
+				<img src="img/email.jpg" height="44px">
+				<input type="text" name="uemail" value="Email">
+			</div>
+			<div>
+				<img src="img/pwd.jpg" height="44px">
+				<input type="password" name="upass" value="000">
+			</div>
+			<div class="sexbox">
+				<a><input type="radio" name="sex" value="women">女</a>
+				<a><input type="radio" name="sex" value="man">男</a>
+				<a><input type="radio" name="sex" value="mimi" checked>保密</a>
+			</div>
+			<div >
+				<img src="img/position.jpg" height="44px">
+				<select name="province">
+					<option value="">江苏省</option>
+					<option value="">其他</option>
+				</select>
+				<select name="city">
+					<option value="">南京市</option>
+					<option value="">其他</option>
+				</select>
+			</div>
+		</div>
+		<div class="agree"><input type="checkbox" name="agree" value="yes">我已阅读并同意《用户协议》</div>
+		<input type="submit" value="注册" class="but">
+		</form>
+	</div>
+</body>
+</html>

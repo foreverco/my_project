@@ -1,0 +1,72 @@
+第四章 Jq
+第二节
+一、jq操作DOM事件
+	<script>
+		//单击事件
+			$(obj).click(function(){
+
+			});
+		//获取焦点事件
+			$(obj).focus(function(){
+
+			});
+		//失去焦点事件
+			$(obj).blur(function(){
+
+			});
+		//交互事件
+		//1)hover(fun1,fun2) 等同于css的:hover
+			$(obj).hover(function(){
+				//鼠标进入悬停，要做的事情...
+			},function(){
+				//鼠标移除，要做的事情...
+			});
+			//1)toggle(fun1,fun2)
+			$(obj).toggle(function(){
+				//第一次单击，要做的事情...
+			},function(){
+				//第二次单击，要做的事情...
+			});
+
+	</script>
+
+	<script>
+		//表单提交事件
+		$(formobj).submit(function(){
+			//表单提交会触发的函数体
+		})
+
+	</script>
+
+二、jq操作DOM家族
+	从一个元素找到其他的相关家族元素，
+	提供了API查找方法
+	<script>
+	1)找孩子
+		//直接子级(无参数，找所有)
+		$(obj).children();//找所有
+		$(obj).children('selector');
+		//跨级找
+		$(obj).find('*');//找所有的
+		$(obj).find('selector');//找所有的
+	2)找爸爸
+		//直接父级
+		$(obj).parent();
+		//隔代父级
+		$(obj).parents();//找所有
+		$(obj).parents('selector');
+
+	3)找哥哥
+		$(obj).prev();//找上一个哥哥
+		$(obj).prevAll();//找所有哥哥
+		$(obj).prevUntil('selector');//找所有哥哥直到遇到selector停止
+
+	4)找弟弟
+		$(obj).next();//找上一个弟弟
+		$(obj).nextAll();//找所有弟弟
+		$(obj).nextUntil('selector');//找所有弟弟直到遇到selector停止
+	
+	5)找所有兄弟
+		$(obj).siblings('selector');
+
+	</script>

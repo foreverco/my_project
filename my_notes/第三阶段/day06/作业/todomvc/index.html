@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/index.css">
+		<!-- CSS overrides - remove if you don't need it -->
+		<link rel="stylesheet" href="css/app.css">
+		<script src='../libs/angular.min.js'></script>
+		<script src='../libs/angular-route.js'></script>
+	</head>
+	<body ng-app='app'>
+		<section class="todoapp"  ng-controller='ctrl'>
+			<header class="header">
+				<h1>todos</h1>
+				<form ng-submit='add()'>
+					<input class="new-todo" placeholder="What needs to be done?" autofocus ng-model='msg'>
+				</form>
+			</header>
+			<section class="main">
+				<input class="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+						<li ng-repeat='t in todo'>
+								<div class="view">
+									<input class="toggle" type="checkbox"  ng-click='finish($index)'>
+									<label>{{t.msg}}</label>
+									<button class="destroy" ng-click='del(todo,$index)'></button>
+								</div>
+								<input class="edit" value="Rule the web">
+							</li>
+
+					<li class="completed" ng-repeat='t in done'>
+						<div class="view">
+							<input class="toggle" type="checkbox" checked>
+							<label>{{t.msg}}</label>
+							<button class="destroy" ng-click='del(done,$index)'></button>
+						</div>
+						<input class="edit" value="Create a TodoMVC template">
+					</li>
+				
+				</ul>
+			</section>
+			<footer class="footer">
+				<span class="todo-count"><strong>{{left}}</strong> item left</span>
+				<button class="clear-completed" ng-click='empty()'>Clear completed</button>
+			</footer>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			<p>Created by <a href="http://todomvc.com">you</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<script src="js/base.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+	<script>
+		var app = angular.module('app',[]);
+		app.controller('ctrl',function($scope){
+			//声明数组，用于保存已完成和位完成的数据
+			$scope.done = [];//已完成
+			$scope.todo = [];//未完成
+			$scope.left = $scope.todo.length;
+			// console.log($scope.left);
+
+			$scope.add = function(){
+				// alert(123);
+				// alert($scope.msg);
+				//将输入的数据保存到未完成的数据中
+				$scope.todo.push({msg:$scope.msg,flag:false});
+				// console.log($scope.todo);
+				$scope.msg = ' ';//清空输入框
+				$scope.left = $scope.todo.length;
+			}
+
+			$scope.finish = function(index){
+				// alert(index);
+				//删除指定下标的元素
+					var res = $scope.todo.splice(index,1);
+					// console.log(res[0]);
+					// console.log($scope.todo);
+				//将删除的元素添加到已完成的数组中
+				$scope.done.push(res[0]);
+				$scope.left = $scope.todo.length;
+			}
+			$scope.empty = function(){
+				$scope.done = [];//已完成
+				$scope.todo = [];//未完成
+				$scope.left = 0;
+			}
+			$scope.del = function(arr,index){
+				if(arr==$scope.done){
+					var aa = $scope.done.splice(index,1);
+					$scope.todo.push(aa[0]);
+				}else{
+					$scope.todo.splice(index,1);
+				}
+			}
+		})
+	</script>
+</html>

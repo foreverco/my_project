@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //定义文本
+    var msg = '大家好,我叫<%= name %>,我今年<%= age %>岁,我的工作是<%= work %>';  
+    //定义一组数据
+    var xm = {
+      name:'小明',
+      age:22,
+      work:'前端攻城狮'
+    };
+    //利用正则表达式去匹配模板的语法,替换成我们真正的数据 str.replace() str.match()
+    var reg = /<%=\s*([^%>]+\S)\s*%>/g;
+    var matches = msg.match(reg);
+    console.log(matches);
+    var msg = msg.replace(matches[0],xm.name);
+    var msg = msg.replace(matches[1],xm.age);
+    var msg = msg.replace(matches[2],xm.work);
+    console.log(msg);
+    
+  </script>
+</body>
+</html>

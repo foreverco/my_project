@@ -1,0 +1,169 @@
+第三章 JS
+第七节
+回顾：
+	1.js获取DOM
+		1)直接获取到标签对象：
+			document.getElementById('idName');
+			document.queryselector('css选择器名');
+		2)多个标签组成的数组集合
+			标签名：
+			name属性名
+			className
+			document.queryselectorAll('选择器名');
+
+	2.js操作DOM属性
+		1)elem.属性名;
+		2)elem.属性名 = 属性值;
+		3)elem.属性名 = '';
+
+	3.Js操作css样式
+		1)行内style属性样式
+			elem.style.样式名;
+			elem.style.样式名 = 值;
+			elem.style.样式名 = '';
+
+		2)class类名操作
+			<p class='p1 p2'></p>
+			A) 获取类
+				elem.className;// 'p1 p2'
+				elem.classList;//['p1','p2']
+			B) 添加类
+				elem.className += '空格'+'NewClassName';
+				elem.classList.add('NewClassName');
+			C) 移除类
+				elem.classList.remove('class');
+
+----------------------------------------------------------------
+
+一、Js操作DOM内容和值
+	<h3 class='title'><font>古诗词</font></h3>
+	1)获取DOM元素的内容
+		<script>
+			elem.innerHTML	可识别HTML标签
+			elem.innerText	只识别文本信息
+			案例：
+			h3_obj.innerHTML;//<font>古诗词</font>
+			h3_obj.innerText;//古诗词
+
+
+		</script>
+	2)修改DOM元素的内容
+		<script>
+			h3_obj.innerHTML = <font color=red>古诗词</font>;//有红色文字修饰
+			h3_obj.innerText = <font color=red>古诗词</font>;//把font标签当初字符输出在页面上
+
+		</script>
+	3)清空内容
+		<script>
+			h3_obj.innerHTML = '';
+			h3_obj.innerText = '';
+		</script>
+	----------------------------------------------------------------
+	1)获取表单控件的值
+		<script>
+			elem.value;
+			//案例：
+			uName.value;//用户名的值
+			uIntro.value;//自我介绍的值
+		</script>
+	2)修改表单控件的值
+		<script>
+			elem.value =值;
+			//案例：
+			uName.value = 'apple';//用户名的值
+			uIntro.value = 'very good';//自我介绍的值
+		</script>
+	3)清空表单控件的值
+		<script>
+			elem.value = '';
+			//案例：
+			uName.value = '';//清空用户名的值
+			uIntro.value = '';//清空自我介绍的值
+		</script>
+
+二、Js操作DOM的事件
+	1)事件：用户行为会触发的一系列的过程
+	2)DOM相关事件名：
+		A):单击		onclick
+		B):双击		ondblclick
+		C):获得焦点 onfocus
+		D):失去焦点 onblur
+		E):内容改变	onchange
+		F):加载事件	onload
+					ready
+		G):表单提交	onsubmit
+	3)如何应用事件
+		方法1：给标签行里面添加'事件属性'
+			<p onclick='fun1()'></p>
+			<script>
+				//定义一个命名函数，记录事件的执行过程
+				function fun1(){
+					//写过程...
+				}
+			</script>
+		方法2：直接用js语句添加'事件属性'
+			<div id='box'></div>
+			<script>
+				var div_obj = document.getElementById('box');
+				//添加一个事件属性
+				//赋值：一个匿名函数
+				obj_div.onclick = function(){
+					//事件的执行过程...
+				}
+
+				//添加一个事件属性
+				//赋值：命名函数
+				obj_div.onclick = fun2;
+
+				//单击事件的执行步骤
+				function fun2(){
+					//事件的执行过程...
+
+				}
+			</script>
+	4)this关键字
+		一个指针：指向事件的操作对象
+	5)内置参数e/event
+		<script>
+			a_obj.onclick = function(e/event){
+				//e/event是一个数字集合：MouseEvent
+				/*
+					e.srcElement;
+					e.target;
+					存储当前事件的操作对象：当前被点击的a
+				 */
+				//this 一个指针：指向当前事件的操作对象
+			}
+
+		</script>
+
+三、Js操作DOM元素Form表单
+	<script>
+		1)获取表单
+			document.forms;//数组集合
+			document.forms['表单名'];
+			document.forms[0];
+			document.forms['login'];
+
+		2)获取表单里的控件
+			document.forms['表单名']['控件名'];
+			document.forms['login']['uname'];
+			document.forms['register']['upass'];
+		3)获取表单控件的值
+			document.forms['login']['uname'].value;
+
+	</script>
+
+补充：三目运算符
+ 条件表达式?为true的结果 :为false的结果;
+ <script>
+ var age=16;
+ if(age>=18){
+ 	document.write('成年！')
+ }else{
+	document.write('未成年！')
+ }
+ age>=18?document.write('成年！'):document.write('未成年！');
+
+
+ </script>

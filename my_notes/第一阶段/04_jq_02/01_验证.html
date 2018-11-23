@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.code{
+				display:inline-block;
+				width:100px;
+				height:40px;
+				line-height:40px;
+				border:1px solid red;
+				font-size:25px;
+				font-weight:bold;
+				color:blue;
+				text-align:center;
+
+			}
+        </style>
+        <script src="jq/jquery-1.9.1.min.js"></script>
+
+        <script>
+	      $(function(){
+	        	//生成6位随机验证码，显示到span标签里
+	        	var str = '';//存储6位验证码
+	        	function creat(){
+	        		//清空字符串
+	        		str = '';
+	        		//字符库
+	        		var arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+	        		//随机抽6次，每次抽一个字符
+	        		for(i = 1;i<=6;i++){
+	        			//随机抽一个字符：随机下标
+	        			var index = Math.floor(Math.random()*(arr.length-1));
+	        			console.log(index,arr[index]);
+	        			//拼接6位字符
+	        			str += arr[index];
+	        		}
+	        			//把6位随机验证码放到span里
+	        			$('.code').html(str);
+
+	        	}
+	        	creat();
+	        	//点击换一张验证码
+	        	$('.but').click(function(){
+	        		creat();
+	        	});
+
+			//3)点击按钮：匹配验证码(不区分大小写)
+			$('input[type=button]').click(function(){
+				if($('input[type=text]').val().toUpperCase() == str.toUpperCase()){
+					alert('验证成功！')
+				}else{
+					alert('验证码有误，重新输入！')
+				}
+			});
+
+		})
+
+			
+
+        </script>
+    </head>
+    <body>
+    	<form action="index.php">
+    		验证码：<input type="text">
+    		<span class='code'></span>
+    		<a href="#" class='but'>点击换一张</a><br>
+    		<input type="button" value="验证">
+    	</form>
+    </body>
+</html>

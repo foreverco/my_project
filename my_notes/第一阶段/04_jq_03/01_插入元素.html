@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//内部插入
+			$('.box1').append('<h3>绝地求生 PUBG<h3>');
+			$('<h1>故宫<h1>').appendTo($('.box1'));
+			$('.box1').prepend('<font color=red>awm</font>');
+			$('<p><font color=blue>ak</font></p>').prependTo($('.box1'));
+		$('.box1').css({
+			'border':'1px solid green',
+			'margin':'20px'
+		})
+		//外部插入
+		$('.box1').after('<h5><font color=orange>枯藤老树昏鸦</font></h5>')
+		$('.box1').before('<h4><font color=pink>小桥流水人家</font></h4>')
+		$('<h4><font color=pink>古道西风瘦马</font></h4>').insertAfter($('.box1 h3'));
+		$('<h4><font color=green>夕阳西下</font></h4>').insertBefore($('.box1 h3'));
+
+
+		//替换
+		$('.box1 h1').replaceWith('<p><a href=#>替换</a></p>');
+		$('<ul><li>列表1</li><li>列表2</li></ul>').replaceAll('h4');
+
+		})
+	</script>
+</head>
+<body>
+	<div class='box1'>
+		<p>98K</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+<body>
+  <div id='app'></div>
+  <script>
+    const app = new Vue({
+      el:'#app',
+      data:{
+        msg:'hello',
+        msg1:{
+          temp:'你好!'
+        }
+      },
+      props:{
+        'name':{
+          default:'asd',
+          type: String
+        }
+      },
+      methods:{}
+    })
+    console.log(app.$props);
+    console.log(app.$parent);
+    console.log(app.$root);
+    console.log(app.$children);
+    console.log(app.$slots);
+    console.log(app.$refs);
+    console.log(app.$listeners);
+    </script>
+</body>
+</html>

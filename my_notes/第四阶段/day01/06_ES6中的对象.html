@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //变量直接赋值给变量
+    //例子1
+    let sname = 'JavaScript';
+    let skill ='-ES6';
+    const obja = {
+      sname,
+      skill
+    }
+    console.log(obja);
+
+    //对象的方法
+    //Object.is(obj1,obj2) 用来比较两个对象是否相等
+
+    Object.is('foo','foo');//true
+    Object.is({},{});//fasle
+    Object.is(NaN,NaN);//true
+
+     // Object.assign(obj,obj1,obj2,...) 用来合并两个或多个对象
+    // 此方法的第一个参数是目标对象,后面参数是源对象
+    // 例子1
+    const obj = {
+      a: '如懿传'
+    };
+    const obj1 = {
+      b: '延禧攻略'
+    };
+    const obj2 = {
+      c: '甄嬛传'
+    };
+    let newObj = Object.assign({},obj,obj1,obj2);
+    console.log(newObj);
+    console.log(obj);
+    console.log(obj1);
+    console.log(obj2);
+  </script>
+</body>
+
+</html>

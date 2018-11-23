@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //异常处理
+      try{
+         //容易出错的代码
+         var num = prompt('请输入一个数值');
+         if(isNaN(num)){
+            throw '输入的内容不是数值类型';
+            
+         }
+      }catch(err){
+         //捕获错误/异常
+         //显示错误警告信息(抛出异常)
+         throw new Error(err);//程序截止了
+      }   
+      
+      
+   </script>
+</body>
+</html>

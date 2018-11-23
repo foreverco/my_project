@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      canvas{
+         border:1px solid red;
+         width:300px;
+         height:300px;
+         margin:10px;
+      }
+   
+   </style>
+</head>
+<body>
+   <!-- canvas#canvas$*5 -->
+   <canvas id="canvas1"></canvas>
+   <canvas id="canvas2" width='300' height='300'></canvas>
+   <canvas id="canvas3" width='300' height='300'></canvas>
+   <canvas id="canvas4" width='300' height='300'></canvas>
+   <canvas id="canvas5" width='300' height='300'></canvas>
+   <!-- 绘制直线 -->
+   <script>
+      //1)找到画布
+      var canvas1_obj = document.querySelector('#canvas1');
+      //修改宽高，必须修改属性
+      canvas1_obj.width = '300';
+      canvas1_obj.height = '300';
+
+      // console.log('画布的宽：'+canvas1_obj.width);
+      // console.log('画布的高：'+canvas1_obj.height);
+
+      //2)定义2d的图形类型
+      var context = canvas1_obj.getContext('2d');
+      //3)开始绘制:对context绘制
+      //设定直线起点:moveTo(x,y)
+      context.moveTo(10,10);
+      //设定直线终点:lineTo(x,y)
+      context.lineTo(150,150);
+      context.lineTo(290,10);
+      context.lineTo(10,10);
+      context.lineTo(150,150);
+      //先挑选颜色/样式
+      context.fillStyle = 'green';//填充色
+      context.strokeStyle = 'blue';//描边色
+      context.lineWidth = 10;//描边粗细
+      context.lineJoin = 'round';//圆角
+      //实际绘图
+      context.stroke();//描边
+      context.fill();//填充
+
+
+      //重新绘制一个线条
+      context.beginPath();//开始新路径
+      context.moveTo(0,200);
+      context.lineTo(150,290);
+      context.lineTo(300,200);
+
+      context.strokeStyle = 'orange';//描边色
+      context.stroke();//描边绘制
+      context.closePath();//闭合路径
+   
+   </script>
+    <!-- 绘制矩形 -->
+    <script>
+         var canvas2_obj = document.querySelector('#canvas2');
+         var context = canvas2_obj.getContext('2d');
+         console.log(canvas2_obj.height);
+
+         //开始绘制矩形 rect(x,y,w,h);
+         context.rect(20,20,100,80);
+         context.fillStyle = 'red';//填充色
+         context.strokeStyle = 'yellow';//描边色
+         context.lineWidth = 10;
+
+         context.stroke();//描边绘图
+         context.fill();
+
+         // 第二个矩形 实心
+         context.fillStyle = 'pink';
+         context.fillRect(140,20,100,80);
+         //第三个矩形 空心
+         context.strokeStyle = 'purple';
+         context.strokeRect(20,120,100,80);
+         //第四个矩形
+         context.beginPath();//开始新路径
+         context.fillStyle = 'skyblue';
+         context.strokeStyle = 'blue';
+         context.rect(140,120,100,80);
+         context.stroke();
+         context.fill();
+         context.closePath();//闭合路径
+         //清除形状(橡皮擦)
+         // context.clearRect(0,0,100,80);
+      
+      </script>
+       <!-- 绘制圆形 -->
+   <script>
+         var canvas3_obj = document.querySelector('#canvas3');
+         var context = canvas3_obj.getContext('2d');
+         //开始绘制圆形 arc(x,y,半径，起始角，结束角[,方向])
+         context.arc(150,150,50,0,Math.PI*1);
+         context.strokeStyle = 'red';
+         context.fillStyle = 'pink';
+         context.stroke();
+         context.fill();
+
+         //添加一个完整的圆
+         context.beginPath();
+         context.arc(150,150,20,0,Math.PI*2);
+         context.fillStyle = 'purple';
+         context.fill();
+
+      
+      </script>
+       <!-- 绘制文字 -->
+   <script>
+         var canvas4_obj = document.querySelector('#canvas4');
+         var context = canvas4_obj.getContext('2d');
+         //开始绘制文字
+         context.font = '30px 微软雅黑';//大小 字体
+            context.textBaseline = 'top';//基线对齐：top
+         context.fillText('我爱中华人民共和国',0,0);
+
+         //再添加一行文字 只有描边
+         context.strokeStyle = 'pink';
+         context.rotate(45*Math.PI/180);//旋转45度
+         //context.translate(20,20);//重新定义画布坐标点位置
+         context.strokeText('国庆假期快乐',100,50);
+
+         //撤销旋转
+      //    context.beginPath();
+         context.rotate(-45*Math.PI/180);
+         context.strokeText('中秋假期快乐',100,150);
+      
+      </script>
+       <!-- 绘制图片 -->
+   <script>
+         var canvas5_obj = document.querySelector('#canvas5');
+            var context = canvas5_obj.getContext('2d');
+            //1)创建图片(加载图片)
+            var myImg =new Image();
+            myImg.src = 'img/timg.jpg';//引入图片地址
+            //2)实际绘制图片：必须等图片加载完成才能绘制
+            myImg.onload = function(){
+                  context.drawImage(myImg,0,0,300,300);
+            }
+      
+      
+      </script>
+</body>
+</html>

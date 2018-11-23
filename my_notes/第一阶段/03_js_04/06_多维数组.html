@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//一维数组
+	var arr1 = ['apple',18,false];
+	//二维数组
+	var arr2 = ['apple',20,true,[1,2,3]];
+	//三维数组
+	var arr3 = [
+		[1,2,3],
+		[
+			['a','b','c'],
+			['apple','banana','orange']
+		]
+	];
+	//打印数组
+	console.log(arr1);
+	console.log(arr2);
+	console.log(arr3);
+	//找元素
+	console.log(arr2[3][2]);//3
+	console.log(arr3[1][0][1]);//b
+	console.log(arr3[1][1][2]);//orange
+	// console.log(arr3.indexOf(orange));
+	
+
+	var class1 = [
+		['学号','姓名','性别','年龄','爱好'],
+		['001','邓超','男','35','学习'],
+		['002','陈赫','男','34','吃'],
+		['003','李晨','男','40','健身'],
+		['004','鹿晗','男','26','唱歌'],
+		['005','baby','女','18','打扮']
+	]
+	console.log(class1[3][4]);
+	//循环遍历取每个元素，每个学生信息占一行
+	for(key in class1){
+		document.write(class1[key]);
+		document.write('<br>');
+	}
+
+	document.write('<hr>');
+
+	for(key in class1){
+		
+		for(k in class1[key]){
+			document.write(class1[key][k]);
+		}
+		document.write('<br>');
+	}
+	</script>
+</body>
+</html>

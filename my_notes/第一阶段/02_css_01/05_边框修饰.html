@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			border-width:1px;
+			border-color:green;
+			border-style:solid;
+		}
+		h1{
+			border-width:4px;
+			border-color:blue;
+			border-style:dashed;
+			width:50%;
+			height:200px;
+
+			border-top-width:10px;
+			border-top-color:purple;
+
+			/* 合并方式 （值没有先后顺序）
+			边框:边框大小 颜色 类型;
+			*/
+			border-top:3px red solid;
+			border-bottom:5px blue dashed;
+			border-left:7px green solid;
+			border-right:9px yellow dashed;
+
+			border:1px solid red;
+		}
+		h2{
+			height:30px;
+			border:8px solid red;
+		}
+	</style>
+
+	<!-- <link rel="stylesheet" href="04_comm.css"> -->
+</head>
+<body>
+	<p style="border-width:2px;
+			border-color:red;
+			border-style:solid;
+			width:600px;
+			height:200px;">aa</p>
+
+	<h1></h1>
+	<h1></h1>
+
+	<h2 style="border-style:solid;">solid实线</h2>
+	<h2 style="border-style:dashed;">dashed短虚线</h2>
+	<h2 style="border-style:dotted;">点虚线</h2>
+	<h2 style="border-style:double;">双边框</h2>
+	<h2 style="border-style:groove;">groove凹槽</h2>
+	<h2 style="border-style:ridge;">ridge凸槽</h2>
+	<h2 style="border-style:none;">none</h2>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//案例1：输入一个数值，判断是否是5和3的倍数
+	var num = prompt('请输入一个数值');
+	if(num % 5 == 0 && num % 3 == 0){
+			document.write(num+'是5和3的倍数')
+	}else{
+		document.write(num+'不是5和3的倍数')
+	}
+	document.write('<br>');
+
+	//案例2：验证用户名，不能包含特殊字符@
+	var uname = 'apple';
+	if(uname.indexOf('@') == -1){
+		document.write('用户名可以使用');
+	}else{
+		document.write('用户名不能包含特殊字符@');
+	}
+	document.write('<br>');
+
+	//案例3：验证密码，密码必须是6位
+	var upass = prompt('请输入密码');
+	if(upass.length == 6){
+		document.write('密码可以使用！');
+	}else{
+		document.write('密码必须是6位！')
+	}
+	document.write('<br>');
+
+	</script>
+</body>
+</html>

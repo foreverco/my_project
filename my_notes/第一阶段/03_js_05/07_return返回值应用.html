@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//验证用户名函数
+	//1）不能为空
+	//2）不能超过10个字符
+	//3）不能包含特殊符号@
+	//提示信息位置可以自己随意指定
+	
+	function name(uname){
+		// var uname = prompt('请输入用户名');
+		if(uname == 0){
+			return '不能为空';
+		}else if(uname.length>=10){
+			return '不能超过10个字符';
+		}else if(uname.indexOf('@') !=-1){
+			return '不能包含特殊符号@';
+		}else{
+			return '用户名可以使用';
+		}
+	}
+
+	// alert(name('141224124jikjda'));
+	document.write(name('141224124jikjda'));
+	</script>
+</body>
+</html>

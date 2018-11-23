@@ -1,0 +1,11 @@
+p{
+  width: 200px;
+  height: 100px;
+  background: #797979;
+}
+/* CSSmodule */
+.box{
+  color:red;
+  font-weight: 900;
+  font-size: 50px;
+}

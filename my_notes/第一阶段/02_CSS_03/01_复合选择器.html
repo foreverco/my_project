@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width:500px;
+			height:40px;
+			border:1px solid red;
+			
+		}
+		.box2{
+			width:600px;
+			height:60px;
+			border:1px dashed blue;
+		}
+		/* 并集选择器 */
+		.box1,.box2{
+			font-size:24px;
+			color:#F214F4;
+			text-align:center;
+			text-decoration:underline;
+		}
+		.box3{
+			width:400px;
+			height:40px;
+			border:1px solid green;
+		}
+		.box3 a{
+			text-decoration:none;
+			color:gray;
+			font-size:18px;
+		}
+		/* 交集选择器 */
+		.box3 a.one{
+			font-weight:bolder;
+			color:red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		奥克斯
+	</div>
+	<div class="box2">
+		加咖啡
+	</div>
+	<div class="box3">
+		<a href="#" class="one">百度</a>
+		<a href="#">腾讯</a>
+		<a href="#">新浪</a>
+		<a href="#">淘宝</a>
+	</div>
+</body>
+</html>

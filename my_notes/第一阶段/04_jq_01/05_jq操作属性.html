@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.4.js'></script>
+	<script>
+		$(function(){
+			//需求：给li添加一个属性title 导航文字1-5
+			for(var i=0;1<$('.list li').length;i++){
+				$('.list li').eq(i).attr('title','导航文字'+(i+1));
+			}
+
+		})
+
+	</script>
+</head>
+<body>
+	<ul class='list'>
+		<li><a href="#">98k</a></li>
+		<li><a href="#">M4</a></li>
+		<li><a href="#">AK</a></li>
+		<li><a href="#">AUG</a></li>
+		<li><a href="#">AWM</a></li>
+	</ul>
+</body>
+</html>

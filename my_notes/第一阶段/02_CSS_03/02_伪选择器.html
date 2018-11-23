@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.nav a:link{
+			text-decoration:none;
+			color:gray;
+			font-size:20px;
+			font-family:"微软雅黑";
+
+		}
+		/* 鼠标经过/悬停 */
+		.nav a:hover{
+			text-decoration:underline;
+			color:red;
+		}
+		/* 单击按下释放之前的状态 */
+		.nav a:active{
+			color:blue;
+		}
+		/* 访问过后 */
+		/* .nav a:visited{
+			color:purple;
+		} */
+
+
+		/* 按钮修饰
+		初始：宽100 高40 颜色：浅蓝色；
+		鼠标经过：蓝色
+		鼠标按下：绿色
+		鼠标访问过后：橘色 */
+		.box1 .but{
+			width:100px;
+			height:40px;
+			background:skyblue;
+			font-size:20px;
+			border:none;
+			color:white;
+		}
+		.box1 .but:hover{
+			background:blue;
+		}
+		.box1 .but:active{
+			background:green;
+		}
+		.box1 .but:visited{
+			background:orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="#">百度</a>
+		<a href="#">腾讯</a>
+		<a href="#">新浪</a>
+		<a href="#">淘宝</a>	
+
+	</div>
+	<div class="box1">
+			<input type="button" value="按钮" class='but'>
+	</div>
+</body>
+</html>

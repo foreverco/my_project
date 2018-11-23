@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'>
+    <ol>
+      <li v-for='item in arr'>{{item}}</li>
+    </ol>
+    <p>
+      <button @click='sortArr'>点击排序</button>
+    </p>
+    <ol>
+      <li v-for='(stu,index) in student'>{{index}}:{{stu.name}}:{{stu.age}}</li>
+    </ol>
+    <p>
+      <button @click='sortArr1'>点击排序</button>
+    </p>
+
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        arr: [20, 19, 18, 30, 22, 5],
+        student: [{
+            name: '小明',
+            age: 30
+          },
+          {
+            name: '小红',
+            age: 25
+          },
+          {
+            name: '小王',
+            age: 20
+          },
+        ]
+      },
+      methods: {
+        sortArr() {
+          return this.arr.sort(function (a, b) {
+            return a-b
+          })
+        },
+        sortArr1(){
+          return this.student.sort(function(a,b){
+            let x = a['age'];
+            let y = b['age'];
+            return x-y;
+          })
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

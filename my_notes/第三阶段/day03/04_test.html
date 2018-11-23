@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script src="../libs/angular.min.js"></script>
+</head>
+<body ng-app="app">
+   <div ng-controller = 'ctrl'>
+      名字：{{name}}，年龄：{{age}},爱好{{likes}},{{obj}}<br>
+      第一个爱好{{likes[0]}}<br>
+      {{obj.name}}
+
+   </div>
+</body>
+<script>
+   var app = angular.module('app',[]);
+   app.controller('ctrl',['$scope',function($scope){
+      $scope.name = 'curry';
+      $scope.age = 30;
+      $scope.likes = ['eat','sing','game'];
+      $scope.obj = {name:'asfdasdfasdf',age:2,likes:3};
+      console.log($scope.obj.name)
+   }])
+</script>
+</html>

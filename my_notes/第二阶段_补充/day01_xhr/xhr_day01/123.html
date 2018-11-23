@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>构建客户端json格式字符串</h3>
+  <input type="text" placeholder='请输入内容' id='txt'>
+  <input type="button" id='btn' value='点击'>
+  <script>
+    //点击按钮 把输入在文件库的内容一json的格式传给服务器端
+    btn.onclick = function(){
+      var txt = txt.value;
+      var jsonData = '{"user":"'+txt+'"}';
+      console.log(JSON.parse(jsonData));
+
+
+    }
+  
+  </script>
+</body>
+</html>

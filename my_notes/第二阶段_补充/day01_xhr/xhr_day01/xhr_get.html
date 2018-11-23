@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+<body>
+   <h2>form表单提交get请求</h2>
+   <form>
+      用户名: <input type="text" id='user'><br>
+      密&nbsp;码: <input type="password" id='pwd'><br>
+      <input type="button" id='btn' value='提交表单'>
+   </form>
+   <script>
+      //请求01.php的内容
+      btn.onclick = function(){
+         //1.创建 xhr
+         var xhr = new XMLHttpRequest();
+         //2.建立连接
+         xhr.open('get','01.php?name='+user.value+'&pwd1='+pwd.value);
+         //3.发送请求
+         xhr.send(null);
+         //4.监听请求
+         xhr.onreadystatechange = function(){
+            if(xhr.readyState===4 && xhr.status===200){
+               //打印响应数据
+               console.log(xhr.responseText);
+            }
+         }
+      }
+      
+      //把get请求换成post请求
+   </script>
+</body>
+</html>

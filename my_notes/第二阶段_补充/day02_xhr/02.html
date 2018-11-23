@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='./xhr_tools.js'></script>
+  <style>
+    #city {
+      list-style: none;
+    }
+
+    select,
+    ul {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <select id="pro">
+    <option>-请选择-</option>
+    <option>江苏省</option>
+    <option>四川省</option>
+    <option>安徽省</option>
+  </select>
+  <ul id='city'></ul>
+</body>
+
+
+<script>
+  pro.onchange = function () {
+    if (this.value.slice(1, -1) === '请选择') {
+      return;
+    }
+    city.innerHTML = '';
+    xhr({
+      url: '01.php',
+      methods: 'get',
+      success: function (data) {
+        var cy = JSON.parse(data);
+        for (var key in cy) {
+          if (pro.value === key) {
+            for (i = 0; i < cy[key].length; i++) {
+              var li = document.createElement('li');
+              li.innerHTML = cy[key][i];
+              //追加到ul
+              city.appendChild(li);
+            }
+          }
+        }
+      }
+    })
+  }
+</script>
+
+</html>

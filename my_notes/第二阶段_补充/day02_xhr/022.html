@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='./xhr_tools.js'></script>
+</head>
+<body>
+  <button id='btn'>点击测试xhr.tools方法</button>
+  <script>
+      //调用xhr方法
+      xhr({
+        url:'022.php',
+        data:{
+          user:'xiaoteng',
+          age:20
+        },
+        methods:'post',
+        success:function(data){
+          console.log(data);
+        }
+      })
+  
+  </script>
+</body>
+</html>

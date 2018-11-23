@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//1.找孩子
+			$('.box1').children().css('border','1px solid red');
+			$('.box1').children('p').css('border','1px solid blue');
+			$('.box1').find('a').css('font-size','30px');
+			$('.box1').find('span').css('border','3px dashed orange');
+			//2.找爸爸
+			$('.txt').parent().css('border','3px dotted green');
+			$('.txt').parents('.box2').css('border','5px double purple');
+			//3.找哥哥
+			$('.box2 p').prev().css('background','yellow');
+			$('.box2 p').prevAll().css('color','green');
+			$('.box2 p').prevUntil('h1').css('text-align','center');
+			//找弟弟
+			$('.box2 p').next().css('background','pink');
+			$('.box2 p').nextAll().css('color','red');
+			$('.box2 p').nextUntil('h6').css('text-align','right');
+			//找所有的兄弟
+			$('.box2 p').siblings().css('border','2px solid red')
+		})
+
+	</script>
+</head>
+<body>
+	<div class='box1'>
+		<h1>一级标题</h1>
+		<h2>二级标题</h2>
+		<h3>三级标题</h3>
+		<p>
+			<a href="#">链接文字</a>
+			<span>span块</span>
+		</p>
+		<h4>四级标题</h4>
+		<h5>五级标题</h5>
+		<h6>六级标题</h6>
+	</div>
+
+	<div class='box2'>
+		<h1>一级标题</h1>
+		<h2>二级标题</h2>
+		<h3>三级标题</h3>
+		<p>
+			<a href="#">链接文字</a>
+			<span class='txt'>span块</span>
+		</p>
+		<h4>四级标题</h4>
+		<h5>五级标题</h5>
+		<h6>六级标题</h6>
+	</div>
+</body>
+</html>

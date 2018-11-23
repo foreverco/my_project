@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      //Array对象
+        var arr1 = ['a','b','c'];
+        var arr2 = [2,5,7];
+        var arr3 = ['apple','banana'];
+        //连接数组
+        console.log(arr1.concat(arr2,arr3));//["a", "b", "c", 2, 5, 7, "apple", "banana"]
+        //把数组转成字符串
+        console.log(arr3.join());//apple,banana
+        console.log(typeof(arr3.join()));//string
+
+        console.log(arr3.join('@'));//apple@banana
+
+        //添加元素
+        var arr4 = [1,2,3];
+        console.log(arr4);
+        arr4[4] = 15;
+        console.log(arr4);//[1, 2, 3, undefined × 1, 15]
+
+        //尾部添加
+        var arr5 = ['001','apple','女'];
+        console.log(arr5.push('学习','唱歌'));//5
+        console.log(arr5);//["001", "apple", "女", "学习", "唱歌"]
+        //头部添加
+        console.log(arr5.unshift(10,20,30));//8
+        console.log(arr5);//[10, 20, 30, "001", "apple", "女", "学习", "唱歌"]
+
+        //删除元素
+        //尾部删除最后一个元素
+        console.log(arr5.pop());//唱歌
+        console.log(arr5);//[10, 20, 30, "001", "apple", "女", "学习"]
+        //头部删除第一个元素
+        console.log(arr5.shift());//10
+        console.log(arr5);//[20, 30, "001", "apple", "女", "学习"]
+
+        //翻转数组(对下标进行反向排序)
+        var arr3 = ['001','apple','18','学习'];
+          console.log(arr3.reverse());//["学习", "18", "apple", "001"]
+
+        //sort()对元素值得排序
+        var arr4 =['aa','ff','bb','abcd','banana','cc','dd'];
+        var arr5 =[10,45,21,5,19];
+        console.log(arr4.sort());//["aa", "abcd", "banana", "bb", "cc", "dd", "ff"]
+        console.log(arr5.sort());[10, 19, 21, 45, 5]
+
+        //需求：数值数组从大到小进行排序
+        // 1) 返回 a-b 从小到大排序
+        // 2) 返回=0
+        // 3) 返回 b-a 从大到小排序
+        var newarr = arr5.sort(function (a,b){
+          // return a-b;
+          return b-a;
+        })
+          console.log(newarr);//[5, 10, 19, 21, 45]
+
+    
+    
+    </script>
+</body>
+</html>

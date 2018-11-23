@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='./temp/template-native.js'></script>
+  <style>
+    #box{
+      background:pink;
+    }
+  </style>
+</head>
+<body>
+  <div id='box'></div>
+ 
+
+  <!-- 在script标签中定义模板 -->
+  <script id='temp01' type='text/html'>
+      <ul>
+        <li><%= name %></li>
+        <li><%= skill %></li>
+        <li>friend:
+          <ul>
+            <% for(var i=0;i<friend.length;i++){ %>
+              <li><%= friend[i] %></li>
+            <% } %>
+          </ul>
+        </li>
+
+        <li>son:
+          <% for(var j=0;j<son.length;j++){ %>
+          <ul>
+              <% for(key in son[j]){ %>
+                <li><%= key %> : <%= son[j][key] %></li>
+              <% } %>
+          </ul>
+          <% } %>
+        </li>
+      </ul>
+  </script>
+  <script>
+    //定义数据 obj
+    var obj ={
+      name:'孙悟空',
+      skill:'龟派气功',
+      friend:['小林','龟仙人','天津饭','布尔玛'],
+      son:[{
+        name:'孙悟饭',
+        wife:'比里迪',
+        age:20
+      },{
+        name:'孙悟天',
+        wife:'无',
+        age:12
+      }]
+    };
+    var data = template('temp01',obj);
+    document.querySelector('#box').innerHTML = data;
+    // 包装成:
+    /* 
+
+    
+    */  
+  </script>
+</body>
+</html>

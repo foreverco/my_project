@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width:220px;
+			height:220px;
+			background:#F6EFED;
+			margin:30px;
+			border:1px solid blue;
+			/* flex布局，新型布局方式 */
+			display:flex;
+		}
+		.border-radius{
+			width:200px;
+			/* height:200px; */
+			/* border:1px solid red; */
+			margin:auto;
+			border-top:100px solid red;
+			border-bottom:100px solid green;
+			border-radius:100px;
+			position:relative;
+		}
+		/* 在大圆里添加两个小圆 */
+		.border-radius::after{
+			content:'';
+			width:20px;
+			height:20px;
+			border:40px solid green;
+			background:red;
+			border-radius:100px;
+			position:absolute;
+			top:-50px;
+			left:0;
+		}
+		.border-radius::before{
+			content:'';
+			width:20px;
+			height:20px;
+			border:40px solid red;
+			background:green;
+			border-radius:100px;
+			position:absolute;
+			top:-50px;
+			right:0;
+		}
+
+
+		.box2{
+			width:220px;
+			height:220px;
+			background:#F6EFED;
+			margin:30px;
+			border:1px solid blue;
+			/* flex布局，新型布局方式 */
+			display:flex;
+		}
+		.small{
+			background:red;
+			width:100px;
+			height:50px;
+			border-radius:5px;
+			margin:auto;
+			position:relative;
+			
+		}
+		.small::after{
+			content:'';
+			border-left:5px solid transparent;
+			border-top:5px solid transparent;
+			border-bottom:5px solid transparent;
+			border-right:5px solid red;
+			position:absolute;
+			top:18px;
+			left:-10px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class='box1'>
+		<div class='border-radius'>
+			
+		</div>
+	</div>
+
+	<div class='box2'>
+		<div class='small'></div>
+	</div>
+</body>
+</html>

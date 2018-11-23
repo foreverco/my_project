@@ -1,0 +1,4 @@
+get获取参数 req.query
+post获取参数：
+   有文件上传用:formidable
+   没有文件上传用：body-parser

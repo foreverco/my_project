@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //冒泡排序-排序算法
+        //1)比较相邻的两个数值，如果前一个比后一个大，交换位置
+        //2)每一轮比较完后，最后一个元素应该是最大的
+        //3)最后一个元素不参与下一轮比较
+        var arr = [8,2,4,3,5,10];
+        //第一轮排序：2 4 3 5 8 10  比较次数：5 0-4
+        //第二轮排序：2 3 4 5 8     比较次数：4 0-3
+        //第三轮排序：2 3 4 5       比较次数：3 0-2
+        //第四轮排序：2 3 4         比较次数：2 0-1
+        //第五轮排序：2 3           比较次数：1 0
+
+
+        //函数 desc(arr)
+        //功能：数值数组排序(从小到大排序)
+        //结果：返回排序完成的新数组
+        function desc(arr){
+            for(var i=1;i<=arr.length-1;i++){//第几轮排序
+                for(var j=0;j<=arr.length-1-i;j++){
+                    //两两比较：如果前一个比后一个大，交换位置
+                    //arr[j] arr[j+1]
+                    //临时变量：存储前一个值
+                    if(arr[j]>arr[j+1]){
+                        var temp =arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+                // console.log('第'+i+'轮排序');
+                // console.log(arr);
+            }
+            return arr;
+        }
+
+        alert(desc(arr));
+        alert(desc([5,9,4,23,7,8,2,56]));
+
+
+        //加一个从大到小排序
+        var arr1 = [45,12,89,47,654,23,48,65,321];
+        function cddx(arr1){
+            for(i=1;i<=arr1.length-1;i++){
+                for(j=0;j<=arr1.length-1-i;j++){
+                    if(arr1[j]<arr1[j+1]){
+                        var news = arr1[j];
+                        arr1[j] = arr1[j+1];
+                        arr1[j+1] = news;
+                    }
+                }
+            }
+            return arr1;
+
+        }
+        document.write(cddx(arr1)+'<hr>');
+        document.write(cddx([546,2132,857498,1231,54465,3545,781,54,3,7,2]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

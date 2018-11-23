@@ -1,0 +1,103 @@
+/*默认*/
+html,body{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration:none;
+	color:#999999;
+	font-size:14px;
+}
+
+/*公共类*/
+.fleft{
+	float:left;
+}
+.fright{
+	float:right
+}
+.overflowh{
+	overflow:hidden;
+}
+.father:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/*top*/
+.top{
+	background:#E3E4E5;
+	/* border:1px solid red; */
+}
+.top .city{
+	/*border:1px solid blue;*/
+	line-height:30px;
+	position:relative;
+}
+.top .nav{
+	padding:0 10px;
+	color:#999999;
+
+}
+#nav{
+	/* margin-left:150px; */
+}
+.top .city table{
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	font-size:12px;
+	position:absolute;
+	left:0;
+	top:30px;
+	display:none;
+	width:200px;
+
+
+}
+.top .city table td{
+	padding:10px;
+}
+.top .city table td a{
+	padding:5px;
+	
+}
+#bj{
+	
+	color:white;
+}
+#bj a{
+	color:white;
+	background:red;
+
+}
+.top .city table td:hover a{
+	background:#E3E4E5;
+	color:red;
+}
+
+.top .city:hover table{
+	display:block;
+}
+.top .city .nav:hover{
+	background:white;
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+}
+.city .inp{
+	color:#999999;
+}
+#inp{
+	margin-left:300px;
+
+}
+.city .inp a:hover{
+	color:red;
+}
+.city .inp a:nth-child(2){
+	color:red;
+	margin-left:5px;
+}

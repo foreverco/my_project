@@ -1,0 +1,100 @@
+第五章 H5
+第二节
+一、正则表达式(js)
+	知识点：regExp对象
+			作用：用来定义验证规范，并且检验
+	0)定义正则表达式
+	<script>
+	// 1)语法格式
+		var pat1 = /[abc]/;
+
+	</script>
+
+	1)定义正则对象(传入正则规范)
+	<script>
+		var pattern1 = new RegExp('表达式1');
+		var pattern2 = new RegExp('表达式2');
+	</script>
+
+	2)检验是否符合正则规范
+	<script>
+	//用法：正则对象.test(被检验的值);true/false
+	pattern1.test('abcd');
+	pattern2.test('1234');
+
+	</script>
+
+	H5属性：<input type="text" name='txt3' required pattern='^[1][35789][0-9]{9}$'>
+
+二、datalist标记：数据列表
+	<style>
+		/* 隐藏折叠三角 */
+		input::-webkit-calendar-picker-indicator{
+			display:none;
+		}
+
+	</style>
+
+	<!-- 数据列表：datalist 
+	定义一次
+	可以有多个载体-->
+	<datalist id='list1'>
+		<option>江苏省</option>
+		<option>江西省</option>
+		<option>广西省</option>
+		<option>广东省</option>
+	</datalist>
+	<!-- 显示到页面上：需要借助于文本输入框 -->
+	<input type="text" list='list1'>
+	了解内容：如何查看隐藏DOM
+	浏览-F12-打开控制台-设置(F1)[settings]-Elements:选项1(勾选)：shou User agent shadow DOM
+
+三、多媒体标签
+	1）音频：audio
+		*标签结构
+		<audio src="xx.mp3"></audio>
+		<audio>
+			<source sec='xx1.mp3'>
+			<source sec='xx2.mp3'>
+			<source sec='xx3.mp3'>
+		</audio>
+		*文件格式
+			1）ogg
+			2）MP3
+			3）wav
+		*属性
+			1）controls ='controls':播放的相关组件
+			2）autoplay	='autoplay':自动播放
+			3）loop='loop':循环播放
+			4）preload='preload':预加载
+
+	2）视频：video
+		*标签结构
+		<video src="xx.mp4"></video>
+		<video>
+			<source sec='xx1.mp4'>
+			<source sec='xx2.mp4'>
+			<source sec='xx3.mp4'>
+		</video>
+		*文件格式
+			1）ogg
+			2）mp4
+			3）webM
+		*属性（同audio）
+			1）width='1000px':播放器的宽度
+			2）height='800px'：播放器的高度	
+			3)muted ='muted':静音
+			4）poster='图片地址' 封面效果
+		*自定义组件使用的对象方法：
+			1）play();	播放视频
+			2）pause();	暂停视频
+			3）load();	重新加载
+		对象属性：
+			1)muted : 是否静音(true/false)
+			2)playbackRate : 播放速度(数值：默认1)
+			3)currentTime : 视屏当前播放位置(数值:单位:s)
+			4)ended : 视频播放是否结束
+
+四、简单了解(画布) canvas
+	<canvas></canvas>
+	绘图功能：js提供的API

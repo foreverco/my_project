@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+<!-- 
+ 练习:
+            1. 在文本框中输入数据,文本框下方同时显示2行:一行全部转大写,一行全部转小写
+            2. 过滤字符串"abcdefg",截取后5位,并将其转成大写
+            3. 在文本框中输入数字,文本框下方显示该数字保留到小数点后以为
+            4. 显示当前时间 格式:2018年9月21日15时26分
+            5. 定义一个对象数组                     
+                {id:101,name:"Mike",age:22},
+                {id:103,name:"Jack",age:22},
+                {id:105,name:"Rose",age:24},
+                {id:102,name:"Allen",age:24},
+                {id:104,name:"Lily",age:22}
+                将数组排序,分别:
+                  按照id升序,降序
+                  按照age降序,同时id升序排序
+            6. 显示数组中,名字包含a的人的信息
+ -->
+   <ul ng-controller='ctrl'>
+      <li>
+         <input type="text" ng-model = 'msg' ng-change='chg()'>
+      </li>
+      <li>{{msg | uppercase}}</li>
+      <li>{{msg | lowercase}}</li>
+      <li>
+         {{'abcdefg' | limitTo:-5 | uppercase}}
+      </li>
+      <li>
+         <input type="text" ng-model='num'><br> 
+         {{num |number:1}}  
+      </li>
+      <li>
+         {{obj|filter:{name:'a'} }}
+      </li>
+      
+
+
+   </ul>
+
+   <div ng-filter='ctrl2'>
+         <input type="text" ng-model='val'><br>
+         {{val | }}
+   </div>
+</body>
+<script>
+   var app = angular.module('app', []);
+   app.controller('ctrl',['$scope',function($scope){
+      $scope.msg;
+      $scope.chg =function(){
+         console.log('123');
+      }
+      $scope.obj=[
+         {id:101,name:"Mike",age:22,grade:'a'},
+         {id:103,name:"Jack",age:22,grade:'a'},
+         {id:105,name:"Rose",age:24,grade:'a'},
+         {id:102,name:"Allen",age:24,grade:'a'},
+         {id:104,name:"Lily",age:22,grade:'a'}
+      ]
+   }])
+   app.filter('ctrl2',function(){
+      
+   })
+</script>
+
+</html>

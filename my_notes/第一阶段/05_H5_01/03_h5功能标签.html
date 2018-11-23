@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		mark{
+			background:skyblue;
+		}
+		summary{
+			cursor:pointer;/* 鼠标状态：小手 */
+			cursor:help;/*？状态*/
+			cursor:wait;/*等待，加载*/
+			cursor:progress;
+		}
+		summary:focus{
+			outline:0;
+		}
+
+	</style>
+
+	<script src=''></script>
+	<script>
+		$(function(){
+			$('meter').attr('value',);
+		})
+
+
+	</script>
+</head>
+<body>
+		<!-- 标记：默认黄色背景 -->
+	<mark>中秋节快乐！</mark>
+		<!-- 定义文档细节 -->
+		<details>
+			<summary>中国青年旅行社</summary>
+			<p>世界这么大，带你去看看</p>
+		</details>
+		<!-- meter标尺 -->
+		<meter value='20' min='0' max='100'></meter>
+		<meter value='50' min='0' max='100'></meter>
+		<meter value='20' min='0' max='100' low='10' high='90' optimum='5'></meter>
+		<meter value='92' min='0' max='100' low='10' high='90' optimum='5'></meter>
+		<h1>绿-黄-红</h1>
+		<meter min='0' low='20' optimum='15' high='80' max='100' value='10'></meter><br>
+		<meter min='0' low='20' optimum='15' high='80' max='100' value='50'></meter><br>
+		<meter min='0' low='20' optimum='15' high='80' max='100' value='90'></meter><br>
+		<h1>黄-绿-黄</h1>
+		<meter min='0' low='20' optimum='40' high='80' max='100' value='10'></meter><br>
+		<meter min='0' low='20' optimum='40' high='80' max='100' value='50'></meter><br>
+		<meter min='0' low='20' optimum='40' high='80' max='100' value='90'></meter><br>
+		<h1>红-黄-绿</h1>
+		<meter min='0' low='20' optimum='90' high='80' max='100' value='10'></meter><br>
+		<meter min='0' low='20' optimum='90' high='80' max='100' value='50'></meter><br>
+		<meter min='0' low='20' optimum='90' high='80' max='100' value='90'></meter><br>
+</body>
+</html>

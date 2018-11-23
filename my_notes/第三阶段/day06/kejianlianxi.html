@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <style>
+      .box1{
+         border:1px solid red;
+         /* font-size:50px; */
+         /* text-align:center; */
+         height:1000px;
+      }
+      table,tr,td{
+         border:1px solid blue;
+         text-align:center;
+
+      }
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+   <div ng-controller='ctrl' class='box1'>
+      随机数：{{num}}
+
+      <div>
+         <button ng-click='but()'>开始/暂停</button>
+      </div>
+      <div>
+            当前时间：{{now}}
+      </div>
+      
+      <div>
+         <button ng-click='send()'>点击发送</button>
+      </div>
+      <div>
+         <table cellspacing=0 cellpadding=10 width='500px'>
+            <tr>
+               <td>学号</td>
+               <td>姓名</td>
+               <td>性别</td>
+            </tr>
+            <tr ng-repeat='student in students'>
+               <td>{{student.id}}</td>
+               <td>{{student.name}}</td>
+               <td>{{student.sex=='M'?'男':'女'}}</td>
+            </tr>
+         </table>
+      </div>
+
+   </div>
+   
+   
+</body>
+<script>
+   var app = angular.module('app', []);
+   app.controller('ctrl',function($scope,$interval,$filter,$http){
+      //设置随机数
+      var num = 0;
+      id = $interval(function(){
+         $scope.num = parseInt(Math.random()*100)+1;
+      },1000)
+
+      //计时器
+      var id = 0;//预先设置一个id
+      var date =$filter('date');//获取date过滤器功能
+      $scope.but = function(){
+        console.log(123);
+         // $interval.cancel(id);
+         //判断id是否有值，如果有，说明之前已经生成了一个计时器id，应该先关闭，如果没有，说明之前没有有效的计时器，可以生成新的计时器
+         if(!id){//id没有值，生成新的计时器
+            id = $interval(function(){
+               $scope.now = date(new Date(),'yyyy-MM-dd HH:mm:ss');
+            },1000);
+         }else{//id有值，清除id的值，停止计时器
+            $interval.cancel(id);
+            id = null;//重置id变量
+         }
+      }
+
+      //3
+      $scope.send = function(){
+         // alert(123);
+         $http({
+            url:'./stu.php',
+         }).success(function(result){
+            console.log(result);
+            $scope.students = result;//将返回的数据绑定到students变量上
+         });
+      }
+
+   })
+</script>
+
+</html>

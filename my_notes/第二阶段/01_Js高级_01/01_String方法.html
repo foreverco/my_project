@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      //Js对象
+      //方法：
+      var str= '不努力一下，你就不知道什么叫绝望！';
+      console.log(str.charAt(2));//力
+      console.log(str.charAt(30));//
+
+      console.log(str.charCodeAt(2));//21147
+      console.log(str.charCodeAt(6));//20320
+      console.log(str.charCodeAt(30));//NaN(非数值)
+
+      console.log(str.search('不'));//0
+      console.log(str.search('努力'));//1
+      console.log(str.search('一下'));//3
+      console.log(str.search('下'));//4
+      console.log(str.search(/不/));//0
+      console.log(str.search(/努力/));//1
+      console.log(str.search(/不/g));//0
+      console.log(str.search(/bb/g));//-1
+      //g在该方法里没有作用，只会搜索一次
+
+      console.log(str.match('不'));//["不", index: 0, input: "不努力一下，你就不知道什么叫绝望！"]
+      console.log(str.match('努力'));//["努力", index: 1, input: "不努力一下，你就不知道什么叫绝望！"]
+      console.log(str.match(/不/g));//["不", "不"]
+      console.log(str.match(/aa/g));//null
+
+      //替换字符创
+      var str = '三级头 三级甲 98k M24,三级头 三级甲 98k M24';
+      console.log(str.replace('三级头','一级头'));//一级头 三级甲 98k M24,三级头 三级甲 98k M24
+      console.log(str.replace(/三级头/ ,'一级头'));//一级头 三级甲 98k M24,三级头 三级甲 98k M24
+      console.log(str.replace(/三级甲/g ,'一级甲'));//三级头 一级甲 98k M24,三级头 一级甲 98k M24
+
+      //连接字符串
+      var str1 = '今天是星期一';
+      var str2 = '我很不开心';
+      var str3 = '因为又要学习了';
+      console.log(str1.concat(str2,str3));//今天是星期一我很不开心因为又要学习了
+      
+      //分割字符串
+      var str = '姓名:腾飞;性别:人妖;爱好:男';
+      console.log(str.split(';'));//["姓名:腾飞", "性别:人妖", "爱好:男"]
+      console.log(str.split(/:/));//["姓名", "腾飞;性别", "人妖;爱好", "男"]
+
+      //截取字符串 slice
+      var str = '将来的你一定会感谢现在拼命的自己！';
+      console.log(str.slice(4,9));//一定会感谢
+      console.log(str.slice(-4));//的自己！
+      //-4 倒数第四个
+      console.log(str.slice(-2));//己！
+
+      console.log(str.substr(4,9));//一定会感谢现在拼命
+      console.log(str.substring(4,9));//一定会感谢
+      console.log(str.substring(-4));//将来的你一定会感谢现在拼命的自己！
+      //没有负值
+
+    </script>
+</body>
+</html>

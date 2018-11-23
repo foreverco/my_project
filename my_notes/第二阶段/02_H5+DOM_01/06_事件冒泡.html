@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+         .yeye{
+            width:400px;
+            height:400px;
+            border:2px solid red;
+         }
+         .baba{
+            width:300px;
+            height:300px;
+            border:2px solid blue;
+         }
+         .son{
+            width:200px;
+            height:200px;
+            border:2px solid green;
+         }
+      
+      
+      </style>
+</head>
+<body>
+    <!-- 多层嵌套的div -->
+    <div class='yeye'>
+         <div class='baba'>
+            <div class='son'></div>
+         </div>
+      </div>
+      <script>
+         //点击那个div ，添加一个粉色背景
+         function changeBg(event){
+            var current = event.srcElement ||event.target;
+               console.log(current);
+               //this:指向调用函数的对象
+               //在冒泡里，this指向会变化
+               console.log(this);
+               //添加背景
+               current.style.background = 'pink';
+         }
+         //给div添加事件处理函数
+         var divs = document.querySelectorAll('div');
+         for(var i = 0;i<divs.length;i++){
+            divs[i].addEventListener('click',changeBg);
+         }
+
+      
+      
+      </script>
+</body>
+</html>

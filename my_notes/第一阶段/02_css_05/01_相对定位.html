@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border:3px solid black;
+			width:600px;
+			margin:20px auto;
+		}
+		.red{
+			background:red;
+			width:180px;
+			height:180px;
+			position:relative;/* 相对定位 */
+			left:50px;
+			top:100px;
+			z-index:11;
+		}
+		.blue{
+			background:blue;
+			width:180px;
+			height:180px;
+			position:relative;/* 相对定位 */
+			top:50px;/*距离它本身顶部50px*/
+			left:70px;/*距离它本身左边70px*/
+			/* 纵深：提高图层顺序 */
+			z-index:10;
+
+		}
+		.green{
+			background:green;
+			width:180px;
+			height:180px;
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="red"></div>
+		<div class="blue"></div>
+		<div class="green"></div>
+	</div>
+</body>
+</html>

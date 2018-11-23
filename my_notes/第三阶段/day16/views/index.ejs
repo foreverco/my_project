@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      .box1{
+         /* border:1px solid red; */
+         /* height: 200px; */
+      }
+      ul{
+         border:1px solid red;
+      }
+      a{
+         display:inline-block;
+         padding:0 10px;
+         margin:10px;
+         background:#999;
+         color:white;
+         text-decoration:none;
+      }
+   
+   </style>
+</head>
+<body>
+   <form action="/tijiao" method='POST'>
+      用户名：<input type="text" name='username'><br><br>
+      留&nbsp;言：<textarea name='msg'></textarea><br><br>
+      <input type="submit" value='提交'>
+   </form>
+   <div class='box1'>
+      
+       <% for(var i=0;i<docs.length;i++){%>
+      <ul>
+         <li><%= docs[i].username %></li>
+         <li><%= docs[i].msg %></li>
+         <li><%= docs[i].time %></li>
+         <a href="">修改</a>
+         <a href="">删除</a>
+      </ul>
+         <% } %>
+      
+   </div>
+</body>
+</html>

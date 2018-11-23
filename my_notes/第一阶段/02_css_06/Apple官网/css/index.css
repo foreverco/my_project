@@ -1,0 +1,285 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-08 09:57:26
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-08 19:39:14
+*/
+
+/* 初始化样式 */
+	*{margin:0;padding:0;}
+	html,body{font-family:"微软雅黑";font-size:13px;}
+	a{text-decoration:none;}
+	ul,li{list-style:none;}
+
+/* 公共类 */
+	.fLeft{
+		float:left;
+	}
+	.fRight{
+		float:right;
+	}
+	.overflowH{
+		overflow:hidden;
+	}
+	.autoW{
+		width:1000px;
+		margin:0 auto;
+	}
+
+	.father:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+
+/* 导航区域  navBox */
+	.navBox{
+		/* outline:1px solid red; */
+		background:#666;
+	}
+	.navBox .con{
+		/* border:1px solid blue; */
+	}
+	.navBox .con img,.navBox .con .navTxt{
+		float:left;
+	}
+	.navBox .con img{
+		margin-top:14.5px;
+	}
+	.navBox .con .navTxt{
+		/* border:1px solid orange; */
+		line-height:50px;
+		/* 把参照物设置为父元素 */
+		position:relative;
+	}
+	.navBox .con .navTxt a{
+		border:1px solid red;
+		display:block;
+		height:50px;
+		padding:0 18px;
+		font-size:20px;
+		color:white;
+	}
+	/* 定位二级导航 */
+	.navBox .con .navTxt ul{
+		position:absolute;
+		width: 100%;
+		text-align:center;
+		left:0;
+		top:50px;
+		background:#CCCCCC;
+		display:none;
+		z-index:100;/* (提高图层顺序) */
+	}
+	/* 鼠标经过一级导航，让弟弟二级导航显示 */
+	/* .navBox .con .navTxt>a:hover+ul{
+		display:block;
+	} */
+	/* 鼠标经过父元素大盒子navTxt，让子元素二级显示出来 */
+	.navBox .con .navTxt:hover ul{
+		display:block;
+	}
+	/* 一级导航，鼠标经过，文字变黑色 */
+	.navBox .con .navTxt>a:hover{
+		color:black;
+	}
+	/* 二级导航字体黑色，鼠标经过字体变白色 */
+	.navBox .con .navTxt ul a{
+		color:black;
+	}
+	.navBox .con .navTxt ul a:hover{
+		color:white;
+	}
+
+
+/* banner区 */
+/* banner区bannerBox */
+	.bannerBox{
+		/* border:2px solid red; */
+		width:1300px;
+		height:601px;
+		margin:0 auto;
+		position:relative;
+	}
+	/* 页面默认显示第一张图 */
+
+	.bannerBox .imgBox img{
+		display:none;
+	}
+	.bannerBox .imgBox img:first-child{
+		display:block;
+	}
+	/* 左右按钮组要定位 */
+	.bannerBox .btns{
+		/* border:3px solid blue; */
+	}
+	/* .bannerBox .btns img:last-child{
+		float:right;
+	} */
+	.bannerBox .btns img{
+		position:absolute;
+		top:50%;
+		margin-top:-40px;
+	}
+	.bannerBox .btns img:first-child{
+		left:10px;
+	}
+	.bannerBox .btns img:last-child{
+		right:10px;
+	}
+	/* 矩形区：定位在盒子底部 */
+	.bannerBox .squares{
+		/* border:2px solid red; */
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:100%;
+		text-align:center;/*只对行元素有用*/
+
+	}
+	.bannerBox .squares span{
+		width:15px;
+		height:15px;
+		background:#CCCCCC;
+		display:inline-block;
+		margin:10px;
+	}
+	.bannerBox .squares span:first-child{
+		background:black;
+	}
+
+/* 图文区 */
+	.imgTxt{
+		/* border:3px solid blue; */
+		margin-top:65px;
+		margin-bottom:78px;
+	}
+	/* 小黑子宽度一样，等间距分布 */
+	.imgTxt .smallBox{
+		width:30%;
+		/* 剩下10%空白 */
+		margin-left:2.5%;
+		/* border:1px solid red; */
+		text-align:center;
+		font-size:16px;
+
+	}
+	.imgTxt .smallBox p{
+		padding:0 30px;
+		/* border:1px solid yellow; */
+	}
+	.imgTxt .smallBox a{
+		color:#551A8B;
+		font-size:18px;
+		font-weight:bold;
+	}
+
+/* 图片展示区 imgBox */
+	.imgBox{
+		/* outline:4px solid red; */
+	}
+	.imgBox .leftBox{
+		/* outline:4px solid blue; */
+	}
+	.imgBox .rightBox{
+		/* outline:4px solid green; */
+		width:636px;
+	}
+
+	/* 图片组：把彩色图覆盖在无色图上方 */
+	.imgBox .imgs{
+		/* outline:1px solid orange; */
+		position:relative;
+	}
+	.imgBox .imgs img:last-child{
+		position:absolute;
+		left:0;
+		top:0;
+		
+		opacity:0;
+	}
+	.imgBox .imgs:hover img:last-child{
+		
+		opacity:1;
+	} 
+	/* 会出现闪屏 */
+	/* .imgBox .imgs img:first-child:hover+img:last-child{
+		display:block;
+	} */
+
+	/* 消除img和div底部的间距 */
+	.imgBox .imgs img{
+		display:block;
+	}
+/* 文字区 */
+.txt{
+	/* border:1px solid red; */
+	text-align:center;
+	margin-top:100px;
+	margin-bottom:100px;
+}
+.txt p{
+	font-size:16px;
+
+}
+.txt p a{
+	font-size:18px;
+	font-weight:bold;
+	line-height:50px;
+}
+/* 图标区 */
+.tb{
+	/* border:1px solid red; */
+	width:250px;
+	margin:0 auto;
+}
+.tb .top{
+	/* border:1px solid blue; */
+}
+.tb .top1{
+	/* border:1px solid orange; */
+	position:relative;
+
+}
+.tb .top .top1{
+	/* width:30%;
+	margin-left:2.5%; */
+	margin-left:14.5px;
+
+}
+.tb .bottom .top1{
+	margin-left:93px;
+}
+.tb .top1 img:last-child{
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+}
+.tb .top1:hover img:last-child{
+	opacity:1;
+}
+/* .tb .bottom{
+	border:1px solid green;
+}
+ */
+.h1{
+	/* border:0; */
+	border-top:2px solid #666;
+	margin-top:100px;
+	margin-bottom:55px;
+	
+}
+.footer{
+	/* border:1px solid red; */
+	font-size:18px;
+	margin-bottom:30px;
+	
+}
+.footer p{
+	padding:0 30px;
+}
+.footer a{
+	color:black;
+	font-size:18px;
+}

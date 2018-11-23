@@ -1,0 +1,291 @@
+第一章 HTML
+第三节
+一、表格	table
+	<table width="宽" hright="高" 
+			border="边框大小" bordercolor="边框颜色" 
+			cellspacing="单元格外间距(0)" cellpadding="单元格内间距" 
+			bgcolor="背景色" background="背景图" 
+			align="left/center/right">
+		
+		<tr align="left/center/right"
+			valign="top/middle/bottom"
+			bgcolor="yellow">
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+
+	</table>
+
+	单元格/列：td/th
+	1）<td></td>
+	2）<th>文字加粗+居中效果</th>
+	*属性
+		1）align="left/center/right"
+		2）valign="top/middle/bottom"
+		3）bgcolor="yellow"
+		4）background="背景图" 
+		5）colspan="个数"	列合并 ***
+		6）rowspan="个数"	行合并 ***
+		合并单元格：被合并掉的单元格要从源代码里面删除
+	其他标签
+	1）表格标题
+		<caption>标题内容</caption>
+	2）区块标签-表头
+		<thead>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</thead>
+	3）区块标签-表内容
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	4）区块标签-脚部区块
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tfoot>
+
+
+二、表单 form
+	1.标签名
+		<form action="后台页面地址（index.php）"></form>
+	2.作用
+		收集用户信息
+		案例：登录/注册
+	3.form表单控件（必须包含在form表单里）
+		1）单行文本输入框
+		<input type="text"  maxlength="12">
+		2)密码框
+		<input type="password">
+		3）单选按钮组（一组要有共同的name名）
+		<input type="radio" name="sex" checked>男
+		<input type="radio" name="sex">女
+		4）多选按钮组
+		<input type="checkbox" name="like">学习
+		<input type="checkbox" name="like">唱歌
+		5)下拉列表框
+		<select name="province">
+			<option value="">江苏省</option>
+			<option value="">浙江省</option>
+			<option value=""></option>
+		</select>
+		6）文件域（上传文件）
+		<input type="file" name="headPic">
+		7)多行文本域
+		<textarea name="intro" id="" cols="30" rows="10" multiple></textarea>
+		*属性
+		multiple 允许多文件上传
+		
+		8)提交按钮
+		<input type="submit" value="登录">
+		<button>提交</button>
+		<input type="image" src="img/乔巴.jpg">
+		9)重置按钮
+		<input type="reset">
+		10）普通按钮（要用js实现效果）
+		<input type="button" value="按钮文字">
+		11）隐藏域(传递隐藏数据使用)
+		<input type="hidden">
+
+	4.数据传递的格式
+		控件名：控件的name属性值
+		空间值：控件的value属性值
+
+		【单选按钮组/多选按钮组/下拉列表必须要自己设置value值】
+
+		控件名=控件值&控件名=控件值
+
+
+
+三、快速生成代码结构
+	创建一个3行2列的表格(table>tr*3>td*2)
+	创建一个5行无序列表（ul>li*5）
+
+四、课下练习
+	1.表格（表格1.jpeg）
+	2.表单（02-form三张图片）
+
+五、预习：css样式
+	1.css边框
+	2.css背景
+	3.文本修饰
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

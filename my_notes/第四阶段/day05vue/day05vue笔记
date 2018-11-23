@@ -1,0 +1,115 @@
+-全局 API
+  1.Vue.extend 扩展实例构造器方法
+    Vue.extend({
+      options
+    }) 
+      参数是一个对象,选项和组件中的是同样.data必须是函数形式
+
+  2.Vue.set()
+   作用:就是在构造器玩不操作内部的数据,属性和方法.
+   问题:由于js的限制,当你改变的数据类型是数组时,Vue不会帮我们自动更新视图,当你修改数组的length时,Vue也不会触发响应式
+
+-Vue-cli
+  Vue-cli是官方提供的用于快速构建项目结构的脚手架工具
+  他会自动生成Vue项目的目录以及相关文件
+1.安装:
+  cnmp install vue-cli -g
+2.初始化项目
+  (1) vue init <template-name> <project-name>
+                  webpack       项目名称
+  (2) 设置选项:
+      1.project name : 项目名称(小写)
+      2.project description :项目描述
+      3.Auther : 作者
+      4.install vue-router :是否安装 router
+      5.Use ESLint to lint your code : Y/N
+      6.setup unit tests width Karma + Mocha : 是否安装单元测试工具
+  (3) Get Start 启动项目   
+
+3.src 源码目录文件
+  assets : 静态资源
+    包含图片,web字体,json数据...
+  components : 公共组件
+  router :　路由配置文件
+  App.vue : 根组件
+    在项目中,我们都是用 .vue 文件表示一个组件(vue实例)
+    一个vue文件包含三个部分,template , script , style
+    template  :在模板中必须要设置一个父元素
+    script    :这里面可以写vue的逻辑,我们使用ES6的语法来写的,使用export default 来导出一个模块
+    style     :默认是全局下的,如果只需作用域当前组件,
+                <style scoped></style>
+
+
+  main.js : 入口js文件,主文件
+
+- Vue-cli 3 版本的安装
+          1. cnpm i @vue/cli -g
+          2. 初始化项目
+                (1) vue create project-name
+                (2) vue ui
+                      (报错的话)npm cache clean --force
+                                npm install --registry=https://registry.npm.taobao.org
+
+-Vue-router (核心插件-官方)
+  vue一般用来开发单页应用(SPA),就是只有一个html页面,不能通过a标签进行链接跳转,必须要使用 路由 来管理页面之间的跳转
+  1.vue结合vue-router使用,安装 vue-router 插件
+    cnpm i --save vue-router
+    vue-cli 中已经集成了
+  2.路由配置文件 router.js
+    router.js 是路由的核心文件
+
+  3.配置一个二级页面
+    (1) 在 views文件夹下新建secondCom.vue
+    (2) 在router.js中配置我们的路由
+  4.导航链接 router-link
+    语法:<router-link to='path'>xxx</router-link>
+    这个标签会默认渲染成a标签
+  5.配置子路由
+    在 views 中,新建一个页面 childComp.vue
+                新建第二个子页面 compTwo.vue
+
+  6.路由参数传递
+    通过<router-link></router-link> 标签携带单数进行传递
+    <router-link :to="{
+      name:'路由的名字',
+      params:{key:value}
+    }"></router-link>
+    (1) 绑定to属性 :to
+    (2) name的值就是路由的名字
+    (3) params 一对象的形式传参 key:value
+    
+  7.编程式导航
+    之前我们是通过router-link标签来实现路由跳转,通过业务逻辑来实现跳转 - 编程式导航
+
+-vuex
+  vuex 是什么? VueX 是一个专门为Vue设计的集中式状态管理模式
+    我们可以把组件的共享状态抽取出来,以全局的一个单例模式来管理,任何组件都可以获取状态或触发行为
+
+  每一个VueX实例其实就是一个仓库(Strore),vuex的核心
+  store就是一个对象,它包含着你的应用的大部分状态state
+
+  何时使用VueX: 
+    (1) 当你的项目数据足够复杂时,需要管理的状态足够多时.
+    (2) 多个组件共同依赖同一个状态时,多个组件都可能会去改变同一个状态时
+
+  VueX 的组成部分
+    1.state : 存放状态
+    2.getters : 从state中派生出状态,比如讲state中的某个状态过滤得到新的状态
+    3.mutations : 改变状态的方法
+    4.actions : mutations的加强版,可以封装多个mutations,可以执行异步操作
+    5.modules : 可以把容器分为多个模块来管理,把状态和方法分类装,可以让代码结构更加清晰
+
+    安装VueX插件
+      cnpm install --save vuex
+
+1.VueX 中的 state
+  state 状态对象,所有的状态都放在state对象中维护
+  获取state状态的方式:
+  (1) 通过 computed 计算属性来获取
+  (2) 使用vuex提供的语法糖 - mapState
+
+2.mutations 改变状态
+  **1.改变 vuex store中的状态的唯一方法就是提交mutations type,mutation中的方法是同步的
+  (1) 使用$store.commit() 来提交一个mutations type.
+      这个方法可以接收参数(payload)
+  (2) 使用语法糖 - mapMutations

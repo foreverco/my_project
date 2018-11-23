@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.nav{
+			width:320px;
+			border:1px solid #6A61F6;
+			line-height:40px;
+			text-indent:16px;
+		}
+		.nav a{
+			text-decoration:none;
+			color:#666;
+			font-size:18px;
+		}
+		.nav a.current{
+			color:red;
+			text-decoration:underline;
+		}
+
+	</style>
+</head>
+<body>
+	<p class='nav'>
+		<a href="#">首页</a>
+		<a href="#">公司新闻</a>
+		<a href="#">发展历史</a>
+		<a href="#">招贤纳才</a>
+	</p>
+	<script>
+	//需求：点击a，被点击的添加：文字变红色，下划线
+	//1)获取超链接a
+	var a_obj = document.querySelectorAll('.nav a');
+	console.log(a_obj);//[a,a,a,a]
+	//2)给a添加单击事件
+	for(key in a_obj){//a超链接：a_obj[key]
+		// console.log(key);
+		a_obj[key].onclick = function(){
+			// alert('点击了a');
+			// this理解为一个指针：指向事件的操作对象
+			// console.log(this);
+			//1）给所有a，移除current
+			for(var i = 0;i<a_obj.length;i++){
+				a_obj[i].classList.remove('current');
+			}
+			//2）给当前a添加current
+			this.classList.add('current');
+		}
+
+	}
+
+
+	</script>
+</body>
+</html>

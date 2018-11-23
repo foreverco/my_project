@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		for(var i = 50;i<=100;i++){
+			if(i % 5 == 0 && i%6 == 0){
+				document.write(i);
+				document.write('<br>');
+			}
+		}
+		document.write('<hr>');
+		//需求3：输出1990-2020年之间的闰年年份，并且输出有几个闰年？
+		//arr：存储闰年
+		
+		var arr = [];//存放闰年
+		for(var year = 1990,num = 0,i=0;year<=2020;year++){
+			if(year%4 == 0 && year %100 != 0 ||year%400 ==0){
+				document.write(year+'是闰年');
+				document.write('<br>');
+				num++;//总数+1
+				//把闰年放到数组里 数组名[下标] = 值;
+				arr[i] = year;
+				i++;//下标+1
+				
+			}
+		}
+		 document.write(num+'个闰年');
+		 document.write(arr.length+'个闰年');
+
+
+
+		//需求4：请输入行数
+		//根据行数输出一个n行的无序列表
+		var list1 = prompt('请输入行数');
+			
+			document.write('<ul>');
+		for(i = 1;i<=list1;i++){
+			document.write('<li>第'+i+'行</li>');
+		}
+			document.write('</ul>');
+
+
+
+	</script>
+</body>
+</html>

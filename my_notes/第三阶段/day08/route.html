@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+  <script src='../libs/angular-route.js'></script>
+</head>
+<body ng-app='app'>
+    <a href="#/show">显示所有人的基本信息</a>
+    <!-- 
+      定义3个链接，锚点分别是：
+      #/student/zhangsan/1101
+      #/student/lisi/1102
+      #/teacher/wangwu/001
+      页面下方显示：
+        学生姓名：zhangsan，学号是1101
+        学生姓名：lisi，学号是1102
+        教师姓名：wangwu，工号是001
+     -->
+     <a href="#/student/zhangsan/1101">点击</a>
+     <a href="#/student/lisi/1102">点击</a>
+     <a href="#/teacher/wangwu/001">点击</a>
+  <div ng-view></div>
+</body>
+<script>
+  var app = angular.module('app', ['ngRoute']);
+  app.config(function($routeProvider){
+    $routeProvider.when('/',{
+      template:'<h1>这是首页</h1>'
+    }).when('/show',{
+      templateUrl:'./show.html',
+      controller:'show'
+    }).when('/:job/:name/:id',{
+      templateUrl:'./people.html',
+      controller:'people'
+    })
+  })
+  app.controller('show',function($scope,$http){
+    $scope.a = function(aa){
+      //按照score的值进行排序
+      // $scope.order = 'score';
+      if($scope.order == aa){
+        $scope.order = '-'+aa;
+      }else{
+        $scope.order =aa;
+      }
+    }
+    
+    //通过http发送请求，获取数据，将数据绑定后发给视图
+    $http({
+      url:'./api/show.php'
+    }).success(function(result){
+      //绑定数据
+      //JSON.parse(result);
+      //console.log(JSON.parse(result));
+      $scope.users = result;
+    });
+  })
+  //people的控制器
+  //获取参数，绑定数据
+  .controller('people',function($scope,$routeParams){
+    var job =$routeParams.job;
+    var name =$routeParams.name;
+    var id =$routeParams.id;
+    if(job=='student'){
+      $scope.job ='学生';
+      $scope.name = name;
+      $scope.type = '学号';
+      $scope.id = id;
+    }else if(job == 'teacher'){
+      $scope.job ='老师';
+      $scope.name = name;
+      $scope.type = '工号';
+      $scope.id = id;
+    }
+  });
+</script>
+
+</html>

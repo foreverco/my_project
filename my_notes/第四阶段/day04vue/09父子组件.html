@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'>
+    <my-list></my-list>
+  </div>
+  <script>
+    //注册全局组件
+    Vue.component('my-list', {
+      data() {
+        return {
+            msg: 'I am my-list'
+        }
+      },
+      template: `
+      <ul class='ulList'>
+        <list-one></list-one>
+        <list-two></list-two>
+        <li>{{msg}}</li>
+      </ul>
+      `,
+      components: {
+        'list-one': {
+          template: `
+          <li>
+            <a href='https://m.jd.com/'>京东APP</a>
+            <a href='#'></a>
+          </li>
+          `,
+          data(){
+            return {
+              msg
+            }
+          }
+        },
+        'list-two': {
+          template: `
+          <li>
+            <a href='https://h5.m.taobao.com/'>淘宝APP</a>
+          </li>
+          `
+        }
+      }
+    })
+    new Vue({
+      el: '#app',
+      data: {},
+    })
+  </script>
+</body>
+
+</html>

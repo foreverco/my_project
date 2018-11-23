@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		正则验证1：<input type="text" name='txt1'><br>
+		正则验证1：<input type="email" name='txt2'><br>
+	</p>
+
+		<form action="index.php">
+			<p>
+				手机号：<input type="text" name='txt3' required pattern='^[1][35789][0-9]{9}$'><br>
+			</p>
+			<input type="submit">
+		</form>
+	<script>
+			//失去焦点，验证
+			var txt1_obj = document.querySelector('input[name=txt1]');
+			var txt2_obj = document.querySelector('input[name=txt2]');
+		//1）定义正则表达式
+			//			abld   ab l(返回false)
+			//			abcd	abc(返回true)
+			var pat1 = /^[a-z0-9]{6,10}$/i;
+
+
+			//需求1：用户名规范 可以用字母或者数字或者_ 不能超过11个字符
+			var pat2 = /^[\w]{0,11}$/;
+			///需求2：密码验证 只能为六位
+			var pat3 = /^[0-9]{6}$/;
+			///需求3：性别验证
+			var pat2 = /^(男|女|人妖)$/;
+			//需求4：昵称验证，第一个字符必须是字母
+			var pat2 = /^[a-zA-Z][\w]{5,}$/;
+			//需求5：手机号
+			var par1 = /^[1][35789][0-9]{9}$/;
+			//邮箱验证
+			var par2 = /^[\w]{6,11}(@qq.com|@126.com||@163.com||@sina.com|)$/;
+
+			//练习需求7：
+			//1）网站首页：网址
+			//2）图片格式：（png/gif/jpeg）
+
+
+
+		//2）定义正则对象（传递表达式）
+			var reg1 = new RegExp(par1);
+			var reg2 = new RegExp(par2);
+			txt1_obj.onblur = function(){
+		//3）检验值是否符合正则规范
+			if(reg2.test(txt1_obj.value) == true){
+				alert('手机号可以使用！');
+			}else{
+				alert('手机号不正确，请重新输入！');
+			}
+
+			}
+			txt2_obj.onblur = function(){
+				if(reg2.test(txt2_obj.value) == true){
+					alert('邮箱可以使用！');
+				}else{
+					alert('邮箱错误，重新输入！');
+				}
+			}
+
+
+
+
+		
+	</script>
+</body>
+</html>

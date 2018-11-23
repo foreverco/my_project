@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='../jq/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+  <button id='btn'>通过cors发起跨域请求</button>
+  <script>
+    //这里我们使用$.ajax()
+    $('#btn').on('click',function(){
+      $.ajax({
+        url:'http://127.0.0.1/02_course_02/day03_cros/02.php',
+        type:'post',
+        data:{
+          sname:'xiaofei'
+        },
+        // dataType:'json',
+        success:function(data){
+          console.log(data);
+        }
+      })
+    })
+  
+  </script>
+</body>
+</html>

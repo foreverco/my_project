@@ -1,0 +1,44 @@
+第二章 H5+DOM 
+第二节
+一、Jquery种的事件操作
+   <script>
+      // 1.简单操作
+      $('elem').click(function(){});
+      $('elem').click(function(){});
+      // 2.事件绑定
+         // -第一组(绑定/解绑)
+         $('elem').bind(事件类型,传递的数据,事件处理函数);
+         $('elem').unbind(事件类型,函数名);
+         //案例
+         $('ul').bind('click',{userNmae:apple},addLine);
+         $('ul').bind('click',{userNmae:apple},function(){});
+
+            $('ul').unbind('click',addLine);
+   </script>
+   <script>
+         //第二组：绑定/解绑 jq1.7+
+         $('elem').on(事件类型,传递的数据,事件处理函数);
+         $('elem').off(事件类型,事件处理函数);
+   </script>
+   <script>
+         //第三组：绑定执行完，立即解除绑定 只执行一次
+         $('elem').one(事件类型,传递的数据,事件处理函数);
+   
+   </script>
+
+二、BOM对象
+   1)定义:Browser Object model
+         浏览器对象模型
+   2)window：浏览器
+      子对象
+      1）document:BOM包含了DOM
+      2)history：历史记录
+            A:前进一步 window.history.forward();
+            A:后退一步 window.history.back());
+            A:跳转几步 window.history.go(5/-5);
+            注释：正值-前进 负值-后退
+      3)location:window窗口url地址
+            window.location = 'http://www.baidu.com';
+            window.location.href = 'http://www.baidu.com';
+      4)navigator:浏览器与操作系统的信息
+            // 兼容处理可以获取浏览器信息来甄别

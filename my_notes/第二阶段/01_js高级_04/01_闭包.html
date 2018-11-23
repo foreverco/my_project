@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      var num = 100;//全局变量
+      function fun1(){
+         console.log(num);//100
+         function fun2(){
+            console.log(num);//100
+            num++;
+         }
+         fun2();//只能在作用域范围内访问
+      }
+      fun1();//调用访问 100 100
+
+      fun1();   //第二次调用101 101
+
+      //使用变量 可以在外部使用，但是又不让他的值可以随意来修改
+
+      function fun2(){
+         var n = 20;//局部变量
+         function aa(){//局部函数：可以在外部访问 形成了一个闭包
+            n++;
+            console.log(n);
+         }
+         //可以把aa()函数返回到父函数体外部
+         return aa;
+      }
+      var rs = fun2();
+      console.log(rs);//仅仅只是一个函数体
+      //等同于 var rs = function aa(){};
+      //调用局部函数
+      rs();//21
+      rs();//22 可以去访问修改局部变量的值
+      
+   
+   </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //扩展运算符
+      //例子1
+        const arr = [10,20];
+        function fun(a,b){
+          console.log(a+b);
+        }
+        //传统的传值
+        fun(arr[0],arr[1]);
+        fun(...arr);
+
+      //例子2
+      //数组合并
+      const a = [1,2];
+      const b = [...a,3];
+      console.log(b);//[1, 2, 3]
+
+      //数组的分割
+      const [a1,...b1] = [1,2,3];
+      console.log(a1,b1);
+
+      //数组的拷贝 克隆(浅)
+      const arr1 = [10,20,{key:30}];
+      const arr2 = arr1;
+      console.log(arr2===arr1);//true
+      const arr3 =[...arr2];
+      console.log(arr3===arr2);//false
+      console.log(arr2[2]==arr3[2]);
+      
+      //字符串转数组
+      let msg = 'hello';
+      const arr4 = [...msg];
+      var aa = msg.split('');
+      console.log(aa);
+
+      //余解构赋值结合
+      const [first,...reset] = [1,2,3,4,5];
+      //first:1
+      //reset:[2,3,4,5];
+      //注意:扩展运算符和解构赋值一起结合,扩展只能在数组的最后一位,否则会报错  
+      //报错 const [first,...reset,aaa] = [1,2,3,4,5];
+      
+  </script>
+</body>
+</html>

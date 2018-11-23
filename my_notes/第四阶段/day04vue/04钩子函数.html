@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+<body>
+  <div id='app'>
+    <p id='p1'>{{ msg }}</p>
+    <p>
+      <button @click='add'>加分</button>
+    </p>
+  </div>
+  <button onclick='app.$destroy()'>销毁Vue实例</button>
+  <script>
+    const app = new Vue({
+      el:'#app',
+      data:{
+        msg:100
+      },
+      methods:{
+        add(){
+          this.msg ++;
+        }
+      },
+      beforeCreate(){
+        console.log(`1-beforeCreate-${this.msg}`);
+      },
+      created(){//常用的钩子方法
+        console.log(`2-created-${this.msg}`);
+      },
+      beforeMount(){
+        console.log('3-beforeMount-',document.getElementById('p1'));
+      },
+      mounted(){//比较常用的钩子
+        console.log('4-mounted-',document.getElementById('p1'));
+      },
+      beforeUpdate(){
+        console.log('5-beforeUpdate-'+this.msg)
+      },
+      updated(){
+        console.log('6-updated-'+this.msg)
+      },
+      beforeDestroy(){
+        console.log('7-beforeDestroy-');
+      },
+      destroyed(){
+        console.log('8-destroy-');
+      }
+    })
+    </script>
+</body>
+</html>

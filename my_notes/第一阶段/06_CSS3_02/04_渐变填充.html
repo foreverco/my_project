@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.linear{
+			width:600px;
+			height:80px;
+			border:1px solid black;
+			/* 渐变色填充背景 */
+			/* -webkit- 谷歌浏览器内核/safari */
+			background-image:-webkit-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+			/* -moz-火狐 */
+			background-image:-moz-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+			/* -o-:opera 欧朋; */
+			background-image:-o-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+			/* -ms- IE浏览器 */
+			background-image:-ms-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+			background-image:linear-gradient(to left,red,orange,yellow,green,lightgreen,blue,purple);
+		}
+		.linear1{
+			width:300px;
+			height:500px;
+			border:1px solid black;
+			margin-top:20px;
+				margin-bottom:150px;
+			/* 从左往右 */
+			background-image:linear-gradient(to right,pink,skyblue);
+			/* 左下-右上 */
+			background-image:-webkit-linear-gradient(60deg,red,orange,yellow,green,lightgreen,blue,purple);
+		}
+		.box2{
+			width:600px;
+			height:600px;
+			border-radius:600px;
+			border:1px solid black;
+			margin-bottom:350px;
+			/* 背景色填充  径向渐变*/
+			background-image:-webkit-radial-gradient(200px,circle,white,blue);
+			background-image:-webkit-radial-gradient(80px at 150px 150px,white,blue);
+			box-shadow:20px 20px 30px 30px black;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class='linear'></div>
+	<div class='linear1'></div>
+	<div class='box2'></div>
+</body>
+</html>

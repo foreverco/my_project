@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.big{
+			border:1px solid red;
+			width:300px;
+			height:300px;
+			padding:200px;
+		}
+		.box4{
+			width:220px;
+			background:#A4CA39;
+			/* border-radius:220px 220px 0 0; */
+			position:relative;
+		}
+		.box4::after{
+			content:'';
+			width:5px;
+			height:50px;
+			background:#A4CA39;
+			border-radius:50px;
+			position:absolute;
+			top:-35px;
+			left:60px;
+			transform:rotate(-30deg);
+		}
+		.box4::before{
+			content:'';
+			width:5px;
+			height:50px;
+			background:#A4CA39;
+			border-radius:50px;
+			position:absolute;
+			top:-35px;
+			right:60px;
+			transform:rotate(30deg);
+		}
+		
+
+
+		.box3{
+			width:220px;
+			height:100px;
+			background:#A4CA39;
+			border-radius:220px 220px 0 0;
+			position:relative;
+			margin-bottom:10px;
+		}
+		.box3::after{
+			content:'';
+			width:20px;
+			height:20px;
+			background:white;
+			position:absolute;
+			border-radius:20px;
+			top:40px;
+			left:50px;
+		}
+		.box3::before{
+			content:'';
+			width:20px;
+			height:20px;
+			background:white;
+			position:absolute;
+			border-radius:20px;
+			top:40px;
+			right:50px;
+		}
+
+
+		.box2{
+			width:220px;
+			height:180px;
+			background:#A4CA39;
+			border-radius:0 0 20px 20px;
+			position:relative;
+		}
+		.box2::after{
+			content:'';
+			width:50px;
+			height:150px;
+			background:#A4CA39;
+			border-radius:50px;
+			position:absolute;
+			top:0px;
+			left:-60px;
+		}
+		.box2::before{
+			content:'';
+			width:50px;
+			height:150px;
+			background:#A4CA39;
+			border-radius:50px;
+			position:absolute;
+			top:0px;
+			right:-60px;
+		}
+		.box1{
+			width:220px;
+			/* height:180px; */
+			background:#A4CA39;
+			border-radius:0 0 20px 20px;
+			position:relative;
+		}
+
+		.box1::after{
+			content:'';
+			width:50px;
+			height:80px;
+			background:#A4CA39;
+			border-radius:0 0 50px 50px;
+			position:absolute;
+			top:0px;
+			left:45px;
+		}
+		.box1::before{
+			content:'';
+			width:50px;
+			height:80px;
+			background:#A4CA39;
+			border-radius:0 0 50px 50px;
+			position:absolute;
+			top:0px;
+			right:45px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='big'>
+		<div class='box4'></div>
+		<div class='box3'></div>
+		<div class='box2'></div>
+		<div class='box1'></div>
+	</div>
+</body>
+</html>

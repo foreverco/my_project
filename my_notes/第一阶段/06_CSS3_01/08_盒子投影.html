@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			border:1px solid blue;
+			margin:20px;
+		}
+		.box1{
+			background:pink;
+		}
+		.box2{
+			background:skyblue;
+			/* box-shadow:5px 5px 20px 5px black inset,5px 5px 20px 5px black; */
+
+
+		/* 需求1：外部-底部添加上一个黑色的投影 
+					  -右侧添加上一个蓝色投影
+				内部 上方红色 左侧粉色
+		*/
+			box-shadow:0 2px 0 0  red inset,
+			5px 0 0  0 pink inset,
+			-5px 0  0 purple inset,
+			0 -5px 0  0 gray inset;
+	
+
+
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class='box1'></div>
+	<div class='box2'></div>
+</body>
+</html>

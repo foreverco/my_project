@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			//显示按钮
+			$('.btn1').click(function(){
+				$('p').show('40000', function() {
+				});
+			});
+			//隐藏按钮
+			$('.btn2').click(function(){
+				$('p').hide('40000', function() {
+				});
+			});
+			//显示隐藏按钮
+			$('.btn3').click(function(){
+				$('p').toggle('40000', function() {
+				});
+			});
+
+
+			//向下滑动
+			$('.btn4').click(function(){
+				$('p').slideDown('slow');
+			});
+
+			$('.btn5').click(function(){
+				$('p').slideUp('slow');
+			});
+
+			$('.btn6').click(function(){
+				$('p').slideToggle('slow');
+			});
+
+			
+			$('.btn7').click(function(){
+				$('p').fadeIn('slow', function() {
+					
+				});
+			});
+
+			$('.btn8').click(function(){
+				$('p').fadeOut('slow', function() {
+					
+				});
+			});
+
+			$('.btn9').click(function(){
+				$('p').fadeToggle('slow', function() {
+					
+				});
+			});
+
+		})
+
+
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" class='btn1' value='显示'>
+		<input type="button" class='btn2' value='隐藏'>
+		<input type="button" class='btn3' value='显示/隐藏'>
+
+		<input type="button" class='btn4' value='向下滑动'>
+		<input type="button" class='btn5' value='向上滑动'>
+		<input type="button" class='btn6' value='切换滑动效果'>
+
+		<input type="button" class='btn7' value='淡入'>
+		<input type="button" class='btn8' value='淡出'>
+		<input type="button" class='btn9' value='切换淡入淡出'>
+	</div>
+	<p style='width:500px;height:200px;background:pink'></p>
+</body>
+</html>

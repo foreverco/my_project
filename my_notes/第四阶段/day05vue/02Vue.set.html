@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+</head>
+<body>
+  <div id='app'>
+    <ul>
+      <li v-for='(item,index) in arr'>
+        {{index + 1}} - {{ item }}
+      </li>
+    </ul>
+    <button @click='changes'>按钮</button>
+  </div>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        arr:['#ddd','#fff','#aaa']
+      },
+      methods:{
+        changes(){
+          //修改data, 是数组
+          // this.arr[0]='#797979';
+          // this.arr.length = 100;
+          // this.arr.push('#000');
+          console.log(this.arr);
+          //修改数组的内容 Vue.set(Array,index,value)
+          Vue.set(this.arr,0,'#797979');
+          console.log(this.arr);
+
+        }
+      }
+    })
+    </script>
+</body>
+</html>

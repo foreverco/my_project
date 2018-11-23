@@ -1,0 +1,40 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-01 16:45:40
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-01 17:06:59
+*/
+.p1{
+	border:1px solid red;
+	background:url(img/g.jpg);
+	width:600px;
+	height:400px;
+}
+
+.p2{
+	border:1px solid red;
+	background:url(img/c.gif) repeat-x;
+	width:600px;
+	height:400px;
+}
+
+.p3{
+	border:1px solid red;
+	background:url(img/h.jpg) repeat-y;
+	width:600px;
+	height:400px;
+}
+
+.p4{
+	border:1px solid red;
+	background:url(img/i.jpg);
+	width:600px;
+	height:800px;
+}
+
+.p5{
+	border:1px solid red;
+	background:url(img/d.gif) no-repeat 60px center;
+	width:600px;
+	height:700px;
+}

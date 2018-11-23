@@ -1,0 +1,89 @@
+第五章	HTML5
+第一节：
+一、web发展版本
+	web1.0版本：主要以内容为主,一HTML+CSS
+	web2.0版本：交互体验，以Ajax和js/DOM
+	web3.0版本：富客户端为主
+
+二、HTML5
+	HTML5不单单是html标签元素，它主要是功能，它集成部分js或者css的API
+	具体体现在哪些提升？
+	1）语义化更明确
+	2）form表单
+	3）音频/视频
+	4）实现绘图
+	5）js和CSS提供的API
+
+三、语义化
+	1)结构化标签
+		* <header></header>：	头部
+		* <article></article>：	文章
+		* <nav></nav>：			导航链接
+		* <footer></footer>：	底部
+		* <aside></aside>：	页面内容外的区域
+	*优点：
+		语义化明确
+		实际跟div是一样的，要结合css修饰
+	2)功能效果标签
+			*<mark></mark> : 默认黄色背景，标记信息
+		*折叠标题/内容
+			<details>
+				<summary>中国青年旅行社</summary>
+				<p>世界这么大，带你去看看</p>
+			</details>
+		*刻度/比例
+			<meter></meter>
+			*min = 值;		最小值
+			*max = 值;		最大值
+			*low = 值;		最低预警值
+			*high = 值;		最高预警值
+			*value = 值;	默认值
+			*optimum = 值;	最佳理想值
+			颜色分布
+			optimum 在min-low之间：绿-黄-红
+			optimum 在low-high之间：黄-绿-黄
+			optimum 在high-max之间：红-黄-绿
+		*进度条
+			<progress value='默认值' max='最大值'></progress>
+
+四、新型表单控件
+	old：text,password,radio,checkbox,file,select,textarea,submit,button,image...
+	new:
+	1)	number :数值 <input type="number">
+			*min:最小值
+			*max:最大值
+			*value:默认值
+			需求：修改默认色：js测试
+	2) color :颜色 <input type="color" value='red'>
+	3) 时间：集成了一个日历
+		时间1：<input type="datetime">	：年月日 时分秒
+		*时间2：<input type="date">		：年月日
+		时间3：<input type="month">		：年月
+		时间4：<input type="week">		：年月第几周
+		时间5：<input type="time">		：上午/下午 时分
+	4) url：网址 			检验格式：必须以http://开头
+	*5) email:邮箱地址		检验格式：必须包含@符号
+	*6）tel:电话	（移动端：会显示数字键盘）
+	7) range:控制条
+		*min:默认值
+		*max：最大值
+		*step：步长
+
+	属性：
+	1) placeholder = '提示信息';
+		*区分value：
+			1）位置一样
+			2）颜色是灰色；value是黑色的
+			3）有文本内容就消失，内容为空自动显示
+
+	2) required =required; 必填项可添加此属性
+
+	3) autofoucs = autofocus;自动获得焦点
+	4) form ='form_id';
+		<form action="index.php" id='login'></form>
+		<input type="text" name='code' form='login'>
+		可以让name=code控件跟在form里提交
+	5) pattern = '正则表达式';
+		作用：自定义验证规则
+	预习：W3CSchool
+		js教程-js对象-正则表达式-底部链接（两项内容）

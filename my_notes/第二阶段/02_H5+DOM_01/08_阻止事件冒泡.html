@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+
+   <style>
+      *{margin:0;padding:0;}
+      .item{
+         width:300px;
+         height:300px;
+         background:-webkit-linear-gradient(skyblue,pink);
+         position:relative;
+         margin:140px auto;
+      }
+      .item.current{
+         box-shadow:5px 5px 10px 5px black;
+      }
+      .item span{
+         position:absolute;
+         font-size:36px;
+         line-height:40px;
+         text-align:center;
+         width:70px;
+         height:40px;
+         top:50%;
+         margin-top:-20px;
+         background:rgba(0,0,0,0.1);
+         color:white;
+      }
+      .item span.prev{
+         left:0;
+      }
+      .item span.next{
+         right:0;
+      }
+      .item span.current{
+         background:rgba(0,0,0,1);
+      }
+   </style>
+   <script src='jq/jquery-1.9.1.min.js'></script>
+   <script>
+      $(function(){
+         //点击左右按钮，背景透明度变为1
+         $('.item span').click(function(){
+            $(this).addClass('current').siblings('span').removeClass('current');
+         })
+         //点击盒子,加一个边框/投影
+         $('.item').click(function(){
+            $(this).addClass('current');
+         })
+
+         //如何解决事件冒泡的影响
+         //从内到外
+         //阻止里面元素的事件冒泡
+        
+          //1）方法1：
+          $('.item span').click(function(event){
+            return false;
+         })
+          //2）方法2：遇到return跳出整个事件函数
+          $('.item span').click(function(event){
+            event.stopPropagation();
+         })
+          //3）方法3：
+          $('.item span').click(function(event){
+            event.preventDefault();
+         })
+
+
+      })
+   
+   </script>
+</head>
+<body>
+   <div class='item'>
+      <span class='prev'> < </span>
+      <span class='next'> > </span>
+   </div>
+</body>
+</html>

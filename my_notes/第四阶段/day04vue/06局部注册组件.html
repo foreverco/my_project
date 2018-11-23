@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'></div>
+  <div id='app1'>
+    <table>
+      <tr>
+        <td is='my-comp'></td>
+      </tr>
+    </table>
+
+  </div>
+  <script>
+    //Vue 实例其实就可以看成一个跟组件
+    new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      template: `
+      <div style='background:pink;'>
+          <comp-one></comp-one>
+          <comp-two></comp-two>
+      </div>
+      `,
+      components: {
+        'comp-one': {
+          template: `<div style='color:red'>这是一个局部注册的组件{{msg}}</div>`,
+          data() {
+            return {
+              msg: '--你好啊!',
+            }
+          }
+        },
+        'comp-two': {
+          template: `
+          <div style='color:blue'>这是一个局部注册的组件{{msg1}}</div>`,
+          data() {
+            return {
+              msg1: '--不好'
+            }
+          }
+        }
+      }
+    })
+
+    new Vue({
+      el: '#app1',
+      components: {
+        'my-comp': {
+          template: `<td>这是一个li</td>`
+        }
+      },
+
+    })
+  </script>
+</body>
+
+</html>

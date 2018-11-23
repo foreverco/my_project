@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //工厂模式：批量生产
+      function Factory(name,age){
+         //1)原料
+            var obj = new Object();
+         //2)加工
+            obj.name = name;
+            obj.age = age;
+            obj.info = function(){
+               console.log('姓名:'+obj.name+'年龄:'+obj.age);
+            }
+         //3)出厂
+         return obj;
+      }
+      //开始投入生产
+      var person1 = Factory('史蒂夫库里',28);
+      console.log(person1);
+      var person2 = Factory('勒布朗詹姆斯',33);
+      console.log(person2);
+      var person3 = Factory('凯文杜兰特',27);
+      console.log(person3);
+
+        person1.info();
+        person2.info();
+        person3.info();
+   </script>
+</body>
+</html>

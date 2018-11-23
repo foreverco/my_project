@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='./temp/template-native.js'></script>
+</head>
+<body>
+    <ul>
+        <li>孙悟空</li>
+        <li>龟派气功</li>
+        <li>
+          朋友:
+          <ul>
+              <li>小林</li>
+              <li>龟仙人</li>
+              <li>天津饭</li>
+              <li>布尔玛</li>
+          </ul>
+        </li>
+       <li>
+         儿子:
+         <ul>
+           <li>孙悟饭</li>
+           <li>比里迪</li>
+           <li>20</li>
+         </ul>
+         <ul>
+           <li>孙悟天</li>
+           <li>无</li>
+           <li>12</li>
+         </ul>
+       </li>
+      </ul>
+
+  <!-- 在script标签中定义模板 -->
+  <script id='temp01' type='text/html'>
+      <ul>
+        <li><%= name %></li>
+        <li><%= skill %></li>
+        <li>
+          <ul>
+            <% for(key in firend){ %>
+              <li><%= firend[key] %></li>
+            <% } %>
+          </ul>
+        </li>
+
+        <li>
+          <% for(var j=0;j<son.length;j++){ %>
+          <ul>
+              <% for(key in son[j]){ %>
+                <li><%= son[j][key] %></li>
+              <% } %>
+          </ul>
+          <% } %>
+        </li>
+      </ul>
+  </script>
+  <script>
+    //定义数据 obj
+    var obj ={
+      name:'孙悟空',
+      skill:'龟派气功',
+      firend:['小林','龟仙人','天津饭','布尔玛'],
+      son:[{
+        name:'孙悟饭',
+        wife:'比里迪',
+        age:20
+      },{
+        name:'孙悟天',
+        wife:'无',
+        age:12
+      }]
+    };
+    var subData = template('temp01',obj);
+    document.body.innerHTML = subData;
+  </script>
+</body>
+</html>

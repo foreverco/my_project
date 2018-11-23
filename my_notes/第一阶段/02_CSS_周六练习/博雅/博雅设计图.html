@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.fleft{
+			float:left;
+		}
+		.fright{
+			float:right;
+		}
+		.clearBox{
+			clear:both;
+		}
+		.con{
+			color:#444866;
+			font-family:"微软雅黑";
+		}
+		.tbox{
+			height:525px;
+		}
+		.tbox .top{
+			height:60px;
+			background:#191D3A;
+		}
+		.tbox .top .top1{
+			width:1000px;
+			height:58px;
+			margin-left:auto;
+			margin-right:auto;
+
+		}
+
+		.tbox .top .top1 .jrwm{
+			margin-top:12px;
+			margin-left:50px;
+		}
+		.tbox .top .top1 a{
+			float:left;
+			height:58px;
+			line-height:58px;
+			width:100px;
+			border-right:1px solid #252947;
+			text-align:center;
+			color:#818496;
+			text-decoration:none;
+			font-family:"微软雅黑";
+
+		}
+		.tbox .top .top1 a:hover{
+			background:#252947;
+			color:white;
+		}
+		.tbox .top .top1 .shouye{
+			background:#252947;
+			color:white;
+		}
+		.banner img{
+			width:100%;
+		}
+		.con{
+			border:1px solid red;
+			width:1000px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
+		}
+		.con1{
+			width:1000px;
+		}
+		.con .p1{
+			width:218px;
+			text-align:center;
+			font-weight:bold;
+			line-height:25px;
+			float:left;
+			margin-right:38px;
+
+		}
+		.con .p2{
+			width:218px;
+			text-align:center;
+			font-weight:bold;
+			line-height:25px;
+			float:right;
+
+		}
+
+		.con a{
+			color:#38B774;
+			font-weight:normal;
+			font-size:12px;
+			text-decoration:none;
+
+		}
+		.con a:hover{
+			color:red;
+		}
+		.con2{
+			width:1000px;
+			margin-top:40px;
+		}
+		.con .con2 .x1{
+			width:445px;
+		}
+		.con .con2 .x3{
+			width:445px;
+		}
+		.con .con2 img{
+			float:left;
+			margin-left:12px;
+			margin-top:5px;
+		}
+		.con3{
+			width:1000px;
+			margin-top:50px;
+		}
+		.con .con3 .last1{
+			width:500px;
+			height:310px;
+			background:url(img/bynewsbg.jpg);
+			background-repeat:no-repeat;
+		}
+		.con .con3 .last2{
+			width:500px;
+			height:310px;
+			background:url(img/byhrbg3.jpg);
+			background-repeat:no-repeat;
+		}
+		.con3 .last1 ul{
+			padding-top:40px;
+			list-style:none;
+			padding-left:10px;
+		}
+		.con3 .last1 ul li{
+			border-bottom:1px solid #DBE1E7;
+			height:42px;
+			line-height:42px;
+			color:#C0BECF;
+			font-family:"微软雅黑";
+
+		}
+		.con3 .last1 ul li a{
+			height:42px;
+			color:#444866;
+			text-decoration:none;
+			font-family:"微软雅黑";
+			font-size:14px;
+		}
+		.con3 .last1 ul li a:hover{
+			color:red;
+		}
+		.con3 .last2 ul li a:hover{
+			color:red;
+		}
+		.con3 .last1 img{
+			margin-left:220px;
+			margin-top:40px;
+		}
+		.con3 .last2 img{
+			margin-left:20px;
+			margin-top:40px;
+		}
+		.con3 .last2 ul li a{
+			height:42px;
+			color:white;
+			text-decoration:none;
+			font-family:"微软雅黑";
+			font-size:14px;
+		}
+		.con3 .last2 ul li{
+			border-bottom:1px solid #6FDEA3;
+			height:37px;
+			line-height:37px;
+			color:white;
+			font-family:"微软雅黑";
+			font-weight:bolder;
+
+		}
+		.con3 .last2 ul{
+			padding-top:10px;
+			list-style:none;
+			padding-left:25px;
+			width:310px;
+			margin-top:100px;
+		}
+		.con3 .last2 ul div{
+			color:white;
+			font-family:"微软雅黑";
+			font-weight:bolder;
+			font-size:14px;
+		}
+		.con3 .last2 .tw{
+			width:120px;
+			font-size:28px;
+			font-weight:bolder;
+			color:white;
+			line-height:23px;
+			margin-left:80px;
+			margin-top:45px;
+		}
+		.con3 .last2 .tw a{
+				width:120px;
+			font-size:13px;
+			color:white;
+		}
+		.footer{
+			height:90px;
+			background:#191D3A;
+			margin-top:50px;
+		}
+		.footer .footer1{
+			width:1000px;
+			height:90px;
+			line-height:90px;
+			margin-left:auto;
+			margin-right:auto;
+			color:#6C6E7E;
+		}
+		.footer .footer1 a{
+			color:#6C6E7E;
+			font-family:"微软雅黑";
+			font-size:12px;
+		}
+		.footer .footer1 a:hover{
+			color:red;
+		}
+		
+		.footer .footer1 .bb img{
+			margin-top: 20px;
+		}
+		.click{
+			/* border:1px solid red; */
+			padding-top:32px;
+			padding-right:15px;
+		}
+		.click a{
+			/* border:1px solid red; */
+			width:70px;
+			height:30px;
+			line-height:30px;
+			float:right;
+			background:#C7D6E5;
+			color:white;
+			text-decoration:none;
+			font-family:"微软雅黑";
+			border-radius:5px;
+		}
+		.click a img{
+			float:left;
+			padding-top:12px;
+			margin-left:12px;
+			margin-right:0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="tbox">
+		<div class="top">
+			<div class="top1">
+				<img src="img/logo.png" height="58" width="185" class="timg fleft">
+				
+					<a href="#" class="shouye">首页</a>
+					<a href="#">博雅游戏</a>
+					<a href="#">博雅新闻</a>
+					<a href="#">关于我们</a>
+					<a href="#">客服中心</a>
+					<a href="#">投资者关系</a>
+				
+			<img src="img/jrwm.png" height="34" width="100" class="jrwm fleft">
+			</div>
+		</div>
+			<div class="banner">
+				<img src="img/banner.jpg" height="465" width="1920" alt="">
+			</div>
+	</div>
+
+	<div class="con">
+		<div class="con1">
+			<div class="p1">
+				<a href="#"><img src="img/pro1.jpg" height="130" width="218" alt=""></a>
+				<font>BPT宣传片</font><br>
+				<a href="#">点击播放 ▶</a>
+			</div>
+			<div class="p1">
+				<a href="#"><img src="img/pro2.jpg" height="130" width="218" alt=""></a>
+				<font>博雅互动宣传视频</font><br>
+				<a href="#">点击播放 ▶</a>
+			</div>
+			<div class="p1">
+				<a href="#"><img src="img/pro3.jpg" height="130" width="218" alt=""></a>
+				<font>斗地主</font><br>
+				<a href="#">LANDLORDS ▶</a>
+			</div>
+			<div class="p2">
+				<a href="#"><img src="img/pro4.jpg" height="130" width="218" alt=""></a>
+				<font>德州扑克</font><br>
+				<a href="#">TEXAS HOLD'EM POKER ▶</a>
+			</div>
+			<div class="clearBox"></div>
+		</div>
+
+		<div class="con2">
+			<div class="x1 fleft"><hr></div>
+			<img src="img/dian3.fw.png" height="12" width="12" alt="">
+			<img src="img/dian4.fw.png" height="12" width="12" alt="">
+			<img src="img/dian4.fw.png" height="12" width="12" alt="">
+			<img src="img/dian4.fw.png" height="12" width="12" alt="">
+			<div class="x3 fright"><hr></div>
+			<div class="clearBox"></div>
+		</div>
+
+		<div class="con3">
+			<div class="last1 fleft">
+			<img src="img/more1.png" height="28" width="66" alt="">
+				<ul>
+					<li>09/28 &nbsp;<a href="#">2015博雅国际扑克大赛(BPT)在澳门落幕</a></li>
+					<li>08/26 &nbsp;<a href="#">2015 BPT博雅国际扑克大赛重磅来袭</a></li>
+					<li>08/01 &nbsp;<a href="#">博雅互动与阿里游戏联手启动"淘宝杯首届电视棋牌大赛"</a></li>
+					<li>07/21 &nbsp;<a href="#">湖南省省长杜家豪一行参观博雅互动</a></li>
+				</ul>
+			</div>
+			<div class="last2 fright">
+				<div class="tw fleft">
+					专场招聘
+					<a>BOYAA JOBS</a>
+				</div>
+				<img src="img/more2.png" height="28" width="66" alt="" class="fleft">
+				
+				<ul>
+					<div>专场招聘岗位: 	</div>
+					<li><a href="#">PHP开发工程师</a></li>
+					<li><a href="#">C++开发工程师</a></li>
+					<li><a href="#">WEB前端开发工程师</a></li>
+					<li><a href="#">大数据开发工程师</a></li>
+				</ul>
+			</div>
+			<div class="clearBox"></div>
+		</div>
+	</div>
+	<div class="click fright">
+		<a href="#" name="last"><img src="img/top.png" height="4" width="8" alt="">&nbsp;TOP</a>
+	</div>
+
+	<div class="footer">
+		<div  class="footer1">
+			<div class="aa fleft">
+				<a href="#">网站地图</a>
+				|
+				<a href="#">免责声明</a>
+			</div>
+			<div class="bb fright">
+				<a>Copyright &copy; 2004-2014 博雅互动（Boyaa Interactive） 粤ICP备05062536号 增值电信业务经营许可证：粤B2-20110513
+				<img src="img/govIcon.gif" height="50" class="fright">
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

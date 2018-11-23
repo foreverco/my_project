@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border:1px solid red;
+			width:850px;
+		}
+		.autoW{
+			margin:20px auto;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class='box'>
+		<img src="img/timg.jpg">
+		<img src="img/afanda.jpg">
+		<img src="img/jay.jpg">
+		<img src="img/eason.jpg">
+	</div>
+	<script>
+	var img1 = document.querySelectorAll('.box img');
+	console.log(img1);
+	for(key in img1){
+		//图片 img1[key]
+		img1[key].width = 200;
+		img1[key].height = 150;
+	}
+
+
+	//需求2：
+	var box1 = document.getElementsByClassName('box');
+	console.log(box1[0]);
+	box1[0].className += ' autoW';
+	console.log(box1[0].className);
+	
+
+
+
+	</script>
+</body>
+</html>

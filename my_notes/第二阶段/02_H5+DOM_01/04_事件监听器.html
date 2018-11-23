@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      #box1{
+         width:400px;
+         height:400px;
+         border:1px solid red;
+      }
+   
+   
+   </style>
+</head>
+<body>
+   <div id ='box1'></div>
+   <input type="button" value='点击'>
+
+   <script>
+      var div_obj = document.querySelector('#box1')
+      var but_obj = document.querySelector('input[type=button]');
+      console.log(div_obj);
+      console.log(but_obj);
+      //1)修改div样式
+      function css(){
+         div_obj.style.background = 'pink';
+         div_obj.style.margin = '10px';
+      }
+      //2）修改内容
+      function con(){
+         div_obj.innerHTML = "<a href='#'>落地成盒<a>";
+      }
+      //3）清空div盒子
+      function empty(){
+         div_obj.innerHTML = '';
+      }
+      //添加事件处理函数
+      //but_obj.onclick = css;
+
+      but_obj.addEventListener('click',css);
+      but_obj.addEventListener('click',con);
+
+      //取消绑定/移除某个事件处理函数
+      but_obj.removeEventListener('click',con);
+   
+   
+   
+   </script>
+</body>
+</html>

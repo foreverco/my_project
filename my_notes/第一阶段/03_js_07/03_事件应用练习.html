@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			color:black;
+		}
+		.box2{
+			border:0;
+			border:1px solid purple;
+		}
+		.box3{
+			border:0;
+			border:1px solid red;
+		}
+	
+	</style>
+</head>
+<body>
+	<form action="index.php">
+		用户名：<input type="text" name='uname'><br>
+		密码：<input type="password" name='upass'><br>
+	</form>
+	<script>
+		//用户名：
+		//获得焦点：添加浅黄色背景，文字颜色是蓝色
+		//失去焦点：去掉背景色，文字颜色是黑色
+		var name_obj = document.querySelector('input[name=uname]');
+		console.log(name_obj);
+		name_obj.value = 'hello';
+		name_obj.onfocus = function(){
+			name_obj.style.background = 'yellow';
+			name_obj.style.color = 'blue';
+		}
+		name_obj.onblur = function(){
+			name_obj.style.background = '';
+			name_obj.style.color = 'black';
+		}
+
+
+		//密码：
+		//获得焦点：紫色边框
+		//失去焦点：灰色边框
+		var pass_obj = document.querySelector('input[name=upass]');
+		pass_obj.onfocus = changes;
+		function changes(){
+			pass_obj.classList.add('box2');
+			console.log(pass_obj);
+			
+		}
+		pass_obj.onblur = function(){
+			pass_obj.classList.add('box3');
+		}
+	</script>
+</body>
+</html>

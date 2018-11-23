@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//给一个输入框，输入姓名
+		//输出姓名的长度
+		//检测姓名李是否有@
+		// prompt('请输入姓名');
+		var name = prompt('请输入姓名');
+		document.write(name.length);+document.write('<br>');
+		document.write(name.indexOf('@'));+document.write('<br>');
+
+
+
+		//案例2：给一个输入框，输入密码	
+		//输出密码的长度
+		//输出的密码全大写字母
+		var upass = prompt('请输入密码');
+		document.write(upass.length);+document.write('<br>');
+		document.write(upass.toUpperCase());+document.write('<br>');
+
+		//直接输出值
+		document.write('用户名是:'+name);
+
+		document.write('<hr>');
+		document.write('<p>我的用户名是:'+name+'</p>');
+		document.write('<p>我的密码是:'+upass+'</p>');
+
+		//变量里值拼接
+		var tel = "13952066778";//电话号码
+		var address = "南京";//地址
+		var school = "清华";//学校
+		var list = "<ul>";
+		 	list += "<li>联系方式："+tel+"</li>";
+		 	list += "<li>家庭住址："+address+"</li>";
+			list += "<li>就读学校："+school+"</li>";
+			list += "</ul>"
+		
+		document.write(list);
+
+	</script>
+	<!-- <ul>
+		<li>联系方式：13952066778</li>
+		<li>家庭住址：南京</li>
+		<li>就读学校：清华</li>
+	</ul> -->
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		mark{
+			background:skyblue;
+		}
+		summary{
+			cursor:pointer;/* 鼠标状态：小手 */
+			cursor:help;/*？状态*/
+			cursor:wait;/*等待，加载*/
+			cursor:progress;
+		}
+		summary:focus{
+			outline:0;
+		}
+		meter{
+			width:500px;
+			height:200px;
+			margin-left:100px;
+		}
+		progress{
+			width:500px;
+			height:200px;
+			margin-left:100px;
+		}
+	</style>
+
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			
+				 var num = 0;
+
+			function changes(){
+				 if(num<=100){
+				$('meter').attr('value',num);
+				 	num += 10;
+				 }else{
+				 	num = 0;
+				 }
+			}
+
+			setInterval(changes,300)
+
+			function changes(){
+				 if(num<=100){
+				$('progress').attr('value',num);
+				 	num += 10;
+				 }else{
+				 	num = 0;
+				 }
+			}
+
+			setInterval(changes,300)
+
+
+
+
+		})
+
+
+	</script>
+</head>
+<body>
+		<!-- 标记：默认黄色背景 -->
+	<mark>中秋节快乐！</mark>
+		<!-- 定义文档细节 -->
+		<details>
+			<summary>中国青年旅行社</summary>
+			<p>世界这么大，带你去看看</p>
+		</details>
+		<!-- meter标尺 -->
+		
+		<meter min='0' max='100' low='30' high='80' optimum='81'></meter>
+		<br>
+		<progress  max='100'></progress>
+		
+</body>
+</html>

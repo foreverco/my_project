@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.aa{
+			text-align:center;
+			background-color:pink;
+			width:520px;
+			margin-left:auto;
+			margin-right:auto;
+
+		}
+		.bb{
+			border:1px pink solid;
+			width:500px;
+			margin-left:auto;
+			margin-right:auto;
+			padding:10px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1 class="aa">会员注册表</h1>
+	<div class="bb">
+	<form action="index.php">
+		用户名&nbsp;&nbsp;<input type="text" name="uname">
+		<br><br>
+		密码&nbsp;&nbsp;&nbsp;<input type="password" name="upass">
+		<br><br>
+		性别&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="man">男
+		<input type="radio" name="sex" value="women">女
+		<input type="radio" name="sex" value="none" checked>人妖
+		<br><br>
+		爱好&nbsp;&nbsp;&nbsp;<input type="checkbox" name="like" value="eat">吃饭
+		<input type="checkbox" name="like" value="sleep">睡觉
+		<input type="checkbox" name="like" value="dou">打豆豆
+		<br><br>
+		出生年月&nbsp;<input type="text" name="year">
+		<br><br>
+		籍贯&nbsp;&nbsp;&nbsp;<select name="province">
+			<option value="0">江苏</option>
+			<option value="1">其他</option>
+			</select>省
+			<select name="city">
+				<option value="0">南京</option>
+				<option value="1">其他</option>
+			</select>市
+			<br><br>
+		头像&nbsp;&nbsp;&nbsp;<input type="file">
+		<br><br>
+		自我评价&nbsp;<textarea name="" id="" cols="50" rows="10"></textarea>
+		<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit">&nbsp;
+		<input type="reset">
+
+	</form>
+	</div>
+</body>
+</html>

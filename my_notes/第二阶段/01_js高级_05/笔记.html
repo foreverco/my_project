@@ -1,0 +1,55 @@
+第一章 JS高级
+第五节
+一、继承
+      子承父业：儿子可以继承父亲的产业
+      家族产业：儿子继承父亲继承爷爷继承祖父...
+      面向对象：
+      儿子继承父辈的属性和方法
+   1)继承实现方式：构造函数绑定
+      <script>
+         function Father(){
+            this.money = '10万';
+         }
+         function Son(){
+               //拷贝绑定
+               Father.apply(son);
+         }
+      </script>
+   //使用构造函数必须通过new
+   var son1 = new Son();
+
+   2)继承实现方式：通过原型继承(prototype)
+   <script>
+      function A(name){
+         this.name = name;
+      }
+      function B(age){
+         this.age = age;
+      }
+      //A和B要当初构造函数使用
+      //让B继承A
+      B.prototype = new A();
+   </script>
+
+二、多态:相同对象在不同情境下的不同表现形态
+      一个爸爸养了多个儿子
+      大儿子：在美国上学 英文
+      二儿子：在中国上学 汉语
+   1)重载：相同的方法名，参数不一样，选择相应的方法
+   2)重写：覆盖继承父类的方法
+
+三、案例：模拟Jquery实现的原理
+   <script>
+      // 1)功能1：获取DOM
+             $('css选择器') 结果：数组集合
+      // 2)功能2：操作css样式
+            //获取color样式的值 参数长度为1并且是字符串
+                  css('color'); 
+            //添加单个样式    参数长度为2
+             css('color','red');
+            //添加多个样式 参数长度为1并且不是字符串
+             css({
+                  'color':'red',
+                  'font-size':'14px'
+            });
+      </script>

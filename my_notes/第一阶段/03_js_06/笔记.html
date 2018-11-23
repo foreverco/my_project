@@ -1,0 +1,67 @@
+第三章 Js
+第五节
+一、Js操作DOM
+	DOM:Document Object Model(文档对象模型)
+	HTML DOM:html标签元素
+	提供一些API方法，便于我们操作HTML标签元素
+二、获取到DOM元素
+	<script>
+		//1)通过id名来获取 唯一的一个元素
+			var elem = document.getElementById('idName');
+		//2)通过class类名获取 [元素集合]
+			var elem = document.getElementsByClassName('className');
+		//3)通过标签名来获取 [元素集合]
+			var elem = document.getElementsByTagName('tagName');
+		//4)通过name属性获取 [元素集合]
+			var elem = document.getElementsByName('name');
+		//5）通过css选择器获取
+			//A://只有1个 第一个
+			var obj1 = document.querySelector('.list li');
+			console.log(obj1);
+			//B:多个元素[数组集合]
+			var obj2 = document.querySelectorAll('.list li');
+			console.log(obj2);
+		//6)直接获取DOM
+			document.body;//body标签
+			document.title;//title标签
+			document.images;//所有的img的数组集合
+			document.forms;//所有form标签的集合
+
+
+	</script>
+
+三、操作DOM元素属性
+	<h1 align='left' id='title' class='t1'></h1>
+	<script>
+	//1)获取属性 DOM对象.属性名
+	var h1_obj = document.getElementById('title');
+	console.log(h1_obj.align);
+	//2)修改属性值 DOM对象。属性名 = 值;
+
+	</script>
+
+四、操作DOM元素样式
+	<script>
+	1)行内样式
+		A:获取行内样式值
+		elem.style.样式名;
+		elem.style.border;
+		B:获取行内样式值
+		elem.style.样式名 = 值;
+		elem.style.border = '1px solid red';
+		C:删除样式
+		elem.style.样式名 = "";
+		elem.style.border = "";
+
+	2)class类操作
+	//添加类
+	elem.className = 'newClass';
+	elem.className += 'nweClass';
+	elem.classList.add('newClass');
+
+	//移动类
+	elem.classList.remove('className');
+	//清空类
+	elem.className = '';
+
+	</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+   <div ng-controller = 'ctrl'>
+      <input type="text" ng-model = 'msg' ng-change='chg()'>
+      +
+      <input type="text" ng-model = 'msg2' ng-change='chg()'>
+      ={{result}}
+   </div>
+   
+
+</body>
+<script>
+   var app = angular.module('app', []);
+   app.controller('ctrl',['$scope',function($scope){
+      //绑定chg事件
+      var result = 0;
+      $scope.chg = function(){
+         // console.log('输入了数据');
+         //获取文本框输入的值
+         console.log($scope.msg);
+         var a = $scope.msg;
+         var b = $scope.msg2;
+       /*   
+         a = parseInt(a);
+         b = parseInt(b);
+         $scope.result = a+b; */
+        /*  if(a == undefined || a==''){
+            a=0;
+         } */
+       /*   a = parseInt(a) || 0;
+         b = parseInt(b) || 0; */
+
+        /*  if(typeof parseInt(a) == NaN){
+           console.log(a);
+         }else{
+            $scope.result = a+b;
+         } */
+         
+         if(a==undefined || a==''|| isNaN(a)){
+            $scope.msg = '';
+         }
+         if(b==undefined || b=='' || isNaN(b)){
+            $scope.msg2 = '';
+         }
+         $scope.result = parseInt($scope.msg||0)+parseInt($scope.msg2||0);
+      }
+
+   }])
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      .pic{
+         border:1px solid red;
+         /* position:relative; */
+      }
+      .pic img{
+         display:none;
+      }
+      .pic img:first-child{
+         display:block;
+      }
+      div{
+         /* position:absolute; */
+         border:1px solid red;
+
+      }
+      div span{
+         display:inline-block;
+         width:15px;
+         height:15px;
+         background:blue;
+         border-radius:15px;
+         margin:0 10px;
+      }
+   
+   </style>
+</head>
+<body>
+   <p class='pic'>
+      <img src="img/2_3501.png" alt="">
+      <img src="img/2_3502.png" alt="">
+      <img src="img/2_3503.png" alt="">
+      
+   </p>
+   <div class='points'>
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+   <script>
+      function togglePic(){
+         //实现过程
+         var spans = document.querySelectorAll('.points span');
+         console.log(spans);
+         var pics = document.querySelectorAll('.pic img');
+         console.log(pics);
+         for(i = 0;i<spans.length;i++){
+            //想办法吧i的值传递到函数体里
+
+            //自调函数：在循环过程中把i的值传递进来
+            (function(index){
+               //index:形参 用来接收实参i 局部变量
+              
+               //调用
+               spans[i].onclick = function(){
+                  console.log(index);
+                  //切换图效果自己补充
+               };//这也是一种闭包形式
+               //点击调用属于全局，访问局部函数
+               //局部函数可以访问局部变量index
+
+            })(i)
+         }
+      }
+      togglePic();
+   
+   
+   </script>
+</body>
+</html>

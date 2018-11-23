@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <script src='jq/jquery-1.9.1.min.js'></script> -->
+	<!-- <script>
+	$(function(){
+		var num = 0;
+		function changes(){
+			if(num<100){
+				num++;
+				$('progress').attr('value',num)
+			}else{
+				window.location = "http://www.baidu.com";
+			}
+		}
+		setInterval(changes,50);
+	})
+
+	</script> -->
+
+	<script>
+
+
+
+	function loading(){
+		var p_obj = document.querySelector('#pro');
+		console.log(p_obj.value);
+		if(p_obj.value == 100){
+			window.location = "01_H5页面.html";
+		}else{
+			p_obj.value +=1;
+		}
+	}
+
+	setInterval(loading,100);
+
+
+
+
+	</script>
+</head>
+<body>
+	<progress max='100' id='pro'></progress>
+	<!-- 需求 进度条从0加载到100，加载完成跳出页面-->
+</body>
+</html>

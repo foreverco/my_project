@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <style>
+      ul{
+         height:2000px;
+      }
+      li{
+         border:1px solid red;
+         margin-top:20px;
+      }
+   
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+   <ul ng-controller='ctrl'>
+      <li>upperuppercase:{{message | uppercase}}</li>
+      <li>loweruppercase:{{message | lowercase}}</li>
+      <li>{{time | date:'yyyy-MM-dd HH:mm:ss'}}</li>
+      <li>{{money | currency}}</li>
+      <li>{{money | currency : '￥'}}</li>
+      <li>{{obj}}</li>
+      <li>{{obj | json}}</li>
+      <li>{{stu}}</li>
+      <li>{{stu | json}}</li>
+      <li>{{names | filter}}</li>
+      <li>{{names | filter:'a'}}</li>
+      <li>{{names | limitTo:3}}</li>
+      <li>{{str | limitTo:4}}</li>
+      <li>{{str | limitTo:-4}}</li>
+      <li>{{num | number}}</li>
+      <li>{{num | number:2}}</li>
+      <li>{{num | number:-2}}</li>
+      <li>{{arr1 | orderBy:'':true}}</li>
+      <li>{{names | orderBy}}</li>
+      <li>{{stus | orderBy:'id'}}</li>
+      <li>{{stus | orderBy:['id','age']}}</li>
+      <li>
+            {{arr1 | orderBy:'-'}}<br>
+            {{names | orderBy:'-'}}<br>
+            {{stus | orderBy:['+id','-age']}}<br>
+
+      </li>
+   </ul>
+</body>
+<script>
+   function Stu(name,age){
+      this.name =name;
+      this.age = age;
+   }
+   var student = new Stu('李四',20);
+   var app = angular.module('app', []);
+   app.controller('ctrl',['$scope',function($scope){
+      $scope.message='good good study,DAY DAY UP'
+      $scope.time = new Date();
+      $scope.money = 25;
+      $scope.obj = new Object();
+      $scope.obj.name = '张三';
+      $scope.obj.age = 23;
+      $scope.stu = student;
+      $scope.names = ['zhangsan','lisi','curry','kobe','hadden'];
+      $scope.str = 'abcdefg';
+      $scope.num = 123456789.123456;
+      $scope.arr1=[4,6,8,2,4,7,9,2,1,6];
+      $scope.stus = [
+         {id:30,name:'curry',age:30},
+         {id:30,name:'james',age:33},
+         {id:24,name:'hadden',age:28},
+         {id:24,name:'kobe',age:37},
+         {id:1,name:'mac',age:40},
+      ]
+   }])
+</script>
+
+</html>

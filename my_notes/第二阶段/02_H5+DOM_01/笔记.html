@@ -1,0 +1,92 @@
+第二章 DOM+H5 
+第一节
+一、DOM事件
+   1)什么是事件？
+      用户的行为或者是浏览器自身的行为，就叫做事件
+      -响应事件执行的函数就叫做事件处理函数
+      -js的事件以on开头
+   2)常见的事件类型
+      -1.浏览器事件：scroll load 
+      -2.表单事件：blur focus change click submit input(输入事件：当用户输入内容时)
+      -3.键盘：keydown keyup
+      -4.鼠标：ckick dblclick mouseover mouseout
+      -5.移动端事件：
+         -1) touchstart:手指触摸屏幕时
+         -2) touchmove:手指在屏幕上滑动
+         -3) touchend:手指离开屏幕时
+   3)定义事件处理函数
+      -1)在标签里添加事件属性
+         <p onclick='console.log("js语句")'></p>
+         <p onclick='fun1()'></p>
+         <script>
+            function fun1(){
+               //事件处理函数
+            }
+         </script>
+      -2)在js里添加事件
+         <p></p>
+         <script>
+            var p_obj = document.querySelector('p');
+            p_obj.onclick = function(){ 
+               //事件处理函数
+               };
+            p_obj.onclick = fun1;
+         </script>
+      -3)移除事件
+         <p></p>
+         <script>
+             var p_obj = document.querySelector('p');
+             p_obj.onclick = '';
+             p_obj.onclick =null;
+         </script>
+   -------------------------------------------------------------------------      
+      -1)添加/绑定事件监听器
+      <script>
+         //主流浏览器都支持这种方法
+         //1）添加/绑定
+            elem.addEventListener(type,fn[,true/false]);
+            *type:事件类型 'click' 'change' 'blur'
+            *fn:事件处理函数 funName | function(){}
+            *捕获/冒泡：事件处理方式 true|false
+         //2)移除/解除绑定
+            elem.removeEventListener(type,funName[,true/false]);
+      </script>
+
+      <script>
+         //IE7/IE8 兼容的事件监听应用：(了解)
+         //1）添加/绑定
+            elem.attachEvent(type,fn);
+            *type:事件类型 'onclick' 'onchange' 'onblur'
+            *fn:事件处理函数 funName |function(){}
+
+         //2)移除/解除绑定
+            elem.detachEvent(type,fn);
+      </script>
+
+二、事件流
+      1)什么是事件流？事件执行的一个流程
+      分为三个阶段
+         -1.捕获：爷爷-->爸爸-->儿子 最后一个参数：true
+         -2.目标：event.secElement || event.target
+         -3.冒泡：儿子-->爸爸-->爷爷  最后一个参数：false(默认)
+         -应用情景：重叠嵌套关系的元素，应用了相同事件的时候
+      2)事件冒泡
+         阻止事件冒泡:主流浏览器
+         1)event.stopPropagation();
+         2)return false;
+         3)event.preventDefault();
+         阻止事件冒泡:兼容IE7/IE8浏览器
+         1) event.cancelBubble = true;
+         2) event.cancelValue = false;
+
+三、event
+      1）什么是Event？
+      当触发事件浏览器会自动创建一个event对象，传入事件函数(默认是第一个参数)
+      2）兼容问题
+      -主流：event || window.event 
+      -IE7/IE8:e=window.event || arguments[0]
+      3)目标元素
+      var target = event.srcElement || event.target;
+
+四、Jquery中的事件操作
+五、BOM对象

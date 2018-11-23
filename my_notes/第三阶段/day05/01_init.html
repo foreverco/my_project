@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <style>
+   div{
+      border:1px solid red;
+      margin:30px;
+   }
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app' ng-init = 'name="zhangsan"'>
+      1-->{{name}}
+   <div ng-controller = 'ctrl1' ng-init='age=23'>
+      2-->{{name}}<br>
+      {{age}}
+      <div ng-init='a=1'><!-- $scope.a -->
+         {{a}}
+      </div>
+      {{a}}
+   </div>
+   <div ng-controller = 'ctrl2'>
+      3-->{{name}}
+   </div>
+      4-->{{name}}
+</body>
+<script>
+   var app = angular.module('app', []);
+   app.controller('ctrl1',['$scope',function($scope){
+
+   }])
+   app.controller('ctrl2',['$scope',function($scope){
+
+   }])
+</script>
+
+</html>

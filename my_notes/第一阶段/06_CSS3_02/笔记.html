@@ -1,0 +1,89 @@
+第六章
+第二节
+一、CSS3-盒模型
+	1)box-sizing:border-box;width = border+padding+content;
+	1)box-sizing:content-box;width = content;
+二、CSS3-背景
+	1)
+	背景图大小
+	background-size:w h;
+	2)参考原点位置
+	background-origin:padding-box|border-box|content-box;
+	3)裁切
+	background-clip:padding-box|border-box|content-box;
+	4)多个背景(用逗号分割)
+三、CSS3-背景图(渐变)
+	1)线性渐变方法
+	linear-gradient(方向,颜色1,颜色2,....);
+	*方向：left/to right/left top/45deg
+	*颜色：颜色值[0%:位置]
+				(0%-100%)
+		<style>
+			.linear{
+				width:600px;
+				height:80px;
+				border:1px solid black;
+				/* 渐变色填充背景 */
+				/* -webkit- 谷歌浏览器内核/safari */
+				background-image:-webkit-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+				/* -moz-火狐 */
+				background-image:-moz-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+				/* -o-:opera 欧朋; */
+				background-image:-o-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+				/* -ms- IE浏览器 */
+				background-image:-ms-linear-gradient(left,red,orange,yellow,green,lightgreen,blue,purple);
+				background-image:linear-gradient(to left,red,orange,yellow,green,lightgreen,blue,purple);
+			}
+		</style>
+	2)径向渐变方法
+	radial-gradient(圆半径,中心点,颜色1,颜色2,颜色3,,...);
+
+四、CSS3-过渡
+	效果：从一个状态过渡到另一个状态(变化的过程)
+	1)样式名
+	transition:属性 时间 速度曲线 延迟时间;
+	
+五、CSS3-自由变换
+	语法格式：transform:方法;
+	方法名：
+		1）位移 translate(x y);	
+		2）旋转	rotate(45deg);	
+		3）缩放 scale(w,h);缩放宽高的倍数
+		4）斜切(倾斜) skew(x,[y])
+
+六、CSS3-动画
+	1)设置关键帧(类似于js函数定义)
+	@keyframes 动画名1{
+		0%{css样式}
+		50%{css样式}
+		100%{css样式}
+	}
+	@keyframes 动画名2{
+		from{css样式}
+		to{css样式}
+	}
+
+	2)使用动画(根据动画名来使用)
+		选择器{
+			<!-- 使用动画 -->
+			animation: name duration timing-function delay iteration-count direction;
+			参数值：
+			1）name：动画名
+			2）duration：时间
+			3）timing-function：速度曲线
+			4）delay：延迟时间
+			5）iteration-count：n|infinite;播放次数；n次|无限次
+			6）direction：normal|alternate; 播放方向：正常|轮流反向
+
+		}
+
+七、字体
+	字体库：有字库网站
+	字体图标：
+		图片转成文字使用
+		http://www.iconfont.com 阿里巴巴图标库
+
+
+
+六、媒介查询
+@meia(自己预习)

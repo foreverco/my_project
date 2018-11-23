@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{
+			border:1px solid blue;
+			width:400px;
+		}
+		.p2{
+			line-height:40px;
+			font-size:22px;
+		}
+		.p3 a{
+			text-decoration:none;
+			display:inline-block;
+			width:70px;
+			color:#666;
+		}
+		.p4{
+			background:orange;
+		}
+		.p5 a{
+			background:#3DD217;
+		}
+
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//给p标记添加p2类
+			$('.p1').addClass('p2');
+			//给p标记添加p3类
+			$('.p1').addClass('p3');
+			//移除p2类
+			$('.p1').removeClass('p2');
+			//3)切换类
+			$('.p1').toggleClass('p4');
+			$('.p1').toggleClass('p5');
+			
+			
+		})
+
+	</script>
+</head>
+<body>
+	<p class='p1 p5'>
+		<a href="#">音乐</a>
+		<a href="#">体育</a>
+		<a href="#">美术</a>
+		<a href="#">学习</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//需求1：依次输出1-10之间的整数
+	for(var i = 1;i<=10;i++){
+		document.write(i);
+		document.write('<hr>');
+	}
+	
+	//查看循环的过程 debug调试(断点调试)
+	//在浏览器里查看
+	//第一步：F12-Sources-文件名（单击）
+	//第二步：在测试的行号上单击
+	//第三步：F11依次执行下一步
+	
+	//需求2：输出50-100之间，能被5和6整除的整数
+	for(var i = 50;i % 5 == 0 && i%6 == 0 && i<= 100;i++){
+		document.write(i);
+		document.write('<br>');
+	}
+
+
+
+
+
+	</script>
+</body>
+</html>

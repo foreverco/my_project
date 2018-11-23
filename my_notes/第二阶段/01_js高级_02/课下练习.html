@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            练习：
+            1）获取数组中最大值
+            2）获取数组中的最小值
+            3）数组去重 
+        */
+
+       // 1）获取数组中最大值
+       var arr1 = [28,56,89,12,546,4859,21,54,35,82];
+       function max(arr1){
+           for(i=0;i<arr1.length;i++){
+               if(arr1[i]>arr1[i+1]){
+                   var news = arr1[i];
+                   arr1[i] = arr1[i+1];
+                   arr1[i+1] = news; 
+               }
+           }
+         return arr1[arr1.length-1];
+       }
+       document.write(max(arr1)+'<hr>');
+       document.write(max([21,54,23,84,65,147,231,546,23,48,3])+'<hr>');
+
+       //2）获取数组中的最小值
+       function min(arr1){
+           for(i=0;i<arr1.length;i++){
+               if(arr1[i]<arr1[i-1]){
+                   var news = arr1[i];
+                   arr1[i] = arr1[i+1];
+                   arr1[i+1] = news; 
+               }
+           }
+           return arr1[arr1.length-1];
+       }
+       document.write(min(arr1)+'<hr>');
+       document.write(min([21,54,23,84,65,147,231,546,23,48,3])+'<hr>');
+
+       //3）数组去重
+       var arr2 = [123,48,123,8546,879,156,48,15,35,48,32];
+       function sames(arr2){
+           var news =[];
+           for(j=0;j<arr2.length;j++){
+               if(news.indexOf(arr2[j]) == -1){
+                   news += arr2[j]+' ';
+               }
+           }
+           return news;
+       }
+       document.write(sames(arr2)+'<hr>');
+       document.write(sames([1,1,2,2,5,5,3,3,4,4,8,8]))
+
+    </script>
+</body>
+</html>

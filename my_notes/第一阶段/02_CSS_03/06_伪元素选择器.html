@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:600px;
+			border:1px solid red;
+		}
+		/* 在内部：起始位置添加内容 */
+		.box:before{
+			content:"杜甫";
+			font-size:30px;
+			color:red;
+		}
+		/* 在内部：末端位置添加内容 */
+			.box:after{
+			content:url(img/ic1.gif);
+			font-size:30px;
+			color:blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='box'>
+		假如今天生活欺骗了你，不要悲伤，不要哭泣，因为明天生活还会继续欺骗你。又一天过去了。今天过得怎么样，梦想是不是更远了？
+		有些女生觉得说自己是吃货能显得可爱。其实并没有这样的效果。老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？社会底层群众中受教育程度最高的一批人。
+	</div>
+</body>
+</html>

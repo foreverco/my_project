@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //对象：
+      //对象.属性名; 对象.方法名();
+
+      var name = 'apple';
+      function drink(){
+         console.log('喝茶');
+      }
+
+      //对象 人 把属性和方法封装到人这个对象里
+      //{下标：值,下标:值,...}
+      var person = {
+         uname:'banana',
+         age:18,
+         intro:function(){//方法
+            console.log(this);//
+            console.log('我的名字是'+this.uname+'年龄'+this.age);//我的名字是banana年龄18
+         }
+      }
+
+         console.log(person);
+         //访问对象的属性和方法
+         console.log(person.uname);//banana
+         console.log(person.age);//18
+         person.intro();
+
+         //重新给属性赋值
+         person.uname = 'baby';
+         person.sex = '女';
+         console.log(person);
+   
+   </script>
+</body>
+</html>

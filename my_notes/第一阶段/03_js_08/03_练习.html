@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{
+			width:600px;
+			height:60px;
+			line-height:60px;
+			text-align:center;
+			border:1px solid red;
+			font-size:30px;
+			color:red;
+			font-weight:bolder;
+		}
+	</style>
+</head>
+<body>
+	<p class='p1'></p>
+
+	<script>
+	var p_obj = document.querySelector('.p1'); 
+	//1.获取时间，并且显示到p里
+		function getDay(){
+			var date = new Date();
+			var year = date.getUTCFullYear();
+			var moon = date.getMonth()+1;
+			var day = date.getDate();
+			var week = date.getDay();
+			var week1 =['日','一','二','三','四','五','六'];
+			week = week1[week];
+			var H = date.getHours();
+			H<10?h='0'+H:H;
+			var M = date.getMinutes();
+			M<10?M='0'+M:M;
+			var S = date.getSeconds();
+			S<10?S='0'+S:S;
+			p_obj.innerHTML = year+'年'+moon+'月'+day+'日 星期'+week+' '+H+':'+M+':'+S;
+
+		}
+	//2.设置计时器，间隔1秒，重新获取时间
+		getDay();
+		setInterval(getDay,1000);
+	</script>
+</body>
+</html>

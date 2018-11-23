@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:400px;
+			height:100px;
+			border:1px solid red;
+			font-size:24px;
+			overflow:visible;
+			overflow:auto;
+			overflow:hidden;
+		}
+		.list{
+			width:220px;
+			border:1px solid blue;
+			padding-left:0;
+			list-style:disc inside;
+		}
+		.list li{
+			border-bottom:1px dashed red;
+			height:40px;
+			line-height:40px;
+			/* 不能断行，不许换行 */
+			white-space:nowrap;
+			/* 溢出内容：隐藏； */
+			overflow:hidden;
+			/* 溢出文本：以省略号显示； */
+			text-overflow:ellipsis;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		君不见，黄河之水天上来，奔流到海不复回。
+		君不见，高堂明镜悲白发，朝如青丝暮成雪。
+		人生得意须尽欢，莫使金樽空对月。
+		天生我材必有用，千金散尽还复来。
+		君不见，黄河之水天上来，奔流到海不复回。
+		君不见，高堂明镜悲白发，朝如青丝暮成雪。
+		人生得意须尽欢，莫使金樽空对月。
+		天生我材必有用，千金散尽还复来。
+		君不见，黄河之水天上来，奔流到海不复回。
+		君不见，高堂明镜悲白发，朝如青丝暮成雪。
+		人生得意须尽欢，莫使金樽空对月。
+		天生我材必有用，千金散尽还复来。
+		君不见，黄河之水天上来，奔流到海不复回。
+		君不见，高堂明镜悲白发，朝如青丝暮成雪。
+		人生得意须尽欢，莫使金樽空对月。
+		天生我材必有用，千金散尽还复来。
+	</div>
+
+	<ul class="list">
+		<li>人生得意须尽欢</li>
+		<li>君不见，黄河之水天上来，奔流到海不复回。</li>
+		<li>天生我材必有用</li>
+		<li>hello world hello world hello world hello world hello world hello world hello world </li>
+		<li>千金散尽还复来</li>
+		<li>君不见，高堂明镜悲白发，朝如青丝暮成雪。</li>
+	</ul>
+</body>
+</html>

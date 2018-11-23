@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      #d{
+         border:1px solid red;
+         /* background:aqua; */
+         width:200px;
+         height:200px;
+      }
+      .d1{
+         background:red;
+      }
+      
+      #d2{
+         border:1px solid red;
+         /* background:aqua; */
+         width:200px;
+         height:200px;
+      }
+      .black{
+         background:black;
+      }
+      .blue{
+         background:blue;
+      }
+   
+   </style>
+
+   <script src='../libs/angular.min.js'></script>
+</head>
+<body ng-app='app'>
+   <div ng-include="'head.html'"></div>
+   <ul ng-controller='ctrl'>
+      <!-- ng-show可以取值为true或者1，则显示元素
+               取值为false或0，则隐藏元素 -->
+      <li ng-show='isShow'>这是ng-show</li>
+      <!-- 效果与ng-show一样，但是取值相反 -->
+      <li ng-hide='false'>这是ng-hide</li>
+      <li ng-if='true'>这是ng-if</li>
+      <!-- <li>{{name}}</li> -->
+      <li ng-bind = 'name'>阿达</li>
+      <li>
+         <label><input type="radio" name='gender' value='M' ng-model='val' ng-checked='sex == "M"'>男</label>
+         <label><input type="radio" name='gender' value='W' ng-model='val'  ng-checked='sex == "W"'>女</label>
+      </li>
+      <li>
+         <img ng-src="{{path}}" width=400>
+      </li>
+      <li>
+         {{stus}}
+      </li>
+      <!-- <li ng-repeat='(k,stu) in stus'> -->
+      <!-- track by $index 当数组中有重复元素时，ng-repeat会出错，添加该语句，可以避免出错 -->
+      <li ng-repeat='stu in stus track by $index'>
+            {{$index}}:{{stu}}
+      </li>
+      <li>
+         <div id = 'd' ng-class='{d1:color=="red"}'></div>
+         <div id = 'd2' ng-class='{black:true,blue:true}'></div>
+      </li>
+      <li>
+         <select ng-model='val'>
+            <option value="1">HTML</option>
+            <option value="2">CSS</option>
+            <option value="3">JS</option>
+         </select>
+      </li>
+      <li>
+         <ul ng-switch='val'>
+            <li ng-switch-when='1'>html的内容</li>
+            <li ng-switch-when='2'>css的内容</li>
+            <li ng-switch-when='3'>js的内容</li>
+            <li ng-switch-when='4'>空的内容</li>
+         </ul>
+      </li>
+   </ul>
+</body>
+
+<script>
+   var app = angular.module('app',[]);
+   app.controller('ctrl',['$scope',function($scope){
+      $scope.isShow = true;
+      $scope.name = 'hello';
+      $scope.sex = 'W';
+      $scope.path = "../day03/1.jpg";
+      $scope.stus=['Jack','Curry','Kobe','Kobe','Hadden'];
+      $scope.color=2;
+      
+   }]);
+
+</script>
+</html>

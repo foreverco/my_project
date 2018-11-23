@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		margin:100px;
+	}
+		.box1{
+			width:100px;
+			height:100px;
+			background:red;
+			/* transition:background 10s,width 10s; */
+			transition:all 10s;
+
+		}
+		.box1:hover{
+			background:blue;
+			width:300px;
+			height:300px;
+			/* 加上过渡 */
+			/* border-radius:300px; */
+			/* margin-top:50px; */
+			box-shadow:50px 50px 50px 50px black;
+			transform:taslate(30px,30px);
+			transform:rotate(45deg);
+		}
+
+		.box2{
+			width:100px;
+			height:100px;
+			background:pink;
+			/* 位移 */
+			transition:all 10s;
+			margin-top:5px;
+			transform:translate(30px,30px);
+
+		}
+		
+
+		.box3{
+			width:100px;
+			height:100px;
+			background:pink;
+			text-align:center;
+			/* 旋转 */
+			transition:all 10s;
+			margin-top:5px;
+			background-image:-webkit-linear-gradient(top,skyblue,purple);
+			transform:rotate(45deg);
+		}
+		
+		.box4{
+			width:100px;
+			height:100px;
+			background:pink;
+			/* 缩放 */
+			transition:all 10s;
+			margin-top:5px;
+			transform:scale(2,2);
+
+
+		}
+		
+		.box5{
+			width:100px;
+			height:100px;
+			background:pink;
+			/* 斜切 */
+			transition:all 10s;
+			margin-top:5px;
+			transform:skew(30deg) rotate(-45deg);
+
+
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class='box1'></div>
+	<div class='box2'>位移</div>
+	<div class='box3'>旋转</div>
+	<div class='box4'>缩放</div>
+	<div class='box5'>斜切</div>
+</body>
+</html>

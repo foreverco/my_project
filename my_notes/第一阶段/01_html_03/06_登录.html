@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 控件名：控件的name属性值
+	空间值：控件的value属性值 -->
+	<form action="index.php" backgroundcolor="red">
+		用户名：<input type="text" name="uname" value="baby" maxlength="12">
+		<br><br>
+
+		密&nbsp;码：<input type="password" name="upass" maxlength="6">
+		<br><br>
+
+		性别：<input type="radio" name="sex" value="man" checked>男
+			 <input type="radio" name="sex" value="women">女
+			 <input type="radio" name="sex" value="none">人妖
+			 <br><br>
+
+		爱好：<input type="checkbox" name="like" value="study" checked>学习
+				<input type="checkbox" name="like" value="sing" checked>唱歌
+				<input type="checkbox" name="like" value="game">游戏
+			<br><br>
+
+		籍贯：<select name="province" id="">
+				<option value="0">江苏省</option>
+				<option value="1" selected>浙江省</option>
+				<option value="2">安徽省</option>
+			</select>
+			<select name="city" id="">
+				<option value="0">南京市</option>
+				<option value="1">苏州市</option>
+				<option value="2">常州市</option>
+			</select>
+			<br><br>
+
+		头像：<input type="file" name="headpic" multiple>
+		<br><br>
+
+		自我评价：<textarea name="intro" id="" cols="30" rows="10"></textarea>
+		<br><br>
+
+		<input type="submit" value="登录"><br><br>
+		<button>提交</button><br><br>
+		<input type="image" src="img/乔巴.jpg">
+		<input type="reset" value="刷新">
+		<input type="button" value="按钮">
+	</form>
+</body>
+</html>

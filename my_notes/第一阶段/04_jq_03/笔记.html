@@ -1,0 +1,91 @@
+第四章
+第一节
+一、jq修改DOM结构
+	<script>
+		1）内部插入
+			$(obj).append('Some text');//向尾部追加内容
+			$(son).appendTo($(father));//把子元素追加到父元素的尾部
+
+			$('.box1').prepend('<font color=red>awm</font>');//向头部添加内容
+			$(son).prependTo($(father));//把子元素添加到父元素头部
+		2）外部插入
+			$('a').after($('b'));//a的后面添加b
+			$('a').before($('b'));//a的前面添加b
+
+			$('a').insertAfter($('b'));//把a插入到b之后
+			$('a').insertBefore($('b'));//把a插入到b之前
+		3）替换
+			$('a').replaceWith($('b'));//把a替换成b
+			$('a').replaceAll($('b'));//用a替换b
+		4）删除
+			$('a').empty();//清空元素的内容
+			$('a').remove([expr]);//移除元素
+		5）复制克隆
+			$(obj).clone();//复制obj整个元素结构
+			$(obj).clone(true);//复制obj整个元素结构以及事件
+
+	</script>
+
+二、jq提供的效果
+	<script>
+		1）显示/隐藏 400（毫秒 数值越大速度越慢）
+			A: show()
+				show('slow/400/fast', function() {
+					//可选
+					//回调函数，效果出发完成之后触发...
+				});
+			B: hide()
+				hide('slow/400/fast', function() {
+					//可选
+					//回调函数，效果出发完成之后触发...
+				});
+			C:toggle(slow/400/fast)
+
+		2)滑动效果
+		
+			A:向下滑动（展开）
+			slideDown('slow/400/fast', function() {
+				
+			});
+			B:向上滑动（收缩）
+			slideUp('slow/400/fast', function() {
+				
+			});
+
+			B:切换滑动（切换展开/收缩）
+			slideToggle('slow/400/fast', function() {
+				
+			});
+
+		3）淡入淡出
+			A:淡入
+			fadeIn('slow/400/fast', function() {
+				
+			});
+			B:淡出
+			fadeOut('slow/400/fast', function() {
+				
+			});
+			C:切换淡入淡出
+			fadeToggle('slow/400/fast', function() {
+				
+			});
+
+		4)自定义动画（动画效果，速度，回调函数）
+			animate({
+				param1: value1,
+				param2: value2},
+				speed, function() {
+				/* stuff to do after animation is complete */
+				//回调函数，动画完成之后去做的事情...
+			});
+三、滚动效果
+	1)滚动图片
+	2）向左滚动
+
+
+
+
+
+
+	</script>

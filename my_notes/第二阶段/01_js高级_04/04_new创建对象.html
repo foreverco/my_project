@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //使用new创建对象
+      var obj = new Object();
+      console.log(obj);
+
+      //添加属性
+      obj.name = '鲁班';
+      obj.age = '5';
+      //添加方法
+      obj.info = function(percent){
+         // console.log(this);
+         console.log(obj.name,obj.age,percent);
+      }
+
+      //使用对象
+      console.log(obj);
+      obj.info('50%');
+
+      //遗留问题：这种创建方式只是创建了一个单个对象
+      //如果我们再要创建一个对象，只能重新执行一下创建步骤
+
+      //克隆复制方式创建副本
+      function cloneObj(oldObj){
+         //创建副本
+         var newObj = new Object();
+         //复制属性和方法
+         for(key in oldObj){
+            //key:属性名和方法名:oldObj.key
+            newObj[key] = oldObj[key];
+         }
+         //把副本返回出来，才可以使用
+         return newObj;
+      }
+
+      //使用副本(不会受原对象的影响，不会更新变化的)
+      var p1 = cloneObj(obj);//得到obj对象的一个副本
+      console.log(p1);
+      p1.age = 18;
+      console.log(p1.age);
+
+      var p2 = cloneObj(obj);//得到第二个副本
+      console.log(p2);
+      p2.age = 20;
+      console.log(p2.age);
+
+      //原对象修改了属性和方法
+      obj.sex = '男';
+      console.log(obj);
+      console.log(p1);
+      console.log(p2);
+
+      
+   </script>
+</body>
+</html>

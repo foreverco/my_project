@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+    *{margin: 0;padding: 0;}
+  .showBox{
+    width: 300px;
+    height:180px;
+    margin:20px auto;
+    border:1px solid steelblue;
+    border-radius: 4px;
+    position: fixed;
+    /* top: 50%; */
+    margin-top: 70px;
+    left: 50%;margin-left: -150px;
+    box-shadow:3px 3px 10px 5px rgba(0,0,0,0.5);
+  }
+  .showBox .title{
+    line-height: 40px;
+    background:steelblue;
+    color: white;
+    text-indent: 16px;
+  }
+  .showBox .content{
+    text-align: center;
+  }
+  .showBox .content .msg{
+    margin-top: 20px;
+    /* border:1px solid red; */
+    line-height: 50px;
+    color: steelblue;
+  }
+  .showBox .content .btns{
+    line-height: 60px;
+  }
+  .showBox .content .btns input{
+    width: 64px;height: 32px;
+    border:none;
+    color: white;
+    outline: none;
+    margin:0 3px;
+    border-radius: 2px;
+  }
+  .btns input.yes{
+    background: red;
+  }
+  .btns input.no{
+    background:steelblue;
+  }
+  
+  </style>
+</head>
+<body>
+  <!-- 消息提示框布局 -->
+  <div class="showBox" id="elem">
+    <div class="title">消息</div>
+    <div class="content">
+      <p class="msg">提示信息内容</p>
+      <p class="btns">
+        <input type="button" class="yes" value="确认">
+        <input type="button" class="no" value="取消">
+      </p>
+    </div>
+  </div>
+
+  <!-- 测试 -->
+  <input type="button" value="购买"  id="btn1">
+  <input type="button" value="删除"  id="btn2">
+
+  <script>
+    //定义一个对象：包含了对提示框的操作方法
+    //1）显示功能：show
+    //2）隐藏功能：hide
+    //3）处理信息显示：showMsg
+    //4）提示框：alert(msg)
+    //5）询问框：confirm(msg,callback)
+    var ti_obj = document.querySelector('.title');
+        console.log(ti_obj);
+    var msg_obj = document.querySelector('.msg');
+     console.log(msg_obj);
+     var yes_obj = document.querySelector('input[class=yes]');
+     console.log(yes_obj);
+      var no_obj = document.querySelector('input[class=no]');
+     console.log(no_obj);
+
+    var showTip = {
+      show:function(){//显示
+        console.log('显示');
+        box_obj.style.display = 'block';
+      },
+      hide:function(){//隐藏
+        console.log('隐藏');
+        box_obj.style.display = 'none';
+      },
+      showMsg:function(msg){//处理信息
+        console.log('开始处理信息');
+        msg_obj.innerHTML = msg;
+
+      },
+      alert:function(msg){//提示框
+        console.log('提示框');
+        showTip.show();
+        // no_obj.style.display = 'none';
+        // showMsg({title:'消息',msg:msg,buttons:{yes:'确认'}});
+         msg_obj.innerHTML = msg;
+         yes_obj.onclick = function(){
+          box_obj.style.display = 'none';
+         }
+
+
+      },
+      confirm:function(msg,callback){//询问框
+        console.log('询问框');
+        showTip.show();
+        // showMsg({title:'询问',msg:msg,buttons:{yes:'确认',no:'取消'},fn:callback});
+        msg_obj.innerHTML = msg;
+        yes_obj.onclick = function(){
+          box_obj.style.display = 'none';
+          console.log('正在删除...');
+         }
+        no_obj.onclick =function(){
+          box_obj.style.display = 'none';
+        }
+      }
+    };
+
+     var box_obj = document.getElementById('elem');
+      console.log(box_obj);
+      // console.log(showTip.hide());
+      showTip.hide();
+
+    //点击按钮，弹框
+    var btn1_obj = document.getElementById('btn1');
+    var btn2_obj = document.getElementById('btn2');
+
+        btn1_obj.onclick = function(msg){
+          showTip.alert('请先登录或者注册');
+        }
+        btn2_obj.onclick = function(){
+          showTip.confirm('是否删除购物车商品',
+          function(){
+            console.log('正在删除...')
+          });
+        }
+  
+  
+  </script>
+</body>
+</html>

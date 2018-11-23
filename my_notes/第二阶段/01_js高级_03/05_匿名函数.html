@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //1)匿名函数赋给一个对象
+       var aa = function(num){
+          console.log('输出一个值'+num);
+       }
+       aa();//输出一个值undefined
+       aa(20);//输出一个值20
+       // console.log(bb);//报错
+      //  console.log(num);//报错 num是形参，所有形参都是局部变量
+
+      bb = 30; //自动做一个声明处理 var aa;放到最顶端
+      console.log(bb);//30
+
+      //2) 自调：函数声明完自动调用
+      //(function(){})([arg1,gar2...])
+      //[arg1,gar2...]:实参
+
+      (function(){
+         console.log('匿名函数自调');
+      })();
+
+      (function(name){
+         console.log('姓名是'+name);
+      })('forever');
+
+      //3)可以作为一个返回值，通过return返回
+
+      function fun1(){
+         console.log('命名函数1');
+         // return true;
+         //return 任意值
+         return function(num){
+            console.log('匿名函数',num);
+         }
+      }
+      var rs = fun1();//命名函数1   
+      console.log(rs);   
+      /* 
+         function(num){
+               console.log('匿名函数',num);
+            }
+      */
+     rs(20);
+
+     //第二次调用
+      fun1()(10);
+
+      //譬如date对象
+      var date = new Date();
+            date.getFullYear();
+      new Date().getMonth();
+
+      
+   </script>
+</body>
+</html>

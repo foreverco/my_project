@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      //Number对象
+      //把数值转成字符串 默认不谢参数，是10
+      var num = 20;
+      console.log(num.toString());//'20'
+      console.log(num.toString(2));//'10100'
+
+      console.log(num.toLocaleString());//'20'
+
+      var num2 = 23.456789;
+      console.log(num2.toFixed());//23
+      console.log(num2.toFixed(4));//23.4568
+
+      var num3 = 18;
+      console.log(num3.toFixed(2));//18.00
+
+
+      var bool = new Boolean(true);
+      console.log(bool.toString()+'aa');//trueaa
+    
+    </script>
+</body>
+</html>

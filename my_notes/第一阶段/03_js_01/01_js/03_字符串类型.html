@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//声明一个字符串变量
+		var str = "鲁班";
+		var str1 = "李白";
+		//打印到控制台给用户看到
+		console.log(str);
+		console.log(str1);
+
+		var str2 = '貂蝉';
+		var str3 = "我的爱好是:'好好学习'";
+		var str3 = '我的爱好是:"好好学习"';
+		var str3 = "我的爱好是:\"好好学习\"";
+		var str3 = '我的爱好是:\'好好学习\'';
+		console.log(str3);
+
+		//结论：""和''可以相互嵌套
+		//但是，"\"\""或'\'\''
+		//所以\'和\"是转义符号
+		
+		//声明一个变量，存储html标签
+		var font = "<font color='red'>红色的文本</font>";
+		document.write(font);+document.write('<br>');
+
+		//给一个输入框，输入用户名
+		var userName = prompt("请输入姓名");
+		document.write(userName);+document.write('<br>');
+
+		//获取字符串的长度属性
+		// 变量名.length
+		document.write(userName.length);+document.write('<br>');
+
+		//方法：1）(正序)查找某一个字符
+		// 变量名.indexOf('查找的字符'[,起始位置]);
+		// 结果：找到了返回该字符对应的数值下标
+		// 		未找到，返回是-1
+		var str = "hello world!";
+				//0123456789101112
+		console.log(str.length);//12 字符串长度
+		
+		console.log(str.indexOf('l'));//2
+		console.log(str.indexOf('d'));//10
+		console.log(str.indexOf('h'));//0
+		console.log(str.indexOf('o'));//4
+		//查找m和p
+		console.log(str.indexOf('m'));//-1
+		console.log(str.indexOf('p'));//-1
+
+		//从第五个位置开始查找字符
+		console.log(str.indexOf('l', 5));//9
+
+		//方法2：(倒序)查找
+		// 变量名.lastIndexOf(substr[, start])
+		console.log(str.lastIndexOf('o'));//7
+		console.log(str.lastIndexOf('a'));//-1
+
+		//效果举例：用户名不能包含特殊符号 @
+		//查找@，结果是-1，说明没有@，否则有@符号
+		
+		//方法3：替换
+		//变量.replace(找到旧值,替换成新值);
+		//结果：替换完成的新字符串
+		var str1 = '2018/8/10 3:43';
+		var str2 = str1.replace('/','-');
+		console.log(str2);
+		document.write(str2);+document.write('<br>');
+		var str3 = str2.replace('/','-');
+		document.write(str3);+document.write('<br>');
+		
+		//效果举例：譬如替换敏感词汇
+		//把文章里面的"习近平"替换成"习大大"
+		var article = "我们的国家主席习近平在十八大发表了重要讲话";
+		document.write(article);+document.write('<br>');
+		var wz = article.replace('习近平','习大大');
+		document.write(wz);
+
+		//方法4：转换大写
+		//方法5：转换小写
+		var intro = 'My name is Apple!'
+		console.log(intro.toUpperCase());//MY NAME IS APPLE!
+		console.log(intro.toLowerCase());//my name is apple!
+
+	</script>
+</body>
+</html>

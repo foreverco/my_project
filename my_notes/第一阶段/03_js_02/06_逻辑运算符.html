@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//比较num的值是不是在5-10之间的	逻辑和
+		//5<=num<=10 计算机没有这种写法
+		var num = 7;
+		console.log(num>=5 && num<=10);
+
+		//性别是否符合要求
+		//性别只能是男，女，人妖	逻辑或
+		var sex = "男";
+		console.log(sex == "男" || sex =="女" || sex=="人妖");//true
+
+		//年龄是否小于20
+		var age = 18;
+		console.log(age <= 20);//true
+		console.log(!(age <= 20));//false
+
+		if(age <= 20){
+			document.write('正确');
+		}else{
+			
+		}
+	</script>
+</body>
+</html>

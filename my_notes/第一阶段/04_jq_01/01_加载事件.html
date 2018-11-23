@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		//onload事件
+		window.onload = function(){
+			console.log('加载完成！');
+		}
+
+		//ready事件：jquery提供的一个加载方法
+		// console.log($);//jquery对象的一个引用
+		jQuery(document).ready(function($) {
+			console.log('准备就绪！');
+			//获取p标记
+			var p1_obj = document.getElementById('p1');
+			console.log(p1_obj);
+		});
+
+		//ready事件写法1：
+		jQuery(document).ready(function($) {
+			console.log('加载写法1');
+		});
+		//ready事件写法2：
+		$(document).ready(function(){ 
+			console.log('加载写法2');
+		});
+		//ready事件写法3：
+		$(function(){
+			console.log('加载写法3');
+		})
+		
+		
+
+	</script>
+</head>
+	<p id='p1'>hello！！</p>
+
+<body>
+</body>
+</html>

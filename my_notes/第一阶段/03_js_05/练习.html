@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/* 
+		拓展：1）输出三位数的水仙花数，并计算个数
+		水仙花数：
+		譬如453是一个水仙花数，那么
+		453 = 4*4*4 +5*5*5 + 3*3*3
+		*/
+	
+		for(x=1,num=0;x<=9;x++){
+			for(y=0;y<=9;y++){
+				for(z=0;z<=9;z++){
+					if(x*100+y*10+z == x*x*x+y*y*y+z*z*z){
+						document.write(String(x)+String(y)+String(z)+'<br>');
+						num++;
+					}
+					
+				}
+			}
+		}
+		document.write(num);
+
+
+	</script>
+</body>
+</html>

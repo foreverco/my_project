@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{margin:0;padding:0;}
+      .box{
+         width:550px;
+         border:3px solid black;
+         padding:10px;
+         overflow:hidden;
+         margin:50px auto;
+      }
+      .p1{
+         height:70px;
+         width:500px;
+         border:3px solid black;
+         font-size:50px;
+         line-height:70px;
+         padding-left:20px;
+         display:block;
+      }
+      .box input[type=button]{
+         border:3px solid black;
+         width:80px;
+         height:80px;
+         line-height:80px;
+         float:left;
+         margin:15px 10px;
+         font-size:50px;
+         text-align:center;
+         background:white;
+      }
+      .box input:nth-child(6){
+         border:3px solid transparent;
+      }
+     
+   </style>
+   <script src='jq/jquery-1.9.1.min.js'></script>
+   <script>
+      $(function(){
+         var num = '';
+         var num1 = '';
+         $('.box input[name=num]').click(function(){
+            console.log($(this).val());
+            num += $(this).val();
+            $('.p1').val(num);
+         })
+         $('.box input[name=jia]').click(function(){
+            console.log($('.p1').val());
+            $('.p1').val('');
+            $('.p1').val('+');
+            $('.p1').val(num1);
+
+            // num1 = $(this).val();
+         })
+         console.log(num);
+         console.log(num1);
+         // console.log(num1);
+         $('.box input[name=deng]').click(function(){
+            $('.p1').val('');
+            $('.p1').val(num1);
+         })
+
+
+
+
+         // var but_obj = document.querySelectorAll('input');
+         // console.log(but_obj);
+         // var p_obj = document.querySelector('.p1');
+         // but_obj.onclick = function(){
+         //    for(var i=0;i<but_obj.length;i++){
+         //       console.log(but_obj[i]);
+
+         //    }
+         // }
+         
+
+
+
+      })
+   
+   </script>
+
+
+</head>
+<body>
+   <div class='box'>
+     <input type="text" name=inp class='p1'>
+     <input type="button" value='1' name=num>
+     <input type="button" value='2' name=num>
+     <input type="button" value='3' name=num>
+     <input type="button" value='4' name=num>
+     <input type="button" value=''>
+     <input type="button" value='5' name=num>
+     <input type="button" value='6' name=num>
+     <input type="button" value='7' name=num>
+     <input type="button" value='8' name=num>
+     <input type="button" value='C'>
+     <input type="button" value='9' name=num>
+     <input type="button" value='0' name=num>
+     <input type="button" value='+' name=jia>
+     <input type="button" value='-' name=jian>
+     <input type="button" value='=' name='deng'>
+      
+   </div>
+</body>
+</html>

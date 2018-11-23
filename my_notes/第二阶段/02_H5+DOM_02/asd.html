@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>asd</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			background-color: black;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+	function Starry () {//构造函数
+		this.cxt = canvas.getContext('2d');//获取画笔
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		this.width = canvas.width;
+		this.height = canvas.height;
+		this.num = 200;
+		this.data=[];//*******
+	}
+	Starry.prototype = {//原型
+		init: function (){//初始化
+			var This = this;
+			for (var i = 0; i < This.num; i++) {
+				This.data[i] = {
+					x : Math.random()*This.width,
+					y : Math.random()*This.height,
+					cX:  Math.random()*0.9-0.3,
+					cY:  Math.random()*0.9-0.3
+				}
+				This.drawCircle(This.data[i].x,This.data[i].y);
+			}
+		},
+		drawCircle: function(x,y){//画圆
+			var cxt = this.cxt;
+			cxt.save();//存储
+			cxt.fillStyle = '#fff';
+			cxt.beginPath();//开始
+			cxt.arc(x,y,1,Math.PI*2,false); 
+			cxt.closePath();//结束
+			cxt.fill();//填充
+			cxt.restore();//释放
+		},
+		drawLine: function(x1,y1,x2,y2){
+			var cxt = this.cxt;
+			var color = cxt.createLinearGradient(x1,y1,x2,y2);//线性渐变createLinearGradient（创造线性渐变）
+			color.addColorStop(0, "#333");//前面是位置后面是颜色addColorStop
+			color.addColorStop(0.5, "#888");
+			color.addColorStop(1, "#ccc");
+			cxt.save();//存储
+			cxt.strokeStyle= color;//和圆的不一样
+			cxt.beginPath();//开始
+			cxt.moveTo(x1, y1);
+			cxt.lineTo(x2, y2); 
+			cxt.closePath();//结束
+			cxt.stroke();//填充
+			cxt.restore();//释放
+		},
+		moveCircle: function(){//移动圆
+			var self = this;
+			self.cxt.clearRect(0,0,self.width,self.height);//擦除函数clearRect(起始x，y，终点x，y)
+			for (var i = 0; i < self.num; i++) {
+				self.data[i].x +=self.data[i].cX;//使x,y的值发生变动
+				self.data[i].y +=self.data[i].cY;
+				//判断是否超出边界，并使其返回
+				if (self.data[i].x<0 || self.data[i].x>self.width) {self.data[i].cX = -self.data[i].cX};
+				if (self.data[i].y<0 || self.data[i].y>self.height) {self.data[i].cY = -self.data[i].cY};
+				self.drawCircle(self.data[i].x,self.data[i].y);
+				//连线判断 Math.pow(x,y) 次方函数 前面的x是值 后面y是次方
+				for (var j = i+1; j < self.num; j++) {
+				if (Math.pow(self.data[i].x-self.data[j].x,2)+Math.pow(self.data[i].y-self.data[j].y,2)<50*50) {
+					self.drawLine(self.data[i].x,self.data[i].y,self.data[j].x,self.data[j].y);
+					}//if结束
+				}//for j结束
+			}//for i 结束
+		},//moveCircle 结束
+		mouseLine:function(x,y){//鼠标连线
+			var self = this;
+			for (var i = 0; i < self.num; i++) {
+				if (Math.pow(x-self.data[i].x,2)+Math.pow(y-self.data[i].y,2)<150*150) {
+					self.drawLine(x,y,self.data[i].x,self.data[i].y);
+				}
+			}
+		}
+	}// prototype 结束
+	function mousePosition (a,b) {//获取鼠标位置函数
+				var bbox = canvas.getBoundingClientRect();//借助getBoundingClientRect()函数
+				return {
+					x:(a -bbox.left)*(canvas.width / bbox.width),
+					y:(b -bbox.top)*(canvas.height / bbox.height)
+				}
+			}		
+	var starry = new Starry();
+	starry.init();
+	setInterval(function(){
+		starry.moveCircle();
+	}, 30);
+	canvas.onmousemove = function(e){//鼠标移动事件onmousemove 
+		//先获取鼠标位置，再连线
+		var mouseposition = mousePosition(e.clientX,e.clientY);//取得位置
+		starry.mouseLine(mouseposition.x,mouseposition.y);//连线
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{margin:0;padding:0;}
+      #can{
+         border:1px solid red;
+         padding-left:20px;
+         padding-top:10px;
+         margin-top:30px;
+      }
+      input{
+         height:60px;
+      }
+   
+   </style>
+</head>
+<body>
+   <!-- 课下练习
+   绘制一个验证码图片：
+   1）验证码：6位随机字符
+         有点 点的数目 颜色随机
+         有线条(6) 颜色随机  -->
+
+      <input type="text">
+      <canvas id='can' width=120 height=50></canvas>
+
+      <script>
+         var num = '';
+         var canvas_obj = document.querySelector('#can');
+
+
+         canvas_obj.onclick = function fun1(){
+            var ran =  Math.random();
+            var ran1 = Math.random();
+            var ran2 = Math.random();
+            var ran3 = Math.random();
+            var co1 = Math.random()*255;
+            var co2 = Math.random()*255;
+            var co3 = Math.random()*255;
+            console.log(ran);
+            console.log(ran1);
+            console.log(ran2);
+            console.log(ran3);
+            console.log(co1);
+
+            //随机字
+            var arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',0,1,2,3,4,5,6,7,8,9];
+            for(i=1;i<=6;i++){
+               // console.log(parseInt(Math.random()*48));
+            console.log(arr[parseInt(Math.random()*58)]);
+               num += String(arr[parseInt(Math.random()*58)]);
+            }
+            console.log(num);
+
+            var context = canvas_obj.getContext('2d');
+            context.textBaseline = 'top';
+            context.font = '25px 微软雅黑';
+            context.fillText(num,0,0);
+
+
+            //随机线条
+            context.strokeStyle = 'rgba('+co1+','+co2+','+co3+','+ran+')';
+            context.lineWidth = ran*10;
+            
+            context.moveTo(ran1*120,ran*50);
+            context.lineTo(ran2*120,ran*50);
+
+            context.fill();
+            context.stroke();
+
+            context.beginPath();
+            context.strokeStyle = 'rgba('+co3+','+co1+','+co2+','+ran+')';
+            context.lineWidth = ran1*10;
+            
+            context.moveTo(ran*120,ran2*50);
+            context.lineTo(ran3*120,ran3*50);
+
+            context.fill();
+            context.stroke();
+
+            context.beginPath();
+            context.strokeStyle = 'rgba('+co2+','+co3+','+co1+','+ran+')';
+            context.lineWidth = ran1*10;
+            
+            context.moveTo(ran3*120,ran*50);
+            context.lineTo(ran1*120,ran3*50);
+
+            context.fill();
+            context.stroke();
+
+         }
+
+         
+
+      
+      </script>
+</body>
+</html>

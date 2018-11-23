@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //构造函数：自动创建对象
+
+      //1）定义构造函数
+      function Auto(name,age,sex){
+         console.log(this);//指向Auto
+         //添加属性
+         this.name = name;
+         this.age = age;
+         this.sex = sex;
+         //添加方法
+        Auto.prototype.info = function(likes){
+            console.log('专业技能是'+likes);
+         }
+      }
+
+      //2)调用构造函数
+      //原始方法调用函数
+      Auto();
+      //console.log(this);//指向window
+      
+      //作为构造函数来调用：是属于对象的
+      var obj = new Auto('apple',18,'女');
+      console.log(obj.name);
+      obj.info('唱歌');
+
+      var obj1 = new Auto('banana',25,'男');
+      console.log(obj1.sex);
+      obj1.info('吃饭');
+
+      var obj2 = new Auto('orange',35,'男');
+      console.log(obj2.age);
+      obj2.info('嘟嘟');
+
+      //测试一下
+      console.log(obj.info);
+      console.log(obj1.info);
+      console.log(obj.info==obj1.info);//false
+
+      //当我们创建多个对象的时候
+      //对象的方法都会重新创建一次
+      //造成的问题：占用内存空间
+
+      //解决内存占用问题 利用：prototype属性
+
+      console.log(obj.prototype);
+
+   </script>
+</body>
+</html>

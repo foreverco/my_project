@@ -1,0 +1,101 @@
+第三章
+第八节
+一、日期对象
+		<script>
+	//1)日期对象 Date
+	var today = new Date();
+	console.log(today);
+	//Tue Aug 21 2018 14:14:30 GMT+0800 (中国标准时间)
+
+	//声明一个指定日期的时间对象
+	var date1 = new Date('2018/11/11 12:13:14');
+	console.log(date1);
+	//Sun Nov 11 2018 12:13:14 GMT+0800 (中国标准时间)
+	
+	//2)日期对象：提供的API方法
+	//1.获取年份
+	var year = today.getFullYear();
+	console.log(year);
+	//2.获取月份
+	var moon = today.getMonth();
+	console.log(moon);//7月份的下标（1-12）
+	//3.获取日份
+	var date1 = today.getDate();
+	console.log(date1);//21
+	//4.获取星期
+	var week = today.getDay();
+	var week1 = ['日','一','二','三','四','五','六'];
+	week = week1[week];
+
+	console.log(week);//2
+	//5.获取小时
+	var hour = today.getHours();
+	hour<10?hour = '0'+hour:hour;
+	console.log(hour);//14
+	//5.获取分
+	var min = today.getMinutes();
+	min<10?min = '0'+min:min;
+	console.log(min);//27
+	//5.获取秒
+	var sec = today.getSeconds();
+	sec<10?sec = '0'+sec:sec;
+	console.log(sec);//50
+	//显示在页面
+	//2018年8月21日 星期二 14：31:09
+	var time = year+'年'+(moon+1)+'月'+date1+'日'+'&nbsp;星期'+week+'&nbsp'+hour+':'+min+':'+sec;
+	document.write('<p class="p1">'+time+'</p>');
+
+	
+	</script>
+	<script>
+		//方法：getTime();
+		//距离1970年1月1日有多少毫秒
+		var time = new Date().getTime();
+		console.log(time);
+		//2018/11/11距离1970/1/1有多少毫秒
+		var end = new Date('2018/11/11 00:00:00').getTime();
+		console.log(end);
+		//差值 今天距离双11有多少毫秒
+		var num = end-time;
+		console.log(num);
+	</script>
+
+	课下练习
+	1）计算今天距离双11有多少天几分几秒？
+
+二、计时器
+	作用：间隔多久做什么事情
+	<script>
+	//1)设置计时器
+	//无限循环
+	setInterval(函数名,间隔的时间);
+	//只执行一次
+	setTimeout(函数名,延迟的时间);
+
+	//给计时器命名
+	var t1 = setInterval(函数名,间隔的时间);
+	var t2 = setTimeout(函数名,延迟的时间);
+
+	//2)清除计时器
+	clearInterval(t1/t2);
+	clearTimeout(t2/t1);
+
+	</script>
+
+三、数学函数(部分API方法)：Math对象
+	<script>
+		//1)四舍五入
+		Math.round(数值);
+		//2)取整(向上)
+		Math.ceil(数值);
+		//3)取整(向下)
+		Math.floor(数值);
+		//4)取最大值
+		Math.max(数值1,数值2,数值3...);
+		//5)取最小值
+		Math.min(数值1,数值2,数值3...);
+		//6)幂运算	x的y次方
+		Math.pow(x,y);
+		//7)随机数0-1之间的随机小数
+		Math.random();
+	</script>

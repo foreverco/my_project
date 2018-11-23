@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{margin:0;padding:0;}
+      .box{
+         width:550px;
+         border:3px solid black;
+         padding:10px;
+         overflow:hidden;
+         margin:50px auto;
+      }
+      .p1{
+         height:70px;
+         width:500px;
+         border:3px solid black;
+         font-size:50px;
+         line-height:70px;
+         padding-right:20px;
+         text-align:right;
+         display:block;
+      }
+      .box input[type=button]{
+         border:3px solid black;
+         width:80px;
+         height:80px;
+         line-height:80px;
+         float:left;
+         margin:15px 10px;
+         font-size:50px;
+         text-align:center;
+         background:white;
+      }
+      .box input:nth-child(6){
+         border:3px solid transparent;
+      }
+     
+   </style>
+   <script src='jq/jquery-1.9.1.min.js'></script>
+   <script>
+      $(function(){
+         var num = '';
+         var num1 = '';
+         var jj = '';
+         var sum;
+         $('.box input[name=num]').click(function(){
+            console.log($(this).val());
+            if(jj==""){
+                   num = num+$(this).val();
+                 $(".p1").val(num);
+             }else{
+                 num1 = num1+$(this).val();
+                 $(".p1").val(num+jj+num1);
+            }
+         })
+         $('.box input[name=jia]').click(function(){
+            jj = $(this).val();
+            $('.p1').val(num+jj);
+            console.log(jj);
+         })
+         console.log(num);
+         console.log(num1);
+         $('.box input[name=deng]').click(function(){
+           if(jj == '+'){
+              sum=Number(num) + Number(num1);
+
+           }else if(jj == '-'){
+               sum=Number(num) - Number(num1);
+           }else if(jj == '*'){
+               sum=Number(num) * Number(num1);
+           }else if(jj == '/'){
+               sum=Number(num) / Number(num1);
+           }
+             $('.p1').val(sum);
+         })
+         $('.box input[name=empty]').click(function(){
+            $('.p1').val(0);
+         })
+
+
+      })
+   
+   </script>
+
+
+</head>
+<body>
+   <div class='box'>
+     <input type="text" name=inp class='p1'>
+     <input type="button" value='1' name=num>
+     <input type="button" value='2' name=num>
+     <input type="button" value='3' name=num>
+     <input type="button" value='4' name=num>
+     <input type="button" value=''>
+     <input type="button" value='5' name=num>
+     <input type="button" value='6' name=num>
+     <input type="button" value='7' name=num>
+     <input type="button" value='8' name=num>
+     <input type="button" value='C' name=empty>
+     <input type="button" value='9' name=num>
+     <input type="button" value='0' name=num>
+     <input type="button" value='+' name=jia>
+     <input type="button" value='-' name=jia>
+     <input type="button" value='*' name=jia>
+     <input type="button" value='/' name=jia>
+     <input type="button" value='=' name='deng'>
+      
+   </div>
+</body>
+</html>

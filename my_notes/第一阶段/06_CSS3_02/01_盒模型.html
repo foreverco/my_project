@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			border:1px solid red;
+			width:316px;
+			height:170px;
+			margin:20px;
+		}
+		.border-box{
+			box-sizing:border-box;
+			border:3px solid red;
+		}
+		.content-box{
+			box-sizing:content-box;
+			border:4px dashed green;
+		}
+		div.box  img{
+			width:100%;
+			height:100%;
+		}
+		.container{
+			width:1200px;
+			border:1px solid blue;
+			padding:20px;
+		}
+		.container img{
+			margin:10px;
+			width:316px;
+			height:170px;
+			box-sizing:border-box;
+		}
+		.container img:hover{
+			border-top:2px solid red;
+			border-bottom:2px solid blue;
+			border-left:2px solid orange;
+			border-right:2px solid purple;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<div class='border-box box'>
+		<img src="05-盒模型/images/1.jpg">
+	</div>
+	<div class='content-box box'>
+		<img src="05-盒模型/images/2.jpg">
+	</div>
+	<div class='container'>
+		<img src="05-盒模型/images/1.jpg">
+		<img src="05-盒模型/images/2.jpg">
+		<img src="05-盒模型/images/3.jpg">
+	</div>
+</body>
+</html>

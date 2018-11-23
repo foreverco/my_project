@@ -1,0 +1,36 @@
+- CorS 跨域资源共享(Cross Origin Resource Sharing)
+1.官方给出的跨域解决方案.
+2.CORS 的实现原理:
+  使用自定义的HTTP响应头部信息
+  设置responseHeader的字段:
+    Access-Control-Allow-Origin: * / 127.0.0.1
+3.具体实现:
+  (1) 通过cors发起跨域请求和普通的ajax请求是一样的,代码没有什么差别
+  (2) 在服务器端设置响应头,因此实现cors的关键是在服务器端,服务器端实现CORS接口,前端就可以跨域请求了
+
+  jsonp 与 cors的区别
+    1.jsonp只支持get请求,而cors支持所有的HTTP请求类型
+    2.使用cors,开发者可以使用普通的Ajax请求,比jsonp有更好的错误处理机制
+    3.jsonp主要被老的浏览器支持,cors是所有现代浏览器都支持,除了IE10以下的版本 
+
+    
+
+
+    2.正则含义:
+      <% :  以 $% 开始
+      =\s* : 匹配'='后面多个空格
+      ([^%>]+\S) : 匹配所有非空格字符
+      \s*%> : 匹配多个空格 一 %> 结尾
+      完整的匹配:
+      var reg = /<%=\s*([^%>]+\S)\s*%>/g;
+
+  ArtTemplate - 腾讯
+    模板引擎的用法大同小异,
+    用法:
+      1.导入模板插件 template-native.js
+      2.定义模板 
+        <%= 内容 %> <% 逻辑 %>
+      3.读取模板,传入数据
+        var subData = template('模板的ID',数据data);
+      4.设置 HTML 页面
+        document.body.innerHTML = subData;

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.list{
+			border:1px solid red;
+			width:200px;
+			line-height:40px;
+			/* 去掉ul的左内间距 */
+			padding-left:0;
+			/* 把列表符号位置移进来 */
+			list-style:disc inside;
+		}
+		.list li{
+			border-bottom:2px dashed red;
+		}
+		/* 第一行加粉色背景 */
+		.list li:first-child{
+			background:pink;
+		}
+		/* 最后一个li去掉下边框 */
+		.list li:last-child{
+			border:0;
+		}
+		/* 第四行加蓝色背景 */
+		.list li:nth-child(4){
+			background:blue;
+		}
+		.art{
+			border:1px solid red;
+			width:400px;
+			font-family:"微软雅黑";
+			text-indent:2em;
+		}
+		.art:first-line{
+			background:yellow;
+		}
+		.art:first-letter{
+			font-size:34px;
+		}
+		input{
+			outline:0;
+			border:1px solid gray;
+		}
+		input[type=text]:focus{
+			background:yellow;
+		}
+		input[type=password]:focus{
+			background:pink;
+		}
+		.lu{
+			border:1px solid red;
+		}
+		对h1无效
+		.lu:focus{
+			background:pink;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li>第一行</li>
+		<li>第二行</li>
+		<li>第三行</li>
+		<li>第四行</li>
+		<li>第五行</li>
+		<li>第六行</li>
+		<li>第七行</li>
+	</ul>
+
+	<p class="art">
+				别减肥了，你丑不仅仅是因为你胖！
+		2.假如今天生活欺骗了你，不要悲伤，不要哭泣，因为明天生活还会继续欺骗你。 
+		3.又一天过去了。今天过得怎么样，梦想是不是更远了？<br>
+		4.有些女生觉得说自己是吃货能显得可爱。其实并没有这样的效果。
+		5.“老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？”
+		  “社会底层群众中受教育程度最高的一批人。”<br>
+		6.以前我以为钱可以买到一切，后来才发现没有办法，因为我钱不够。
+		7.很多朋友喜欢分享旅游经验，看着他们把钱花光出去走一趟。
+		  回来后生活没有任何改变，我就感到放心了。
+		8.人生很多事，终究是会随着时间好起来的。<br>
+		  像很多人原本只是胖，久了就变好胖。
+		9.谁说你没有毅力的，单身这事你不就坚持了好几十年吗?
+		10.不敢跟别人说自己有认真读书，是因为不想，用尽全力来证明自己脑袋不好。
+		11.上帝为你关上一扇门的同时，还顺带夹了一下你的脑袋
+		12.许多人所谓的追逐梦想，<br>
+		   就是不想要辛苦努力地付出，
+		　　还可以轻松自由地生活。
+		　　生活就该像这只贱贱的猫，喝掉毒鸡汤，然后豁达向上。
+	</p>
+
+
+		<form action="">
+			用户名<input type="text" name="uname">	<br><br>
+			密&nbsp;码<input type="password" name="upass">	<br>
+		</form>
+
+		<h1 class="lu">
+			生活就该像这只贱贱的猫
+		</h1>
+</body>
+</html>

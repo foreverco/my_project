@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			/* border:3px solid red; */
+			width:545px;
+			height:851px;
+			position:relative;
+			margin:20px 360px;
+
+		}
+		.box1::after{
+			content:'';
+			width:100%;
+			height:100%;
+			background:rgba(0,0,0,0.5);
+			position:absolute;
+			top:0;
+			left:0;
+			opacity:1;
+			transition:all 2s;
+
+		}
+		.box1:hover::after{
+			opacity:0;
+			/* background:transparent; */
+
+		}
+		.box1::before{
+			content:'哈哈哈哈';
+			width:150px;
+			height:50px;
+			/* border:1px solid red; */
+			top:0px;
+			left:0px;
+			background-image:linear-gradient(to left,red,orange,yellow,blue);
+			color:white;
+			font-size:30px;
+			text-align:center;
+			line-height:50px;
+			font-weight:bold;
+			opacity:0;
+			position:absolute;
+			transition:all 2s;
+		}
+		.box1:hover::before{
+			/* background:transparent; */
+			top:50%;
+			margin-top:-25px;
+			margin-left:-75px;
+			left:50%;
+			opacity:1;
+			transform:rotate(7200000deg);
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class='box1'>
+		<img src="img/pic03.png">
+		
+	</div>
+</body>
+</html>

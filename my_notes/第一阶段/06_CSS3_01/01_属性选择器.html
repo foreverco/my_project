@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*  */
+		p[data-title]{
+			border:1px solid red;
+		}
+		/* 以指定值开始的 */
+		div[data-box ^='矩形']{
+			border:1px solid blue;
+		}
+		/* 以指定值结束的 */
+		input[value $='国']{
+			border:1px solid pink;
+		}
+		/*  */
+		div li[data-row *='行']{
+			border:1px dashed purple;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<p data-title='文章1'>这是一个三级头</p>
+	<p data-title='文章2'>这是一个98k</p>
+	<div data-box='矩形盒子1'>
+		<ul>
+			<li><input type="text" value='中国'></li>
+			<li><input type="password"></li>
+			<li><input type="tel" value='美国'></li>
+			<li><input type="text" value='法国'></li>
+		</ul>
+	</div>
+
+	<div data-box='矩形2'>
+		<ol>
+			<li data-row='row1 首行 aa'><input type="text"></li>
+			<li data-row='row2'><input type="password"></li>
+			<li data-row='row3'><input type="tel"></li>
+			<li data-row='row4 尾行 bb'><input type="text"></li>
+		</ol>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		background:url(img/timg.jpg);
+		background-size:100%;
+		background-attachment:fixed;
+		opacity:0.2;
+	}
+		.box1,.box2,.box3{
+			margin:10px 0;
+		}
+		.box1{
+			border:2px solid red;
+		}
+		.box2{
+			border:2px solid blue;
+		}
+		.box3{
+			border:2px solid green;
+		}
+		/* 方法1：display; 隐藏后不占位置*/
+		.box1 img:last-child{
+			display:none;
+		}
+		/* 方法2：visibility; 隐藏后占位置*/
+		.box2 img:last-child{
+			visibility:hidden;
+		}
+		/* 方法3：opacity; 隐藏后占位置 */
+		.box3 img:last-child{
+			opacity:0.1;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<img src="img/afanda.jpg" width="300px"><br>
+		<img src="img/timg.jpg" width="300px">
+	</div>
+	<div class="box2">
+		<img src="img/afanda.jpg" width="300px"><br>
+		<img src="img/timg.jpg" width="300px">
+	</div>
+	<div class="box3">
+		<img src="img/afanda.jpg" width="300px"><br>
+		<img src="img/timg.jpg" width="300px">
+	</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 省份下拉列表 -->
+	<select id="pro" onchange='changePro()'></select>
+	<!-- 城市下拉列表 -->
+	<select id="city" onchange='changePro()'></select>
+	<!-- 区下拉列表 -->
+	<select id="qu"></select>
+
+	<script>
+	//省份数组
+	var proArr = ['江苏省','浙江省','安徽省','河南省'];
+	//城市数组
+	var cityArr = [
+		['南京市','无锡市','苏州市','常州市'],
+		['杭州市','绍兴市','温州市','宁波市'],
+		['黄山市','合肥市','蚌埠市','芜湖市'],
+		['郑州市','开封市','洛阳市','信阳市']
+	];
+	var quArr = [
+		[
+			['白下区','玄武区','江宁区','秦淮区'],
+			['无锡区','无锡区','无锡区','无锡区'],
+			['苏州区','苏州区','苏州区','苏州区'],
+			['常州区','常州区','常州区','常州区']
+		],
+		[
+			['杭州区','杭州区','杭州区','杭州区'],
+			['绍兴区','绍兴区','绍兴区','绍兴区'],
+			['温州区','温州区','温州区','温州区'],
+			['宁波区','宁波区','宁波区','宁波区']
+		],
+		[
+			['白下区','玄武区','江宁区','秦淮区'],
+			['无锡区','无锡区','无锡区','无锡区'],
+			['苏州区','苏州区','苏州区','苏州区'],
+			['常州区','常州区','常州区','常州区']
+		],
+		[
+			['白下区','玄武区','江宁区','秦淮区'],
+			['无锡区','无锡区','无锡区','无锡区'],
+			['苏州区','苏州区','苏州区','苏州区'],
+			['常州区','常州区','常州区','常州区']
+		]
+
+	];
+
+
+	//1)查找下拉列表标签元素 根据id找
+	var pro_sel = document.getElementById('pro');
+	var city_sel = document.getElementById('city');
+	var qu_sel = document.getElementById('qu');
+	console.log(pro_sel);
+	console.log(city_sel);
+	//2)往select里放内容
+	/*pro_sel.innerHTML = '<option>aa</option>';
+	console.log(pro_sel.innerHTML);*/
+	var ops = '';
+	for(key in proArr){//省份名：proArr[key]
+		ops += '<option>'+proArr[key]+'</option>'
+	}
+	pro_sel.innerHTML = ops;
+
+	var opc = '';
+	for(key in cityArr[0]){
+		opc += '<option>'+cityArr[0][key]+'</option>'
+	}
+	city_sel.innerHTML = opc;
+
+	var opq = '';
+	for(key in quArr[0][0]){
+		opq += '<option>'+quArr[0][0][key]+'</option>'
+	}
+	qu_sel.innerHTML = opq;
+
+	//4）联动效果
+	/*
+		省份下拉列表选项发生改变的时候：去做事情
+		onchange事件：内容发生改变的事件
+		获取当前是哪一个省份（选项）：
+		selectedIndex属性：被选中的option的索引下标
+
+	 */
+	function changePro(){
+		//所有事情的执行过程
+		// alert(123);
+		// 获取被选中的option的索引下标
+		var i = pro_sel.options.selectedIndex;
+		console.log(pro_sel.options);
+		console.log(i);
+		//i option的下标 == 省份下标 == 1组城市
+		//找到对应的城市，放到城市下拉列表里
+		//清空原先的城市
+		
+			var opc = '';
+		for(key in cityArr[i]){
+			opc += '<option>'+cityArr[i][key]+'</option>'
+		}
+		city_sel.innerHTML = opc;
+
+		// 区
+		var opq = '';
+	for(key in quArr[i][i]){
+		opq += '<option>'+quArr[i][i][key]+'</option>'
+	}
+	qu_sel.innerHTML = opq;
+
+		
+
+	}
+
+
+	
+	</script>
+</body>
+</html>

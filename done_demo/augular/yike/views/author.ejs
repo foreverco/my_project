@@ -1,0 +1,17 @@
+			<!-- 主体 -->
+			<div class="body">
+				<dl class="author">
+					<dt>本周推荐</dt>
+					<% for(var i=0;i<data.length;i++){ %>
+					<dd>
+						<div class="avatar">
+							<img src="<%= data[i].avatar %>" alt="" style='border-radius:62px'>
+						</div>
+						<div class="info">
+							<h5><%= data[i].name %></h5>
+							<p><%= data[i].editor_notes %></p>
+						</div>
+					</dd>
+					<% } %>
+				</dl>
+			</div>

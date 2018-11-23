@@ -1,0 +1,95 @@
+第二章 CSS
+第三节
+一、复合选择器
+	1)并集选择器
+	<style>
+		选择器1，选择器2，...{}
+	</style>
+	2)交集选择器
+	<style>
+		标签名.className{}
+		标签名#idName{}
+	</style>
+
+
+二、伪选择器
+	元素选择器:伪选择器{}
+	1) :hover{}		鼠标悬停的状态
+	2) :link{}		默认链接状态
+	3) :active{}	单击按下释放之前的状态
+	4) :visited{}	被访问过后的状态
+	注意：3和4效果后改成js实现
+
+	5) :first-child{} 	筛选第一个
+	6) :last-child{} 	筛选最后一个
+	7) :nth-child(n){} 筛选第n个
+
+	8) :first-line{} 	第一行
+	9) :first-letter{} 	首字符
+
+	10) :focus{} 		获取焦点(主要针对于表单控件)
+
+	11) :before{content:"内容"}
+	12) :after{content:"内容"}
+
+	<style>
+		.box{
+			width:600px;
+			border:1px solid red;
+		}
+		/* 在内部：起始位置添加内容 */
+		.box:before{
+			content:"杜甫";
+			font-size:30px;
+			color:red;
+		}
+		/* 在内部：末端位置添加内容 */
+			.box:after{
+			content:url(img/ic1.gif);
+			font-size:30px;
+			color:blue;
+		}
+ 
+	</style>
+
+三、div布局(DIV+CSS布局)
+	1)div标记
+	<div></div>
+
+	优点：
+	1）无缝贴齐，可以随意设定间距大小
+	2）无限嵌套；布局自由
+
+	2)CSS样式：外间距margin
+		margin-top/bottom/left/right:10px;
+	3)CSS样式：内间距padding
+		padding-top/bottom/left/right:10px;
+	4)合并写法（同padding）
+       /*   	上	右	 下	   左 */
+		margin:10px 20px 30px 40px;
+		/*   	上	左右   下	   */
+		margin:10px 20px 30px;
+			/* 上下 左右 */
+		margin:10px 20px;
+		  /* 上下左右 */
+		margin:10px;
+	5)div模型计算公式
+	实际大小=外间距+边框+内间距+内容尺寸(width/height)
+四、CSS样式:显示类型
+	1）行内元素（无宽高，不换行）
+		display:inline;
+	2）块元素（有宽高，会换行）
+		display:block;
+	3）行内块元素（有宽高，不换行）
+		display:inline-block;
+	4）隐藏
+		display:none;
+五、CSS样式：浮动定位
+	1）float:left;
+	2）float:right;
+
+	页面分为：地面+上空
+	默认在地面：上下行
+	上空排列：左右结构
+
+	浮动的元素不占位置

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- v-text -->
+    <p v-text='msg'>
+    </p>
+    <!-- v-html -->
+    <p v-html='vhtml'></p>
+  </div>
+  <script>
+    /* vue的指令 */
+    //1.v-text / v-html
+    new Vue({
+      el:'#app',
+      data:{
+        msg:'hello vue directive v-text/v-html',
+        vhtml:'<h1 style="color:red">V-html 指令</h1>'
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

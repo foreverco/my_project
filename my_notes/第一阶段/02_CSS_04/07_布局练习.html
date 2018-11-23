@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.fleft{
+			float:left;
+		}
+		.fright{
+			float:right;
+		}
+		.father{
+			border:1px solid red;
+			overflow:hidden;
+		}
+		.father .left ul{
+			list-style:square inside;
+			padding-left:10px;
+		}
+		.father .left ul li{
+			/* border-bottom:1px dashed gray; */
+			height:40px;
+			line-height:40px;
+
+		}
+		.father .right ul{
+			list-style:square inside;
+			padding-left:10px;
+			color:gray;
+			list-style:none;
+		}
+		.father .right ul li{
+			/* border-bottom:1px dashed gray; */
+			height:40px;
+			line-height:40px;
+
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="left fleft">
+			<ul>
+				<li><a href="#">零距离余猛兽亲密接触</a></li>
+				<li><a href="#">新西兰旅游资讯:花园城市基督城</a></li>
+				<li><a href="#">有课入境澳大利亚新规则</a></li>
+				<li><a href="#">新西兰旅游资讯：博物馆酒店的艺术气息</a></li>
+				
+			</ul>
+		</div>
+		<div>
+			<div class="right fright">
+			<ul>
+				<li>2011-02-21</li>
+				<li>2011-02-21</li>
+				<li>2011-02-21</li>
+				<li>2011-02-21</li>
+				
+			</ul>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

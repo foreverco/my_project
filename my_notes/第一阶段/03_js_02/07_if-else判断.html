@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//判断语句	一个语句有一个结果
+		if(true){
+			console.log('正确');	
+		}else{
+			console.log('错误');
+		}
+		//正确
+		if(false){
+			console.log('正确');	
+		}else{
+			console.log('错误');
+		}//错误
+
+		//比较 数值大小 20和30
+		if(20>=30){
+			//20大于等于30
+			document.write('20>30');
+		}else{
+			//20小于30	
+			document.write('20<30');
+		}
+		//判断用户名是否为空
+		var uname = prompt('请输入用户名');
+		if(uname == ''){
+			document.write('用户名不能为空！');
+		}else{
+			document.write('用户名可以使用！');
+		}
+
+		//判断数值是否能被5整除
+		var num = 34;
+		if(num % 5 == 0){
+			document.write(num+'可以被5整除')
+		}else{
+			document.write(num+'不可以被5整除')
+		}
+
+
+	</script>
+</body>
+</html>

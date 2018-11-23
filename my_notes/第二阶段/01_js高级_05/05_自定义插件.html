@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <!-- 添加标签 -->
+   <p class='nav'>
+      <a href="#">李白</a>
+      <a href="#">杜甫</a>
+      <a href="#">辛弃疾</a>
+      <a href="#">貂蝉</a>
+      <a href="#">鲁班</a>
+   </p>
+   <ul class='list'>
+      <li>春眠不觉晓</li>
+      <li>处处闻啼鸟</li>
+      <li>夜来风雨声</li>
+      <li>花落知多少</li>
+   </ul>
+   <!-- 自定义插件 -->
+   <script>
+      //创建一个对象
+      function Get(selector){
+         //返回获取到的DOM元素集合
+         this.selector = document.querySelectorAll(selector);
+      //    console.log(this);
+      }
+
+       //把new Get()方式转换成 Jquery()
+      //通过全局变量 $()
+      //创建并返回Get对象
+      window.$ = function(selector){
+         // console.log('是一个匿名函数');
+         //调用对象
+         var p_obj = new Get(selector);
+         return p_obj;
+         // console.log(p_obj);
+      }
+
+      //添加上一个方法：修改样式 DOM样式
+      Get.prototype.css = function(){
+         //参数保存在arguments里的
+         //console.log(arguments);//样式
+         console.log(this.selector);//DOM集合
+         //1)循环遍历DOM集合,给每一个标签修饰样式
+         for(i = 0;i<this.selector.length;i++){//每一个标签 this.selector[i]
+            // this.selector[i].style
+            // console.log(this.selector[i]);
+            //修改样式
+            if(arguments.length == 2){
+               this.selector[i].style[arguments[0]] = arguments[1];
+            //    console.log(arguments);
+            
+            }else if(arguments.length == 1 && typeof(arguments[0]) == 'string'){
+                  //获取样式的值
+                  // console.log(this.selector[i].style[arguments[0]]);
+
+
+                  return this.selector[i].style[arguments[0]];
+
+            }else{//添加多个样式
+                  // console.log(this.selector[i].style[arguments[1]]);
+                  for(key in arguments[0]){
+                        // console.log([key][0]);
+                        // console.log(arguments[0][key]);
+                       this.selector[i].style[[key][0]]= arguments[0][key];
+                  }
+            }
+         }
+      }
+      //console.log($('.nav'));//p标签数组
+      //console.log($('.list'));//p标签数组
+      //调用css方法
+      // $('.nav a').css('color');
+      $('.nav').css({
+            'border':'1px solid blue',
+            // 'width':'400px'
+      });
+      $('.nav a').css({
+            'color':'red',
+            'border':'1px solid red',
+            'width':'100px',
+            'height':'50px',
+            'line-height':'50px',
+            'display':'inline-block',
+            'text-align':'center',
+            'font-size':'20px',
+            'text-decoration':'none',
+            'font-weight':'bold'
+      });
+         //自己在扩展一个方法：属性操作 attr
+         Get.prototype.attr = function(){
+            console.log(this.selector);
+            console.log(this.selector.length);
+            for(j=0;j<this.selector.length;j++){
+                  this.selector[j][arguments[0]]=arguments[1];
+                  console.log(arguments[0]);
+                  console.log(arguments[1]);
+            }
+           
+         }
+
+
+         $('.list').attr('type','none');
+         $('.nav').attr('align','right');
+      
+   
+   
+   </script>
+</body>
+</html>

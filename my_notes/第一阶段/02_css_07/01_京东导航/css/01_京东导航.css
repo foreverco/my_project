@@ -1,0 +1,137 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-09 11:09:47
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-27 19:20:17
+*/
+/* 初始化 */
+*{
+	margin:0;
+	padding:0;
+}
+html,body{
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+a{
+	text-decoration:none;
+	color:#999999;
+}
+ul,li{
+	list-style:none;
+}
+
+/* 公共类 */
+.overflowh{
+	overflow:hidden;
+}
+.father:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.fleft{
+	float:left;
+}
+.fright{
+	float:right;
+}
+.pos_rel{
+	position:relative;	/* 相对定位 */
+}
+.pos_abs{
+	position:absolute;	/* 绝对定位 */
+}
+.pos_fix{
+	position:fixed;		/* 固定定位 */
+}
+
+/* 导航区 navBox */
+.navBox{
+	margin:0 auto;
+	width:1000px;
+	/* border:1px solid red; */
+	background:#E3E4E5;
+}
+
+.navBox .leftBox{
+	/* border:2px dashed orange; */
+}
+.navBox .rightBox{
+	/* border:2px groove green; */
+}
+.navBox .rightBox>li{
+	float:left;
+}
+
+/* 一级导航修饰 */
+.navBox .ulBox>li>a{
+	/* border:3px solid red; */
+	line-height:30px;
+	padding:0 6px;
+}
+/* 修饰分割线垂直居中 */
+.navBox .ulBox>li>span{
+	line-height:30px;
+}
+/* 一级导航模块左右隔开 */
+.navBox .ulBox>li{
+	margin-left:5px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               px;
+}
+/* 二级导航 */
+.navBox .ulBox .innerBox{
+	border:1px solid #CCCCCC;
+	top:30px;/*二级在一级下方*/
+	display:none;
+	background:white;
+	z-index: 10;
+}
+.navBox .ulBox .innerBox0{
+	width:280px;
+	height:150px;
+	left:0;
+}
+.navBox .ulBox .innerBox1{
+	width:170px;
+	height:100px;
+	left:0;
+}
+.navBox .ulBox .innerBox2{
+	width:140px;
+	height:80px;
+	left:0;
+}
+.navBox .ulBox .innerBox3{
+	width:100px;
+	height:220px;
+	right:0;
+}
+.navBox .ulBox .innerBox4{
+	width:100%;
+	height:300px;
+	left:0;
+}
+/* 鼠标经过li，让子盒子innerBox显示出来 */
+.navBox .ulBox>li.hover:hover .innerBox{
+	display:block;
+}
+/* 修饰边框
+一级：上 左 右边框；
+二级：上下左右边框
+让一级盒子遮盖住二级上边框 */
+.navBox .ulBox>li.hover>a{
+	
+	height:30px;
+	display:inline-block;
+	border:1px solid transparent;
+	border-bottom:0;
+	z-index: 11;
+	position:relative;
+}
+
+/* 鼠标进入父盒子 一级内容添加边框和背景 */
+.navBox .ulBox>li.hover:hover>a{
+	background:white;
+	border:1px solid #ccc;
+	/* border-bottom:0; */
+}

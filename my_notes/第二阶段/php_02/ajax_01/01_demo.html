@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{margin:0;padding:0;}
+      .auto{margin:0 auto;}
+      .nav{
+         width:900px;
+         line-height:60px;
+         background:pink;
+         font-size:36px;
+      }
+      .nav a{
+         text-decoration:none;
+         padding:0 30px;
+      }
+      .bannerBox{
+         width:1000px;
+         border:1px solid red;
+      }
+   </style>
+   <script src='../jq/jquery-1.9.1.min.js'></script>
+   <script>
+      $(function(){
+         //点击按钮:向服务器01_demo.php页面请求数据
+         $('#btn1').click(function(){
+            //现在开始发送请求
+            $.ajax({
+               url:'01_demo.php',
+               type:'post',
+               data:'uname=apple',
+               dataType:'json',
+               success:function(data){
+                  //console.log(data);
+                  //data是用来接收php文件返回的数据
+               //   $('#btn1').after('<br>'+data);
+               //把json数组里的元素取出来放到对应的位置
+               for(key in data){
+                  console.log(data[key]);
+               }
+               $('.title').html(data['title']);
+               $('.author').html(data['author']+'&nbsp;&nbsp;'+(data['time']));
+               $('.con').html(data['content']);
+               }
+            })
+
+         })
+      })
+   
+   
+   </script>
+</head>
+<body>
+   <p class='nav auto'>
+      <a href="#">首页</a>
+      <a href="#">淘宝</a>
+      <a href="#">京东</a>
+      <a href="#">当当</a>
+   </p>
+   <div class='bannerBox auto'>
+      <img src="../imgs/timg.jpg" width='1000' height='300'>
+   </div>
+   <!-- 显示文章信息 -->
+   <input type="button" value='展开文章' id='btn1'>
+
+   <!-- 把拿到的文章信息显示出来 -->
+   <h3 class='title'></h3>
+   <p class='author' style='color:red;background:black;font-size:40px;font-weight:bolder;color:white'></p>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+   <h1 class='con' style='color:red;background:yellow'></h1>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //prototype属性
+      //指针，指向原型对象
+
+
+      var str = 'apple';
+      console.log(str);//apple
+      console.log(typeof str);//string
+
+      var str1 = new String('banana');
+      console.log(str1);//String对象
+      console.log(str1.length);
+      console.log(typeof str1);//object
+
+      //继承：他可以直接继承父级的相关属性和方法
+
+      //扩展String对象的方法
+      //写一个扩展方法：验证是否为空
+      //isNull()
+      //返回值：true 是空字符串
+      String.prototype.isNull = function(){
+         if(this.length == 0){
+            console.log('字符串是空的！');
+            return true;
+         }
+      }
+      // console.log(str1);
+      //检验一下
+      str1.isNull('');
+
+      //随意验证一个字符串
+      var str3 = '';
+      str3.isNull();
+   
+   </script>
+</body>
+</html>

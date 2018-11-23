@@ -1,0 +1,29 @@
+#content{
+   width:480px;
+   height:480px;
+   background:#bbada0;
+   position:relative;
+   margin:0 auto;
+   border-radius:10px
+}
+
+.cell{
+   width:100px;
+   height:100px;
+   line-height:100px;
+   position:absolute;
+   background:#ccc0b3;
+   font-size:60px;
+   text-align:center;
+   color:#ccc;
+   border-radius:6px;
+}
+[id^='c0']{top:16px;}
+[id^='c1']{top:132px;}
+[id^='c2']{top:248px;}
+[id^='c3']{top:364px;}
+
+[id$='0']{left:16px}
+[id$='1']{left:132px}
+[id$='2']{left:248px}
+[id$='3']{left:364px}

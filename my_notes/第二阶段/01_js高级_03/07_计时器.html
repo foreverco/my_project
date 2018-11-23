@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //输出1-5之间的数 5s时间
+     var i = 1;
+      var t = setInterval(function(){
+         if(i == 5){
+            clearInterval(t);
+         }
+         
+       console.log(i);
+         i++;
+      },1000);
+
+      //在页面上打印一个列表
+      function print(){
+         document.write('<ul>');
+         document.write('<li>aa</li>');
+         document.write('<li>bb</li>');
+         document.write('<li>cc</li>');
+         document.write('</li>');
+      }
+      print();
+      
+   </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+第一章 HTML
+第二节
+一、HTML标签结构
+	1）h5页面结构(! tab键补全)
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+			
+		</body>
+		</html>
+	2）h4页面结构(html:xt tab键补全)
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+			
+		</body>
+		</html>
+	3）html发展版本
+		html 2.0  1995年
+		html 3.2  1997年
+		html 4.01 1999年
+		h5 		  2015年
+	4）遵循 w3c标准规范(www)
+		W3C(万维网联盟):制定语言规范	
+		html：超文本标记语言
+		xhtml：可扩展超文本标记语言
+		xml	：扩展标记语言（小型数据库）
+	5）执行HTTP协议
+		http://
+		https://
+	6）标签写法
+		<标签名 属性="值">		
+		<标签名 属性='值'>		
+		<标签名 属性=值>
+	7）meta标记
+		<meta /> h4之前版本		
+		<meta >	 h5版本
+		1.刷新并且跳转页面
+			<meta http-equiv="refresh" content="3;笔记.html">
+		2.描述文本信息
+			<meta http-equiv="description" content="百度，百度贴吧，百度网站，百度外卖，百度一下，你就知道">
+		3.关键字
+			<meta http-equiv="keywords" content="花朵，花朵分类..." />	
+		2、3作用：优化网站排名，SEO优化
+	8）链接标记
+		1.链接css文件
+			<link rel="stylesheet" href="index.css">
+		2.链接logo图标显示在标题里
+			<link rel="shortcut icon" href="img/1.ico">	
+
+二、文本修饰
+	1）font标签
+		<font size="10" color="red" face="微软雅黑">文本内容</font>
+		*属性
+		1）size="10/+2/-2" 				文本大小
+		2）color="red/#FF0000"			文本颜色
+		2）face="微软雅黑/宋体/黑体"	文本字体
+	2）加粗样式
+		<b>文本加粗</b>
+		<strong>文本加粗</strong>
+	3）倾斜
+		<i>文本倾斜</i>
+		<em>文本倾斜</em>
+	4）下划线
+		<u>文本下划线</u>
+		<ins>文本下划线</ins>
+	5）删除线
+		<s>文本删除线</s>
+		<del>文本删除线</del>
+	注意：尽量使用第二种标记，语义化更明显
+	6）上角标
+		X<sup>3</sup>
+	7）下角标
+		CO<sub>2</sub>
+	8）标签
+		<label>文本内容</label>
+	9）块
+		<span>文本内容</span>
+
+	特性：
+	1）不换行，默认在同一行显示
+
+三、图片标签
+	<img src="图片url地址" 
+		 alt="图片有误的描述信息" 
+		 title="鼠标悬停的描述文本"
+		 width="300px"
+		 height="300px"/>
+	路径查找：
+	1）相对路径
+	<img src="img/13.png" alt="图片已受损" width="300px" height="250px" title="这是一个摄像机的小图标">
+	2）绝对路径
+	<img src="D:/web1807/第一阶段/01_html_02/img/6.ico" alt="" />
+
+	建议：最好选择 相对路径方式
+
+四、段落和标题
+	1）段落
+		<p align="left/center/right">段落1</p>
+		<p>段落2</p>
+	2）标题
+		<h1 align="left/center/right">一级标题</h1>
+		<h2>二级标题</h2>
+		<h3>三级标题</h3>
+		<h4>四级标题</h4>
+		<h5>五级标题</h5>
+		<h6>六级标题</h6>
+	*属性
+	 	1）水平对齐：左/中/右（默认：左）
+	 	align="left/center/right"
+	 *特性：
+	 	1）上下行显示，可以换行，独占一行
+
+五、实体标签
+	1)空格: 	&nbsp;
+	2)大于号>:	&gt;	
+	3)小于号<	&lt;
+	4)版权符号©：&copy;
+	5)商标符号®：&reg;
+	6)银元符号¥：&yen;
+
+六、超链接
+	1）点击跳转地址
+		<a href="跳转的地址">内容</a>
+		<a href="07_桃花源记.html" target="_blank">桃花源记</a>
+		*属性
+		1）href="跳转的地址"
+		2）target="_blank"			打开方式：空白新窗口
+			target="_self"（默认）	打开方式：自身窗口
+		内容：
+		文字/图片/标签
+		状态：
+		文字变色+下划线+鼠标经过变小手
+	2）下载(添加 download属性)
+		<a href="img/13.png" download>下载图片</a>
+	3）锚点链接（书签链接）
+		1.建立书签(给书签起名字)
+		<a name="书签名">书签1</a>
+		2.点击"谁"跳转到"书签名"位置
+		<a href="#书签名">谁</a>
+	
+		从08页面跳转到09页面的底部
+		<a href="09_锚点链接.html#last">跳转到09页面底部位置</a>
+		
+		3.返回顶部
+		<a href="#">返回顶部</a>
+
+七、列表
+	1.无序列表
+				实心圆点/空心圆/矩形块/无
+		<ul type="disc/circle/square/none">
+			<li>无序列表</li>
+			<li>无序列表</li>
+			<li>无序列表</li>
+		</ul>
+	2.有序列表
+				i/I:罗马数字
+		<ol type="a/A/i/I/1">
+			<li>有序列表</li>
+			<li>有序列表</li>
+			<li>有序列表</li>
+		</ol>
+
+八、课后练习
+	快速梳理王者荣耀（参考word文档）
+
+九、预习
+	路径：D:/web1807/第一阶段课件/01_html_1/APP
+	表格
+	表单

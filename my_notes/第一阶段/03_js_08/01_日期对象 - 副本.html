@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{
+			margin:0 auto;
+		}
+
+	</style>
+</head>
+<body>
+	<script>
+	
+	
+	function times(){
+		//1)日期对象 Date
+	var today = new Date();
+	console.log(today);
+	//Tue Aug 21 2018 14:14:30 GMT+0800 (中国标准时间)
+
+	//声明一个指定日期的时间对象
+	var date1 = new Date('2018/11/11 12:13:14');
+	console.log(date1);
+	//Sun Nov 11 2018 12:13:14 GMT+0800 (中国标准时间)
+	
+	//2)日期对象：提供的API方法
+	//1.获取年份
+	var year = today.getFullYear();
+	console.log(year);
+	//2.获取月份
+	var moon = today.getMonth();
+	console.log(moon);//7月份的下标（1-12）
+	//3.获取日份
+	var date1 = today.getDate();
+	console.log(date1);//21
+	//4.获取星期
+	var week = today.getDay();
+	var week1 = ['日','一','二','三','四','五','六'];
+	week = week1[week];
+
+	console.log(week);//2
+	//5.获取小时
+	var hour = today.getHours();
+	hour<10?hour = '0'+hour:hour;
+	console.log(hour);//14
+	//5.获取分
+	var min = today.getMinutes();
+	min<10?min = '0'+min:min;
+	console.log(min);//27
+	//5.获取秒
+	var sec = today.getSeconds();
+	sec<10?sec = '0'+sec:sec;
+	console.log(sec);//50
+
+	//显示在页面
+	//2018年8月21日 星期二 14：31:09
+	var time = year+'年'+(moon+1)+'月'+date1+'日'+'&nbsp;星期'+week+'&nbsp'+hour+':'+min+':'+sec;
+		document.write('<p class="p1">'+time+'</p>');
+	}
+
+	var t1 = setInterval(times,1000);
+
+	</script>
+</body>
+</html>

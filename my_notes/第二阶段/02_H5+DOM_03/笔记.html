@@ -1,0 +1,61 @@
+第二章 DOM+H5 
+第三节
+一、canvas标签-画布
+   1)H5 新加的标签
+   2)本身没有任何绘图功能，就是一个空白的画布
+   3)H5提供了一些API方法/属性，可以实现绘图功能(通过js完成)
+二、canvas可以做什么？
+   1）绘制一些基本形状,写文字
+   2）可以处理一些图片，合成图片
+   3）动画游戏
+三、canvas的相关API
+   前提：在画布上绘制
+      1)html网页添加canvas标记
+         <canvas id='canvas1'></canvas>
+      2)在js里获取画布
+         <script>
+            var canvas_obj = document.querySelector('#canvas1');
+            //画布大小只能通过属性修改
+            canvas_obj.width = '300';
+            canvas_obj.height = '300';
+         </script>
+      3)定义图形的类型('2D/3D'):目前'2D'
+         <script>
+            var context = canvas.getContext('2d');
+         </script>
+
+   1)绘制路径-直线
+         <script>
+            //*属性
+            1）lineWidth = 10;      //线条粗细
+            2）strokeStyle = 'red'; //描边颜色
+            3）fillStyle = 'pink';  //填充色
+            4）lineJoin = 'miter/round/bevel'; 
+                        //顶点：尖角/圆角/斜角
+            //方法：
+            1）beginPath();   //开始新路径
+            2）closePath();   //闭合路径
+            3）moveTo(x,y);   //起点位置
+            4）lineTo(x,y);   //终点位置    
+
+            //实际绘制
+            1）fill();     //填充绘制
+            2）stroke();   //描边绘制        
+         </script>
+
+   2)绘制矩形
+   3)绘制路径-弧线(圆)
+   4)绘制文字
+   5)绘制图片
+
+
+
+
+
+
+
+   //课下练习
+   绘制一个验证码图片：
+   //1）验证码：6位随机字符
+         有点 点的数目 颜色随机
+         有线条(6) 颜色随机 

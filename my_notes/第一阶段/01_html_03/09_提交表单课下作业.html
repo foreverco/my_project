@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.aa{
+			float:left;
+		}
+		.box{
+			padding-left:100px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+	<form action="index.php">
+	配送地区：&nbsp;<select name="city">
+				<option value="0">北京市</option>
+				<option value="1">上海市</option>
+				<option value="2">南京市</option>
+			 </select>
+			 <select name="part">
+				<option value="0">东城区</option>
+				<option value="1">闵行区</option>
+				<option value="2">嘉定区</option>
+			 </select>
+			 <br><br>
+	预订人：&nbsp;&nbsp;<input type="text" name="uname" value="">
+				<br><br>
+	手机号码：&nbsp;<input type="text" name="tel" value="">
+	或固定电话:<input type="text" name="tel2" value="">
+			<br><br>
+	配送地址：&nbsp;<input type="text" name="add">有助于快速送货确认地址
+			<br><br>
+	配送时间：&nbsp;<input type="text" name="time">
+		<br><br>
+	金额/张数：&nbsp;<input type="button" value="添加金额/张数">
+		<br><br>
+	金额合计：&nbsp;<input type="text" name="money">
+	<br><br>
+	数量合计：&nbsp;<input type="text" name="number">
+	<br><br>
+	是否需要发票：<input type="radio" name="need" value="yes">是&nbsp;<input type="radio" name="need" value="no">否
+	<br><br>
+	发票类型：<input type="radio" name="type" value="putong">普通发票&nbsp;<input type="radio" name="type" value="zengzhi">增值发票
+	<br><br>
+	发票抬头：<input type="radio" name="head" value="geren">个人&nbsp;<input type="radio" name="head" value="gongsi">单位
+	<br><br>
+	单位名称：&nbsp;<input type="text" name="company">
+	<br><br>
+	发票内容：<input type="radio" name="con" value="card">农产品卡&nbsp;<input type="radio" name="con" value="chanpin">农产品&nbsp;<input type="radio" name="con" value="other">其他
+	<br><br>
+	发票明细：<input type="radio" name="details" value="yes">是&nbsp;<input type="radio" name="details" value="no">否
+	<br><br>
+	支付方式：<input type="radio" name="pay" value="cash">现金&nbsp;<input type="radio" name="pay" value="card">刷卡&nbsp;<input type="radio" name="pay" value="zhipiao">支票
+	<br><br>
+	<div><a class="aa">备注：</a>&nbsp;&nbsp;<textarea name="" id="" cols="80" rows="4"></textarea></div>
+	<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="保存">&nbsp;&nbsp;<input type="reset">
+	</form>
+	</div>
+
+</body>
+</html>

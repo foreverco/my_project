@@ -1,0 +1,57 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-08 18:03:20
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-08 19:42:06
+*/
+
+/* 初始化样式 */
+html,body{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+	padding:0;
+}
+a{
+	text-decoration:none;
+	color:#999999;
+}
+/* 公共类 */
+.fleft{
+	float:left;
+}
+.fright{
+	float:right;
+}
+.autow{
+	width:1000px;
+	margin:0 auto;
+}
+.overflowh{
+	overflow:hidden;
+}
+.father:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+/* 导航 */
+
+.top{
+	border:1px solid red;
+	background:#E3E4E5;
+}
+.top .con{
+	border:1px solid blue;
+}
+.top .con a{
+	display:block;
+	border:1px solid red;
+}
+.top .con .city{
+	border:1px solid orange;
+	width:50px;
+	float:left;
+}

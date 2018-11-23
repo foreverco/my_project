@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'></div>
+
+  <script>
+    /* slot组件插槽 */
+    new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      template: `
+        <div>
+           <h2>我是父组件标题</h2> 
+           <my-comp>
+            <p>这是my-comp组件第一次引用</p>
+           </my-comp>
+           <my-comp>
+              <p>这是my-comp组件第二次引用</p>
+           </my-comp>
+        </div>
+      `,
+      components: {
+        'my-comp': {
+          template: `
+            <div>
+              <h3>我是子组件标题</h3>
+              <!--插槽,显示组件内的内容 -->
+              <slot></slot>
+            </div>
+          `,
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+@base: '#2aa';
+.border(@line:1px){
+  border:@line solid red;
+}
+
+div{
+  background: @base;
+  opacity: 0.6;
+  .border(4px);
+}

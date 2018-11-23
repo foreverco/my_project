@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{
+			width:100px;
+			height:100px;
+			background:red;
+		}
+
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//移动
+			$('input[name=but]').click(function(){
+				$('p').animate({
+					'margin-left': '400px',
+					'width': '400px',
+					'height':'400px',
+					'border-radius':'400px',
+				},
+					300, function() {
+					/* stuff to do after animation is complete */
+					$('p').animate({
+						'margin-top': '400px',
+						'width': '100px',
+						'height':'100px',
+						'border-radius':'0',
+					},
+						300, function() {
+						/* stuff to do after animation is complete */
+						$('p').animate({
+							'margin-left':'0',
+							'width': '400px',
+							'height':'400px',
+							'border-radius':'400px',
+						},
+							300, function() {
+							/* stuff to do after animation is complete */
+							$('p').animate({
+								'margin-top': '0',
+								'width': '100px',
+								'height':'100px',
+								'border-radius':'0',
+							},
+
+								300, function() {
+								/* stuff to do after animation is complete */
+
+
+							});
+
+						});
+
+					});
+				});
+			})	
+
+		})
+
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" value='按钮' name='but'>
+		<p></p>
+
+	</div>
+</body>
+</html>

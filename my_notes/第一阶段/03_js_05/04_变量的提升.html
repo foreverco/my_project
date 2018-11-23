@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//变量的提升
+		var name = 'apple';//全局变量
+		function fun1(){
+			name = 'banana';//name就是全局变量
+			age = 18;//变量的提升:作用域提升到全局
+			
+
+		}
+		console.log(name);//apple
+		console.log(age);//age is not defined
+		fun1();
+		console.log(name);//banana
+		console.log(age);//18
+
+		
+
+	</script>
+</body>
+</html>

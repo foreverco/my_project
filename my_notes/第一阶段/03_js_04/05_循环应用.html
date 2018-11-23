@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.aa{
+			/* border:1px solid red; */
+			text-align:center;
+			width:300px;
+		}
+
+	</style>
+</head>
+<body>
+	<script>
+
+		document.write('<p class="aa">');
+		var ip = prompt('请输入行数');
+		for(i = 1;i<=ip;i++){
+			for(j = 1; j<=(i*2-1);j++){
+				document.write('*');
+			}
+			document.write('<br>');
+		}
+
+document.write('<hr>');
+			
+			for(i = 1;i<=4;i++){
+			for(j = 1; j<=(i*2-1);j++){
+				document.write('*');
+			}
+			document.write('<br>');
+		}
+			document.write('</p>');
+
+	</script>
+</body>
+</html>

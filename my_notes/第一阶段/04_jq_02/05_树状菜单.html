@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.menu{
+			border:1px solid pink;
+			width:220px;
+			line-height:34px;
+		}
+		.menu dt{
+			text-indent:10px;
+			background:#444FF9;
+			font-weight:bold;
+			color:white;
+		}
+		.menu dd{
+			text-indent:30px;
+			background:#B5F2BF;
+		}
+
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		//需求：页面初始状态，二级都是隐藏，显示第一组
+		$(function(){
+			$('.menu dd').hide();
+			$('.menu dt:first').nextUntil('dt').show();
+		//需求，用户点击一级，展开对应的二级
+		$('.menu dt').click(function(){
+			$('.menu dd').hide();
+			$(this).nextUntil('dt').show();
+		})
+
+
+		})
+
+
+	</script>
+</head>
+<body>
+	<dl class='menu'>
+		<dt>武器</dt>	
+		<dd>AUG</dd>	
+		<dd>AWM</dd>	
+		<dd>MK14</dd>	
+		
+		<dt>医疗</dt>	
+		<dd class='dt1'>急救包</dd>	
+		<dd>绷带</dd>	
+		<dd>止痛药</dd>
+		<dd>肾上激素</dd>
+
+		<dt>防具</dt>	
+		<dd>三级头</dd>	
+		<dd>三级甲</dd>	
+		<dd>三级包</dd>
+		<dd>八倍镜</dd>
+
+	</dl>
+</body>
+</html>

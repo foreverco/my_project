@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+   /* *{margin:0;padding:0;} */
+   
+   </style>
+   <script src='jq/jquery-1.9.1.min.js'></script>
+   <script>
+      $(function(){
+         $('.list').click(function(){
+            $(this).css('border','1px solid red');
+         });
+         $('.list').click(function(){
+            $(this).css('margin','20px');
+         });
+
+         $('.list').bind('click mouseover',{userName:'apple',userAge:18},addLine);
+
+         function addLine(arg){
+            console.log('绑定了一个新的事件处理函数');
+            console.log(arg.data);
+            console.log(arg['data']);
+            //把数据放到最后一行li里添加进去
+            //循环遍历取下标和值
+            for(key in arg['data']){
+               console.log(arg['data'][key]);
+               $('.list').append('<li>'+key+':'+arg['data'][key]+'</li>')
+            }
+              //解除绑定 addLine
+              $('.list').unbind('click',addLine);
+         }
+
+         //执行one
+         $('p').one('click',{color:'pink'},changeBg);
+         function changeBg(color){
+            $('p').css('background',color.data.color);
+            console.log('调用了该函数',color.data.color);
+         }
+      })
+   </script>
+</head>
+<body>
+   <ul class='list'>
+      <li>第一行</li>
+      <li>第二行</li>
+      <li>第三行</li>
+      <li>第四行</li>
+      <li>第五行</li>
+   </ul>
+   <p style='height:60px;border:1px solid red'></p>
+</body>
+</html>

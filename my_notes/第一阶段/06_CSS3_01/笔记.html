@@ -1,0 +1,58 @@
+第六章 CSS3
+第一节
+一、CSS3是什么？
+	之前CSS1--->CSS2
+	CSS3是最新的样式版本
+	应用：移动端优先于PC端
+	应用场景：移动端小游戏开发：微信小程序 H5+CSS3+JS(API)
+二、CSS-选择器类型：
+	1)属性选择器
+		A: 选择器[属性名=属性值] 	匹配有'属性名'=值
+		B: 选择器[属性名] 			匹配有'属性名'的标记
+		C: 选择器[属性名^=值] 		匹配有值以'指定值'开头的
+		D: 选择器[属性名$=值] 		匹配有值以'指定值'结束的
+		E: 选择器[属性名*=值] 		匹配有值包含'指定值'的
+	2)伪类选择器
+		1.结构伪类
+			A: 选择器:first-child{}
+			   选择器:last-child{}
+			   选择器:nth-child(){}
+			B: 选择器:nth-child(odd){}
+			   选择器:nth-child(even){}
+			   选择器:nth-child(an+b/an-b){}
+			C: 选择器:empty{} 匹配内容为空的标记(使用不多)
+		2.目标伪类
+			选择器:target{} 结合锚点
+	3)伪元素选择器
+		A: 选择器::first-letter		首字符
+		B: 选择器::first-line		首行
+		C: 选择器::before(content:'')			
+		内部头部添加一个伪元素
+		D: 选择器::after{content:attr(属性名);}			
+		内部末端添加一个伪元素
+		E: 选择器::selection		被选中的文本
+三、CSS3样式-颜色
+	1)英文单词
+	2)十六进制
+	3)RGB/RGBA
+	4)HSLA:
+		H-->色调(0-360) 0/360:红色 120：绿色 240：蓝色
+		S-->饱和度(0%-100%)
+		L-->亮度(0%-100%)
+		A-->透明度(0-1)
+四、CSS样式-文本投影(不占位置)
+	text-shadow:h-shadow v-shadow blur color;
+	*h-shadow 	水平偏移
+	*h-shadow 	垂直偏移
+	*blur		模糊度
+	*color		颜色
+五、边框修饰
+	1)圆角
+		border-radius: 1-4 length|% / 1-4 length|%;
+		border-radius:20px 30px 40px 50px;
+					   /* 左上 右上 右下 左下 */
+		border-radius:50%;
+	2)盒子投影
+		box-shadow:h-shadow v-shadow blur spread color inset;
+		*spread 扩展(同时向四周扩展)
+		*inset 内部(不加，默认外部)

@@ -1,0 +1,115 @@
+第三章 Js
+第四节
+一、流程控制语句:for..in循环
+	1）语法格式(主要用于数组循环遍历)
+	<script>
+		for(key in arr){
+			//key变量名：键
+			//arr变量名：数组
+		}
+		//如何获取关联数组的长度？
+		//声明一个关联数组
+		var student = [];
+			student['ucode'] = '0011';
+			student['uname'] = 'baby';
+			student['usex'] = '女';
+			student['uage'] = '18';
+				var num=0;
+			for(k in student){
+				document.write(student[k]);
+				document.write('<hr>');
+				num+=1;
+			}
+		document.write(num);//循环的次数，也就是元素的个数
+	</script>
+二、流程控制语句：while循环语句
+	1）语法格式
+	<script>
+		变量初始化;
+		while(限定条件){
+			循环体;
+			变换步长;
+		}
+	</script>
+
+三、流程控制语句：do..while循环语句
+	1）语法格式
+	<script>
+		变量初始化;
+		do{
+			循环体;
+			变换步长;
+		}while(限定条件);
+	</script>
+
+	总结：1）for,while语句：先判断后执行
+		  2）do..while语句：先执行后判断(至少执行一次)
+
+		  初始条件符合：三种循环都一样
+		  初始条件不符合：do..while至少执行一次
+
+四、循环嵌套
+	<script>
+	for(var i = 0;i<=3;i++){
+		for(var j = 1;j<=4;j++){
+			//打印i是？j是？
+			console.log(i,j);
+		}
+	}
+
+	</script>
+
+	<!-- 
+		执行步骤：
+		i:0 j:1
+		i:0 j:2
+		i:0 j:3
+		i:0 j:4
+
+		i:1 j:1
+		i:1 j:2
+		i:1 j:3
+		i:1 j:4
+
+		i:2 j:1
+		i:2 j:2
+		i:2 j:3
+		i:2 j:4 
+	-->
+
+五、循环语句使用的两个关键字：
+	1）break关键字
+		遇到break 语句结束，跳出整个流程语句
+	2）continue关键字
+		略过本次循环，直接进入下一次循环
+
+六、多维数组
+	<script>
+	//一维数组
+	var arr1 = ['apple',18,false];
+	//二维数组
+	var arr2 = ['apple',20,true,[1,2,3]];
+	//三维数组
+	var arr3 = [
+		[1,2,3],
+		[
+			['a','b','c']
+		]
+	];
+
+	</script>
+	循环遍历数组：
+	1）索引数组
+	for(var i = 0;i<=arr.length-1;i++){
+		//i 下标
+		//arr[i] 值
+	}
+	for(key in arr){
+		//key 下标
+		//arr[key] 值
+	}
+	2）关联数组
+	for(key in arr){
+		//key 下标
+		//arr[key] 值
+	}

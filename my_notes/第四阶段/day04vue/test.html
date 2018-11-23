@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+<body>
+  <div id='app'></div>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        msg:'hello',
+        dodo:''
+      },
+      methods:{
+        sets(data1){
+          this.dodo=data1;
+        }
+      },
+      template:`
+        <div>
+          <p>父组件{{msg}}</p>
+          <p>{{dodo}}</p>  
+          <com-son @gets='sets'><com-son>
+        </div>
+      `,
+      components:{
+        'com-son':{
+          data(){
+            return {
+              smsg:'111子组件'
+            }
+          },
+          template:`
+            <button @click='ad'>子组件按钮</button>
+          `,
+          methods:{
+            ad(){
+              this.$emit('gets',this.smsg);
+            }
+          }
+        }
+      }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* 隐藏折叠三角 */
+		input::-webkit-calendar-picker-indicator{
+			display:none;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 数据列表：datalist 
+	定义一次
+	可以有多个载体-->
+	<datalist id='list1'>
+		<option>江苏省</option>
+		<option>江西省</option>
+		<option>广西省</option>
+		<option>广东省</option>
+	</datalist>
+	<!-- 显示到页面上：需要借助于文本输入框 -->
+	<input type="text" list='list1'>
+</body>
+</html>

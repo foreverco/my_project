@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		form[name=login]{
+			line-height:40px;
+		}
+		form[name=login] label{
+			display:inline-block;
+			width:65px;
+		}
+		form[name=login] span{
+			width:300px;
+			border:1px solid red;
+			height:30px;
+			display:inline-block;
+			margin-top:10px;
+		}
+
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//提交表单事件 
+			//return false;阻止提交
+			//return true;允许提交
+			$('form[name=login]').submit(function(){
+					// 检验用户名
+					console.log(validateName());
+					console.log(validatePass());
+					if(validateName() == 'ok' && validatePass() == 'okey'){//验证成功允许提交
+						return true;
+					}else{//阻止提交
+						return false;
+					}
+			});
+
+			//1)验证用户名 不能为空 不能超过10 不能有@
+			//验证成功：return 'ok'	
+			//验证失败：return 'no'
+				function validateName(){
+					var uName = $('input[name=uname]').val();
+					if(uName == ''){
+						console.log('空');
+						$('.mess1').html('<font color=red>用户名不能为空!</font>');
+						return 'no';
+					}else if(uName.length > 10){
+						$('.mess1').html('<font color=red>用户名不能超过10个字符!</font>');
+						return 'no';
+					}else if(uName.indexOf('@') != -1){
+						$('.mess1').html('<font color=red>用户名不能包含@符号!</font>');
+						return 'no';
+					}else{
+						$('.mess1').html('<font color=blue>用户名可以使用</font>');
+						return 'ok';
+					}
+				}
+
+			//2)验证密码
+			//验证成功：return true
+			//验证失败：return false
+			//不能为空 只能为6位 不能包含$/#/@
+			
+			function validatePass(){
+				if($('input[name=upass]').val == ''){
+					$('.mess2').html('<font color=red>密码不能为空</font>');
+					return 'aa';
+				}else if($('input[name=upass]').val.length != 6){
+					$('.mess2').html('<font color=red>密码必须是六位！</font>');
+					return 'aa';
+				}else if($('input[name=upass]').val.indexOf('$') != -1 
+						||$('input[name=upass]').val.indexOf('@') != -1
+						|| $('input[name=upass]').val.indexOf('#') != -1){
+					$('.mess2').html('<font color=red>密码不能包含特殊字符！</font>');
+					return 'aa';
+				}else{
+					$('.mess2').html('<font color=red>密码正确！</font>');
+					return 'okey';
+				}
+			}
+		})
+
+	</script>
+</head>
+<body>
+	<form action="index.php" name='login'>
+		<p>
+			<label>用户名:</label>
+			<input type="text" name='uname'>
+			<span class='mess1'></span>
+		</p>
+		<p>
+			<label>密码:</label>
+			<input type="password" name='upass'>
+			<span class='mess2'></span>
+		</p>
+		<p>
+			<input type="submit" value='登录'>
+		</p>
+	</form>
+</body>
+</html>

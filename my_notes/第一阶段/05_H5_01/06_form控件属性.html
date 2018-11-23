@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		label{
+			width:70px;
+			/* border:1px solid red; */
+			display:inline-block;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="text" name='code' value='001' form='login'>
+	<form action="xindex.php" id='login'>
+		<p>
+			<label>用户名：</label>
+			<input type="text" name='uname' placeholder='请输入用户名' required>
+		</p>
+		<p>
+			<label>密码：</label>
+			<input type="password" name='upass' placeholder='请输入密码' required autofocus>
+		</p>
+		<p>
+			<label>邮箱：</label>
+			<input type="email" name='umail' placeholder='请输入邮箱'>
+		</p>
+		<p>
+			<label>主页：</label>
+			<input type="url" name='uindex' placeholder='请输入主页'>
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.tabs{
+			border:1px solid red;
+			margin:10px 30px;
+			width:300px;
+		}
+		.tabs .nav{
+			border-bottom:1px solid red;
+			line-height:36px;
+		}
+		.tabs .nav a{
+			display:inline-block;
+			padding:0 10px;
+		}
+		.tabs .nav a:hover{
+			background:pink;
+		}
+		.tabs .con ul{
+			list-style:disc inside;
+			margin:10px 15px;
+			line-height:26px;
+			border:1px solid blue;
+		}
+	</style>
+	<script src='jq/jquery-1.6.2.min.js'></script>
+	<script>
+	$(function(){
+		//需求1：页面初始，显示新闻列表1
+		$('.con ul:first').siblings().hide();
+		$('.tabs .nav a:first').css({
+			
+		})
+
+		//需求2：点击a链接，显示对应的新闻列表
+		$('.tabs .nav a').click(function(even){
+			console.log($(this).index());
+
+			$('.con ul').eq($(this).index()).show().siblings('ul').hide();
+		})
+	})
+
+	</script>
+</head>
+<body>
+	<div class='tabs'>
+		<p class='nav'>
+			<a href="#">热门</a>
+			<a href="#">新闻</a>
+			<a href="#">公告</a>
+			<a href="#">活动</a>
+			<a href="#">赛事</a>
+		</p>
+
+		<div class='con'>
+		<ul>
+			<li>热门</li>
+			<li>热门</li>
+			<li>热门</li>
+			<li>热门</li>
+			<li>热门</li>
+		</ul>
+		<ul>
+			<li>新闻</li>
+			<li>新闻</li>
+			<li>新闻</li>
+			<li>新闻</li>
+			<li>新闻</li>
+		</ul>
+		<ul>
+			<li>公告</li>
+			<li>公告</li>
+			<li>公告</li>
+			<li>公告</li>
+			<li>公告</li>
+		</ul>
+		<ul>
+			<li>活动</li>
+			<li>活动</li>
+			<li>活动</li>
+			<li>活动</li>
+			<li>活动</li>
+		</ul>
+		<ul>
+			<li>赛事</li>
+			<li>赛事</li>
+			<li>赛事</li>
+			<li>赛事</li>
+			<li>赛事</li>
+		</ul>
+	</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='../jq/jquery-3.2.1.min.js'></script>
+</head>
+
+<body>
+  <button id='btn'>jq发送jsonp请求</button>
+  <script>
+    //使用$.ajax() 发起jsonp请求
+    $('#btn').on('click', function () {
+      $.ajax({
+        url:'http://127.0.0.1/02_course_02/day03_cros/01.php',
+        type:'get',
+        dataType:'jsonp',
+        success:function(data){
+          console.log(data);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

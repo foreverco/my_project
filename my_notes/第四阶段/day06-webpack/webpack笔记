@@ -1,0 +1,143 @@
+- webpack -
+1.webpack 是什么?
+  webpack 是现代JS应用程序的 模块化管理 和 打包工具.
+
+2.webpack 的工作方式?
+  把你的项目当做一个整体,通过一个给定的主文件(main.js),
+  webpack将从这个主文件开始找到你的项目所需的所有依赖,最后打包成一个或多个 浏览器可识别的 文件
+
+3. 安装 webpack
+  (1) 初始化一个 npm 的配置文件 -package.json 文件
+      npm init -y
+  (2) webpack 版本已经升级到 4.25.1
+      cnpm i webpack webpack-cli --save-dev
+
+4.webpack 初体验
+  1. 新建文件 src / index.js |common.js
+  2. 在common.js 中创建两个元素并输出,在index.js中引入
+  3. webpack 配置文件(webpack.config.js)
+    在根目录下新建一个配置文件,配置文件中写入项目相关的配置
+
+5.编译日志
+  (1) Hash : 当前打包生成的唯一Ｈash值
+  (2) Version : webpack的版本号
+  (3) Time : 打包的事件
+  (4) Assets : 打包生成的文件,包括执行过程
+
+5.webpack 的核心概念
+  四个核心的概念: entry output loader plugin
+    (1) entry:单个入口 多个入口
+      入口起点,告诉webpack从哪里开始,并根据依赖关系,确定需要打包的内容
+    (2)output:
+      告诉 webpack 在哪里生成我们打包后的文件
+      filename: 文件名
+      path: 路径
+
+6.webpack中的插件 plugins
+  插件是用来扩展webpack功能的,它会在整个构建过程中,执行不同的任务
+  1. 生成html模板插件 : html-webpack-plugin
+      功能:可以把我们打包好的JS,CSS文件自动插入到生成的html中
+      安装: cnpm i --save-dev html-webpack-plugin
+
+  2.清除打包的文件 dist 目录
+    安装: cnpm i --save-dev clean-webpack-plugin
+
+7. loaders(加载器)
+  webpack中可以使用loaders来处理除了JS之外的任何静态资源.
+  处理不同的文件类型就需要使用不同的loader,
+  比如: 处理.vue文件 用 vue-loader
+        处理.css文件 使用css-loader
+  这些loader都是需要单独安装
+  在webpack的配置文件中配置loader:
+    module:{
+      rules: [//进行不同loader的配置]
+    }
+    设置配置规则:
+      (1) test : 一个匹配所处理文件的正则表达式(必须)
+      (2) use : 使用某个loader (必须)
+      (3) include/exclude : 手动设置包含某个文件或不包含(可选)
+      (4) options : 提供额外的一些设置选项(可选)
+
+    1.webpack 处理 css
+      (1) 在src下,新建 src / css / main.css | base.css文件
+      (2) webpack处理css有两个基本loader
+          css-loader : 可以让你使用类似于 url('...') 方法去引入图片之类的功能
+          style-loader : 把生成的样式用style标签内联到HTML中
+          安装:
+          cnpm i --save-dev css-loader style-loader
+      (3)最后还是要去配置webpack
+
+    2.CSS Module(CSS 模块化)
+      CSS 模块化就是把JS的模块化思想带入其中.它可以让所有类名只作用于当前模块.这样就可以不用担心不同模块具有相同类名的问题
+      分别在 main.css 和base.css 文件中写入样式
+
+    3. Less/Sass 的配置文件 
+        webpack 处理预处理语言需要对应的loader
+        less-loader sass-loader , 都要配合css-loader和style-loader来使用
+        新建一个 01.less 文件
+        cnpm i less less-loader --save-dev
+
+    4. 独立打包CSS文件
+        我们把CSS打包到JS中,不利于代码调试,我们还是需要将CSS单独打包到CSS文件
+        安装插件 mini-css-extract-plugin(webpack4.0使用)
+        ExtractTextWebpackPlugin(3.0使用)
+
+    5.PostCSS in webpack
+      PostCSS 是一款用插件转换CSS的工具,它提供了很多很好用的插件.
+      例如:autoprefixer,css-next,css Module,css-nano...
+        (1) autoprefixer : 自动根据当前浏览器支持的特性来添加前缀
+            -webkit-transition:all .6;
+        (2) css-next : 可以让我们使用未来的CSS语法
+        (3) css-nano : 帮我们压缩 CSS
+      安装:
+        cnpm install --save-dev postcss-loader autoprefixer
+
+    6.文件处理 (图片 | web字体 | 第三方JS库)
+      CSS引入图片 - file-loader | url-loader
+      (1) file-loader : 解决图片路径引用问题,webpack最终会将各个模板打包成一个文件,
+                      因此样式中的url路径是相对HTML,不是相对CSS文件的
+              安装:cnpm install file-loader --save-dev
+            
+      (2) url-loader : url-loader可以将图片进行base64格式的编码,生成 dataUrl 格式
+      安装:cnpm install url-loader --save-dev
+
+      (3) 图片压缩: img-loader
+        有的时候我们需要对图片你进行压缩,减少图片的体积
+        安装 : cnpm i --save-dev img-loader imagemin imagemin-pngquant
+
+        {// 图片压缩
+          loader:'img-loader',
+          options:{
+            plugins:[
+              // require('imagemin-mozjpeg')(),
+              require('imagemin-pngquant')({
+                // 质量
+                quality: 60,
+                // 进步
+                progressive:true
+              })
+            ]
+          }
+        }
+
+      (4) 合并雪碧图 postcss-sprites
+          把多个小图标合并成一张图标,减少http请求数,优化的一种常见手段(HTTP层面)
+          cnpm i postcss-sprites --save-dev
+          import cost
+          要结合postcss
+
+    7.搭建开发环境
+      1.我们的web项目是运行在 web 服务器上的,我们要通过搭建一个本地web服务器来运行我们的项目,
+      以达到类似线上的效果,方便我们更好的调试代码
+      2.webpack 官方提供了一个本地开发服务器
+        (webpack-dev-sever),它是基于node.js构建的
+        cnpm i webpack-dev-server --save-dev
+      
+      3.dev-server 的功能
+        (1) live Reloading : 触发浏览器的自动刷新(基本功能)
+        (2) 路径的重定向 : 切换地址路径为线上地址
+        (3) 浏览器中可以显示编译错误
+        (4) 模块热更新 (Module Hot Reloading)
+            在不刷新页面的情况下,更新视图,调试更方便,更快
+        (5) 接口代理(proxy) : 代理远程的接口请求,webpack集成了http-proxy-middleware
+      4.配置 dev-server

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border:1px solid red;
+			width:100px;
+			height:100px;
+			background:red;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="button" value="点我" onclick='close1();'>
+	<hr>
+	<!-- <input type="text"> -->
+	<script>
+	// 做一件事情：把大象关进冰箱里
+	function close1(animal){
+		document.write('第一步：打开冰箱门<br>');
+		document.write("第二步：把"+animal+"关进去<br>");
+		document.write('第三步：关上冰箱门<br>');
+	}
+
+	//调用函数，才会执行
+	// close1('大象');
+	// document.write('<hr color=red>');
+	// close1('泰迪');
+	// document.write('<hr color=red>');
+	// close1('哈士奇');
+	// // 把泰迪关进去
+	// document.write('<hr color=red>');
+
+	//输出学生的个人信息
+	//我的名字是：apple;
+	//我来自：江苏省南京市;
+	//我的爱好是：吃喝玩乐;
+	//我最大的理想是：周游世界
+	
+	var name = prompt('我的名字是：') ;
+	var city =  prompt('我来自：');
+	var like = prompt('我的爱好是：') ;
+	var dream = prompt('我最大的理想是：') ;
+
+	
+	function mas(name,city,like,dream){
+		document.write('<font color=red>我的名字是：'+name+'</font><br>')
+		document.write('<font color=green>我来自：'+city+'</font><br>')
+		document.write('<font color=yellow>我的爱好是：'+like+'</font><br>')
+		document.write('<font color=blue>我最大的理想是：'+dream+'</font><br>')
+	}
+	mas(name,city,like,dream);
+	
+	
+	</script>
+	
+</body>
+</html>

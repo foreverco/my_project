@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//需求：存储一个学生信息
+		// apple 女 学习 18 打羽毛球
+		var girl = [];
+		console.log(girl);
+		//存值
+		girl[0] = 'apple';
+		girl[1] = '女';
+		girl[2] = '学习';
+		girl[3] = 18;
+		girl[20] = '打羽毛球';
+		console.log(girl);
+
+
+		//需求2：存储商品信息
+		//商品名：iphone 单价：2500 数目：10
+		var iphone = new Array();
+		iphone['name'] = 'iphone';
+		iphone['price'] = 2500;
+		iphone['num'] = 10;
+		iphone[8] = 11;
+		document.write(iphone);
+		console.log(iphone);
+
+		//取值
+		console.log(iphone['price']);//2500
+
+		//下标是数字----索引数组
+		//下标是字符串---关联数组
+		
+		//获取数组的长度 == 最大数值下标+1
+		document.write(girl.length);//21
+		document.write(iphone.length);
+	</script>
+</body>
+</html>

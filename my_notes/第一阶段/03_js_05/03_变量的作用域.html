@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//变量的作用域
+		//全局变量：在函数体内外都可以访问
+		var hero = '安琪拉';
+		var age = 18;
+		var sex = '人妖';
+		function fun1(){
+			var hero = '李白';//局部变量
+			var age = 30;
+			document.write(age);
+		}
+
+
+		function fun2(){
+			//局部变量：只作用于当前函数体
+			var hero2 = '貂蝉';
+			document.write(hero2);
+			document.write(sex);
+		}
+
+		console.log(hero);//安琪拉
+		fun1();
+		console.log(hero);//安琪拉
+		// console.log(hero2);	//hero2 is not defined
+		fun2();
+
+	</script>
+</body>
+</html>

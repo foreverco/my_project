@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.tb1{
+			width:500px;
+			height:300px;
+			border:3px solid blue;
+			font-size:20px;
+			text-align:center;
+			margin:0 auto;
+
+		}
+		tr,td{
+			border:1px solid blue;
+		}
+
+	</style>
+</head>
+<body>
+	<script>
+	
+
+	//需求2：创建一个5行3列的表格，大小500*300
+		document.write('<table cellspacing=0 class="tb1">');
+		for(i = 1;i<=6;i++){
+			if(i%2 ==0){
+			document.write('<tr style="background:orange">');
+			for(j = 1;j<=4;j++){
+				document.write('<td>'+i+'-'+j+'</td>');
+			}
+			document.write('</tr>');}else{
+				document.write('<tr>');
+			for(j = 1;j<=4;j++){
+				document.write('<td>'+i+'-'+j+'</td>');
+			}
+			document.write('</tr>');
+			}
+		}
+		document.write('</table>');
+
+
+		/*for(var i = 0;i<=3;i++){
+		for(var j = 1;j<=4;j++){
+			//打印i是？j是？
+			document.write(i+':'+j+'<hr>');
+		}
+	}*/
+	</script>
+</body>
+</html>

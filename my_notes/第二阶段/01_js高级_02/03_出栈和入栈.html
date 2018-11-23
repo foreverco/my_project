@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //出栈和入栈
+         //原理：1)从一头进入，到另一头出来
+               //2)先入先出
+        //乘坐公交车：前门进 后门下
+        //总共六位乘客排队
+        //1）从前门进入
+        for(var i=1,arr=[];i<=6;i++){
+            arr.unshift('乘客'+i);
+        }
+        console.log(arr);
+
+        //2)从后门出
+        for(var j=arr.length-1;j>=0;j--){//循环的次数依次减小
+            console.log(arr.pop()+'下车');
+            console.log(j,arr)
+        }
+        console.log(arr);
+
+    
+    
+    
+    </script>
+</body>
+</html>

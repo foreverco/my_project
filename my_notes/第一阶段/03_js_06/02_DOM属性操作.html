@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.t1{
+			border:1px solid red;
+		}
+		.t2{
+			border:2px dashed green;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<h1 align='left' id='title' class='t1'>
+		今天风好大，我好害怕，<br>
+		万一别人都被刮走了，就我刮不走，那多尴尬！
+	</h1>
+	<script>
+		//1)获取属性 DOM对象.属性名
+			var h1_obj = document.getElementById('title');
+			console.log(h1_obj.align);//left
+			console.log(h1_obj.id);//title
+			console.log(h1_obj.className);//t1
+
+		//2)修改属性值 DOM对象.属性名 = 值;
+		h1_obj.align = 'center';
+		h1_obj.className = 't2';
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //arguments是函数的内置对象
+      function fun1(){
+         console.log(arguments);
+      }   
+      fun1();//第一次调用
+
+      fun1(20,30,45,'aa');
+   console.log('------------------------------------------------------------------------------------')
+      function fun2(num1,num2){
+         //num1,num2 是形参
+           console.log(arguments); //"apple", "banana", 30, 50, 70 是实参
+           console.log(arguments.length); //5 实参的个数
+           console.log(arguments.callee); //函数本身
+           console.log(arguments.callee.length); //2 形参的个数
+
+           //获取下标为1的实参
+           //类数组对象，不能使用数组原生的API
+           console.log(arguments[1]);//banana
+         //   console.log(arguments.indexOf('apple'));
+      }
+      fun2('apple','banana',30,50,70);
+      //"apple", "banana", 30, 50, 70 是实参
+
+      var str = 'asdaspdasd';
+      console.log(str.indexOf());//-1
+      console.log(str.indexOf('p',2,5,'apple'));//5
+
+      //arguments对象：可以做一些参数处理
+
+      function fun2(num1,num2){//num1,num2是形参
+         if(arguments.length != arguments.callee.length){
+            console.log('2b，数量不对！！');
+         }else{
+         console.log(num1+num2);
+         }
+      }
+      fun2(10,20);//10,20是实际参数
+      fun2(10,20,30);//10,20,30是实际参数
+
+
+      //需求：用函数：求任意个数数值的和
+      function fun3(){
+         var num = 0;
+        for(key in arguments){
+           num += arguments[key];
+        }
+        return num;
+      }
+      console.log(fun3(2,2,3,4));
+      console.log(fun3(22,20,35,48));
+      
+   </script>
+</body>
+</html>

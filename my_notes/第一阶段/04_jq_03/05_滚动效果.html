@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.window{
+			width:400px;
+			border:4px solid red;
+			margin:100px;
+			height:40px;
+			overflow:hidden; /* 多余的隐藏起来*/
+		}
+		.list{
+			line-height:40px;
+			border:1px solid blue;
+			list-style:inside;
+			text-indent:20px;
+		}
+		.list li{
+			border-bottom:1px dashed #888;
+		}
+
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//移动整个队伍：第一个人跳完绳之后移动到队伍的末端
+			function moveUp(){
+				$('.list').animate({'margin-top':'-40px'}, 
+				2000,function(){
+					//把第一个人放到队友后面
+					$('.list li:first').insertAfter($('.list li:last'));
+					//把队伍位置归为0
+					$('.list').css('margin-top','0');
+				})
+			}
+
+			setInterval(function(){
+				moveUp();
+			});
+		})
+
+	</script>
+</head>
+<body>
+	<div class='window'>
+		<ul class='list'>
+			<li>枯藤老树昏鸦</li>
+			<li>小桥流水人家</li>
+			<li>古道西风瘦马</li>
+			<li>夕阳西下</li>
+			<li>断肠人在天涯</li>
+		</ul>
+
+	</div>
+</body>
+</html>

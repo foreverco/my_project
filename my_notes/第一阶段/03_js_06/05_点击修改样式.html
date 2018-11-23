@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='box'></div>
+	<input type="button" value='红色' onclick = "colors('red')";>
+		<input type="button" value='绿色' onclick = "colors('green')";>
+	<input type="button" value='蓝色' onclick = "colors('blue')";>
+	<input type="button" value='橘色' onclick = "colors('orange ')";>
+	
+	<script>
+	//需求1：给div加一个宽高400*400 黑色边框
+	
+	var box_obj = document.getElementById('box');
+	console.log(box_obj);
+	box_obj.style.width = '400px';
+	box_obj.style.height = '400px';
+	box_obj.style.border = '1px solid black';
+
+	//点击按钮切换div对应的背景色
+	function colors(color){
+		box_obj.style.background = color;
+	}
+	
+
+
+
+	</script>
+	
+</body>
+</html>

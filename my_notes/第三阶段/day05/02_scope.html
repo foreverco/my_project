@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+   <title>Document</title>
+   <style>
+      .box1{
+         border:5px solid red;
+         height:100px;
+      }
+      .box2{
+         border:5px solid blue;
+         height:100px;
+      }
+      h1{
+         border:5px solid yellow;
+         height:100px;
+      }
+   
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app' ng-init='global="全局"'>
+   <h1>控制器外面：
+      global:{{global}}
+      <div>控制器外面调用sex:{{sex}}</div>
+
+
+   </h1>
+   <h3>控制器1</h3>
+   <div class='box1' ng-controller='ctrl1' ng-init='age=23'>
+      <div>name:{{name}}</div>
+      <div>age:{{age}}</div>
+      <div>global:{{global}}</div>
+      <div>控制器1调用sex:{{sex}}</div>
+   </div>
+
+   <h3>控制器2</h3>
+   <div class='box2' ng-controller='ctrl2' ng-init='age=45'>
+      <div>name:{{name}}</div>
+      <div>age:{{age}}</div>
+      <div>global:{{global}}</div>
+      <div>控制器2调用sex:{{sex}}</div>
+      <div><button ng-click='change()'>点击改变性别</button></div>
+   </div>
+
+</body>
+<script>
+   var app = angular.module('app', []);
+   app.controller('ctrl1',['$scope','$rootScope',function($scope,$rootScope){
+      $scope.name='张三';
+      $rootScope.sex = '女';
+   }]);
+   app.controller('ctrl2',['$scope','$rootScope',function($scope,$rootScope){
+      $scope.name='Jim';
+      // $scope.sex ='男';
+      $scope.change= function(){
+         console.log($rootScope.sex);
+         if($rootScope.sex == '女'){
+            $rootScope.sex ='人妖';
+         }else if($rootScope.sex == '人妖'){
+            $rootScope.sex ='女';
+         }
+      }
+   }]);
+</script>
+
+</html>

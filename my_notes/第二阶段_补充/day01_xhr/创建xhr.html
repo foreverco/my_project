@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /* Ajax 的原生写法 */
+    /* 1. 创建XHR */
+    var xhr = new XMLHttpRequest();
+    /** 
+     * 2. 建立连接 
+     * 如果请求方式是get,data是直接写在url?后面,不是send里面
+     * xhr.open('get','xxx.php?name=xiaoming&age=20');
+     * xhr.send(null); 
+     **/
+    xhr.open('post','xxx.php',/*true*/);
+    /**
+     *  3. 发送请求
+     *  data 数据格式 => 键值对 key1=v1 & key2=v2
+     *  在发送数据之前,要设置请求头
+     **/
+    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhr.send('name=xiaoming&age=20');
+    /* 4. 监听请求 */
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState===4 && xhr.status===200){
+        // 5. 处理响应数据
+        console.log(xhr.responseText);
+      }
+    }
+
+
+  </script>
+
+
+
+
+
+
+</body>
+</html>

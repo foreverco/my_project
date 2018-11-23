@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//定义一个数组
+		var arr1 = ['apple','banana','pear'];
+		//获取数组长度
+		console.log(arr1.length);
+		//查找元素
+		console.log(arr1.indexOf('apple'));//0
+		console.log(arr1.indexOf('banana'));//1
+		console.log(arr1.lastIndexOf('pear'));//2
+
+		//查找一个orange
+		console.log(arr1.indexOf('orange'));//-1
+		//结果：
+		//找到了返回的是对应的数值下标
+		//找不到返回的是-1
+		
+		//定义一个关联数组
+		var arr2 = [];
+		arr2['code'] = '001';
+		arr2['uname'] = '陈赫';
+		arr2['usex'] = '男';
+		arr2['like'] = '学习';
+		console.log(arr2.indexOf('男'));//-1
+
+
+		//用户名验证：请输入你的用户名
+		//用户名不能使用已经注册过的用户
+		
+		// var uname = ['aa','bb','cc','dd'];
+		// var uname1 = prompt('请输入用户名');
+		// if(unamen.indexOf(); != -1){
+		// 	document.write('用户名已存在');
+		// }
+
+		//定义已经注册过的用户名
+		var uname = ['aa','bb','cc','dd'];
+		//获取用户输入的名字
+		var uname1 = prompt('请输入用户名');
+
+		//if else
+		if(uname.indexOf(uname1) == -1){
+			document.write('用户名可以使用');
+		}else{
+			document.write('用户名已存在');
+		}
+
+		//switch分支
+		switch(uname.indexOf(uname1)){
+			case -1:document.write('用户名可以使用');
+			break;
+			default:document.write('用户名已存在');
+		}
+
+	</script>
+</body>
+</html>

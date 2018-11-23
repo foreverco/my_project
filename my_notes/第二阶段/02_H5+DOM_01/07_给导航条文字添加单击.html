@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{margin:0;padding:0;}
+      .navBox{
+         border:1px solid red;
+         width:600px;
+         line-height:40px;
+   
+
+      }
+      .navBox:after{
+         content:'';
+         display:inline-block;
+         clear:both;
+      }
+      .navBox a{
+         float:left;
+         width:100px;
+         background:red;
+         text-decoration:none;
+         color:white;
+         padding:0 10px;
+         text-align:center;
+      }
+      .navBox a.current{
+         background:purple;
+      }
+   
+   </style>
+</head>
+<body>
+   <p class='navBox'>
+      <a href="#">绝地求生</a>
+      <a href="#">dota</a>
+      <a href="#">英雄联盟</a>
+      <a href="#">王者荣耀</a>
+      <a href="#">穿越火线</a>
+   </p>
+   <script>
+      var p_obj = document.querySelector('.navBox');
+      var a_obj = document.querySelectorAll('a');
+     p_obj.onclick = function(event){
+        console.log('目标元素',event.target);
+        console.log('this',this);
+        var cur = event.target;
+         for(var i = 0;i<a_obj.length;i++){
+            a_obj[i].classList.remove('current');
+         }
+        cur.classList.add('current');
+     }
+   
+   
+   </script>
+</body>
+</html>

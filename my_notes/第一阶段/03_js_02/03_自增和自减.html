@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var num1 = 4;
+		num1 ++;		// 自己+1
+		console.log(num1);//5
+		num1 +2;		//num1没有计算
+		console.log(num1);
+
+		var num2 = 10;
+		num2 -- ;
+		console.log(num2);//9
+		-- num2;
+		console.log(num2);//8
+
+		//自增自减并且赋值给其他变量
+		var a = 15;
+		var b = 25;
+		var c = 30;
+
+		a ++;//a=16 b=25 c=30;
+		-- b;//a=16 b=24 c=30;
+		console.log(a,b,c);//16 24 30
+
+		//++在后，先赋值后运算
+		c = a++;
+		console.log(a,b,c);//17 24 16
+		//--在前，先运算后赋值
+		c = --b;
+		console.log(a,b,c);//17 23 23
+		
+
+	</script>
+</body>
+</html>

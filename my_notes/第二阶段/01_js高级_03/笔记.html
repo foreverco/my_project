@@ -1,0 +1,86 @@
+第一章 JS高级
+第三节
+一、Function对象
+    1.什么是函数？
+        函数就是一个代码块，一次定义，多次使用
+        函数可以看成方法
+    2：函数的创建
+        1)声明定义(可以在任意地方调用)
+            <script>
+                function fun([arg1,arg2..]){
+                    //函数执行的结构体
+                }
+                fun();//调用
+            </script>
+        2)直接量函数(先声明再调用)
+            <script>
+                var fun1 = function([arg1,arg2...]){
+                     //函数执行的结构体
+                }
+                fun1();//调用
+            </script>
+        3)new关键字创建(不推荐使用)
+            <script>
+                var function_name = new Function(arg1, arg2, ..., argN, function_body);
+                var fun2 = new Function('arg1','arg2'...'argn','console.log("aa")');
+                fun2();//调用
+            </script>
+    3.变量作用域
+        1)全局变量:使用var声明在函数体外部
+        2)局部变量:使用var声明在函数体内部
+        3)变量的提升:不使用var定义在函数体内部
+    4.重载
+        1.什么是重载？
+        A:相同函数名,但是参数列表不一样
+        B:根据参数值的个数,选择的使用哪一个函数
+        C:JS是没有重载,一般不允许写同名函数
+        D:可以用arguments对象模拟重载效果
+    5.arguments对象
+        1)就是函数的一个内置对象：参数对象
+        - 类数组对象：
+          和数组格式相似，但是不能使用数组原生API
+        2)arguments                 包含实参的相关信息
+        3)arguments.length          实参的个数
+        4)arguments.callee          函数本身
+        5)arguments.callee.length   形参的个数
+        - 应用：
+            1)可以通过arguments[下标]访问实参
+    6.匿名函数
+        1)直接赋给对象
+        2)可以自调
+        3)可以作为返回值直接返回
+    7.回调函数 callback
+        1)什么是回调函数？
+            主函数体内嵌套'子函数',由'主函数'决定什么时候来调用'子函数';
+            '子函数'==>称之为回调函数
+        2)为什么要使用回调函数？
+            1.Js是单线程工作模式，必须一件一件执行
+            2.前边的事情耗时比较长，后面的事情继续等待
+        3)为了解决这个缺点，我们用回调函数实现多线程模式
+        4)可以同一时间执行多件事情
+        5)jq提供的回调函数就是常见的多线程实现
+        6)计时器就是回调函数处理的一种机制
+
+二、Error对象/异常处理
+    1)什么是错误？
+        程序执行过程出错了，那么Error接收错误信息
+    2)错误对象(6种)
+        A)ReferenceError:引用错误
+        B)SyntaxError:语法错误
+        C)RangeError:范围错误
+        D)TypeError:类型错误
+        E)evalError:eval()方法错误
+        F)URLError:路径错误
+    3)异常处理(语句 try..catch)
+        可以预知的错误，使用if...else...;
+        无法预知的错误，才用异常处理
+        1)兼容性问题，和文件版本问题
+    4)如何自定义错误类型和信息
+        <script>
+            var rs = new Error('错误信息');
+                rs.name = 'TypeError';
+            throw rs;
+        </script>
+
+三、闭包(预习)
+预习：面向对象

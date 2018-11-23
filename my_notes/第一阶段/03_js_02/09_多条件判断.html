@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//输入你的年龄
+	//0-10 输出：一个正在玩耍
+	//11-20输出：正在学习
+	//21-30输出：正在走向人生巅峰
+	//31-45输出：正在安享晚年
+	//46以上输出：你已修炼成仙！
+	// var age = prompt('请输入您的年龄');
+	// if(age>= 0 && age <=10){
+	// 	document.write('正在玩耍')
+	// }else if(age>10 && age <=20){
+	// 	document.write('正在学习')
+	// }else if(age>20 && age <=30){
+	// 	document.write('正在走向人生巅峰')
+	// }else if(age>30 && age <=45){
+	// 	document.write('正在安享晚年')
+	// }else{
+	// 	document.write('你已修炼成仙！')
+	// }
+
+	//验证用户名
+	//1）用户名不能为空
+	//2）用户名不能超过10个字符
+	//3）用户名不能包含特殊符号@，#，$,%
+	//否则，用户名可以使用
+	var uname = prompt('请输入用户名');
+	if(uname == ''){
+		document.write('用户名不能为空');
+	}else if(uname.length > 10){
+		document.write('用户名不能超过10个字符');
+	}else if(uname.indexOf('@') != -1 ||
+			uname.indexOf('#') != -1 ||
+			uname.indexOf('$') != -1  ||
+			uname.indexOf('%') != -1 
+		){
+		document.write('用户名不能包含特殊符号');
+	}else{
+		document.write('用户名可以使用!');
+	}
+
+	var num = 10;
+	num += 20;
+	
+	</script>
+</body>
+</html>

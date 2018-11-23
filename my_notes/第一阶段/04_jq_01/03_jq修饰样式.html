@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			//DOM加载完成后..
+			//修饰h3 红色边框
+			$('#title').css('border','1px solid red');
+			$('#title').css('width','300px');
+			$('#title').css({
+				lineHeight:'30px',
+				textAlign:'center',
+				'font-size':'35px',
+				'padding':'0',
+				'margin':'20px'
+			})
+			//用户名输入框加蓝色边框 浅黄色背景色
+			$('input[name=uname]').css({
+				'border':'1px solid blue',
+				'background':'yellow',
+				'line-height':'30px',
+				'width':'200px'
+			})
+			//密码输入框 加橘色边框 粉色背景色
+			$('input[name=upass]').css({
+				'border':'1px solid orange',
+				'background':'yellow',
+				'line-height':'30px',
+				'width':'200px',
+				'margin-top':'20px'
+			})
+			//无序列表加黑色边框，行高40，偶数行加浅蓝色背景
+			//每一行加虚线下边框，最后一行除外
+			$('.list').css({
+				'border':'1px solid black',
+				'width':'300px',
+				'padding':'20px',
+				'background':'#DBFCFB',
+				'list-style':'none'
+			})
+			$('.list li').css({
+				'border-bottom':'1px dashed gray',
+			})
+			$('.list li:last').css({
+				'border-bottom':'0'
+			})
+			$('.list li:odd').css({
+				'background':'yellow'
+			})
+			$('form').css({
+				'border':'1px solid #BE9EF7',
+				'width':'300px',
+				'padding':'0 30px 30px 20px',
+				'background':'#D1FAFA'
+			})
+			//获取样式的值 css('样式名')
+			console.log($('#title').css('border'));
+
+			//移除样式
+			$('#title').css('border','');
+			
+		})
+
+	</script>
+</head>
+<body>
+	<form action="">
+		<h3 id='title'>用户注册</h3>
+		用户名：<input type="text" name='uname'><br>
+		密&nbsp;码：<input type="password" name='upass'><br>
+	</form>
+	<ul class='list'>
+		<li><a href="#">熊猫</a></li>
+		<li><a href="#">虎牙</a></li>
+		<li><a href="#">斗鱼</a></li>
+		<li><a href="#">全民</a></li>
+		<li><a href="#">战旗</a></li>
+		
+	</ul>
+</body>
+</html>

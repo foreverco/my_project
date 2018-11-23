@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      .box1{
+         border:5px solid red;
+         width:700px;
+         line-height:80px;
+         height:80px;
+         font-size:50px
+      }
+      .box2{
+         margin-top:50px;
+      }
+   
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+<body ng-app='app'>
+   <!-- 
+      练习：
+      1)点击按钮，自动生成5个随机数字
+         每秒显示一个随机数字，总共显示5次，产生5个随机数
+         5个随机数产生后，显示抽奖完成，中奖号码有：
+         23,45,34,78,12
+         (飞哥要求：可以将重复的去掉，但是总中奖号码不变)
+         $interval
+      2)点击按钮，下方显示请求获取到的数据
+         点击按钮时，获取按钮旁的输入框的值，根据不同的值，返回不同的数据：
+         如果输入的是M，则显示男同学的信息，如果是F，则显示女同学的信息，如果是其他，显示参数错误
+    -->
+    <div ng-controller='ctrl'>
+      <div>
+          <button ng-click='btn()'>生成</button>
+      </div>
+      <!-- <div class='box1'>{{num}}</div> -->
+      <div class='box1'>
+         {{arr1}}
+         {{msg}}
+      </div>
+      <div class='box2'>
+            <input type="text" ng-model='val'>
+            <button ng-click='add()'>获取</button><br>
+            {{newVal}}
+      </div>
+      
+    </div>
+</body>
+<script>
+   var app = angular.module('app',[]);
+   app.controller('ctrl',['$scope','$interval',function($scope,$interval){
+      //1)
+      var arr =[];
+      $scope.btn = function(){
+         var id = $interval(function(){
+               $scope.num = parseInt(Math.random()*100);
+                  arr.push($scope.num);
+                  $scope.arr1 = arr;
+                  // console.log($scope.arr1);
+                  if($scope.arr1.length == 5){
+                     $interval.cancel(id);
+                     $scope.msg = '抽奖完成！'
+                  }
+         },1000)
+      }
+
+      //2)
+      $scope.add = function(){
+         if($scope.val == 'M'){
+            $scope.newVal = '男';
+         }else if($scope.val == 'F'){
+            $scope.newVal = '女';
+         }else{
+            $scope.newVal = '参数错误'
+         }
+      }
+   }])
+
+
+</script>
+</html>

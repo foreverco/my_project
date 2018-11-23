@@ -1,0 +1,113 @@
+第二章 JS
+第三节
+一、流程控制语句:switch分支
+	1）语法格式
+	<script>
+		switch(值/条件表达式){
+			case 值1:结果1;break;
+			case 值2:结果2;break;
+			case 值3:结果3;break;
+			...
+			default:其他结果;
+		}
+		//总结下：类似于 if..else if...
+		//只能做值相等的比较，使用有局限性
+		//case后break;不可以省略
+		
+
+		/*需求：
+			输入今天是星期几？
+			星期一：图书馆学习
+			星期二：公园烧烤
+			星期三：水上乐园游玩
+			星期四：KTV唱歌
+			星期五：组团打游戏
+			星期六：南京一日游
+			星期日：睡觉
+		*/
+		var day = prompt('请输入今天是星期几');
+		switch(day){
+			case '星期一':document.write('图书馆学习');break;
+			case '星期二':document.write('公园烧烤');break;
+			case '星期三':document.write('水上乐园游玩');break;
+			case '星期四':document.write('KTV唱歌');break;
+			case '星期五':document.write('组团打游戏');break;
+			case '星期六':document.write('南京一日游');break;
+			case '星期日':document.write('睡觉');break;
+			default:document.write('输入错误！');
+		}	
+	</script>
+
+二、数据类型：数组Array
+	需求：存储班级学生的姓名 32个变量
+	1）语法格式:声明数组
+		<script>
+			//写法1：
+			var arrName = [值1,值2,值3...];
+			//写法2：
+			var arrName = new Array(值1,值2,值3...);
+			//写法3：先声明，后赋值
+			var arrName = [];
+			var arrName1 = new Array();
+			
+		</script>
+	2)取数组里的值：根据下标取值
+		<script>
+			//数组名[下标]
+			//下标：系统自动分配一个数值下标，从0开始排序
+			var arr = ['a','b','c','d']
+					//  0	1   2   3
+				console.log(arr[0]);//a
+				console.log(arr[1]);//b
+		</script>
+	3)给制定下标赋值:数组名[下标] = 值；
+		<script>
+			arr[2] = 'hello';
+			//arr数组就是：['a','b','hello','d']
+		</script>
+	4)获取数组长度 length属性
+		<script>
+		数组名.length;
+		//注意：只识别数值下标
+		//数组.length == 最大数值下标 + 1
+		</script>
+	5）查找数组的某一个值
+		<script>
+			数组名.indexOf('查找的值'[, 起始位置]);
+			数组名.lastIndexOf('查找的值'[, 起始位置]);
+			//结果：
+			//找到了返回的是对应的数值下标
+			//找不到返回的是-1
+		</script>
+
+
+三、数据类型：空 Null
+	只有一个值：null
+	<script>
+		var h2_obj = document.getElementById('title2');
+		console.log(h2_obj);//null
+		//没有该对象的时候是null
+	</script>
+
+四、数据类型：未定义 Undefined
+	只有一个值：undefined
+	<script>
+		//只声明变量,没有值
+		var num;
+		console.log(num);//undefined
+	</script>
+
+五、流程控制语句：for循环
+	1）语法结构
+	<script>
+		for (变量初始值;限定条件;变化步长) {
+			循环执行的结构体;
+		};
+
+	</script>
+
+预习：
+	for循环嵌套
+	多维数组
+	while循环
+	do...while循环

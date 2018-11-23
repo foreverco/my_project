@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id='title'>江苏教育官网</h1>
+
+	<script>
+		//null
+		var m = null;
+		//undefined
+		var n = undefined;
+
+		//检验数据类型
+		console.log(typeof m);//object(对象)
+		console.log(typeof n);//undefined
+
+		//只声明变量,没有值
+		var num;
+		console.log(num);//undefined
+
+		//获取Dom元素（html标签元素）
+		//通过id获取标签元素
+		var h1_obj = document.getElementById('title');
+		console.log(h1_obj);
+		var h2_obj = document.getElementById('title2');
+		console.log(h2_obj);//null
+		
+	
+
+	</script>
+</body>
+</html>

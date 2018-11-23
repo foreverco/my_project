@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <p style='height:40px;border:1px solid red' onclick='fun1();fun2();'></p>
+   <script>
+      var p_obj = document.querySelector('p');
+      console.log(p_obj);
+      function fun1(){
+         p_obj.innerHTML = '文字内容';
+      }
+
+      function fun2(){
+         p_obj.style.background ='pink';
+      }
+   
+   
+   
+   </script>
+</body>
+</html>

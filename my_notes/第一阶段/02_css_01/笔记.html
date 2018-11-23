@@ -1,0 +1,162 @@
+补充：
+一、form表单
+	<form action="动态页面地址" 
+		name="表单名"
+		method="get/post"
+		enctype="mulipart/form-data"></form>
+		*属性：
+		1）method="get/post"	提交方式
+			get提交		地址栏?传参
+			post提交 	隐藏传参
+			结论：
+			1.get没有post安全
+			2.两种提交方式都可以在后台页面接受数据
+			3.get传递效率比post高
+		2）enctype="mulipart/form-data"
+			当文件上传时，必须要加
+			1.文件的所有信息
+				文件大小，文件格式，文件名，文件临时存储地址...
+
+二、页面内框架(后台管理页面常用)
+	当前网页内嵌套其他页面
+	<iframe src="" frameborder="0" scrolling="yes"></iframe>	
+	*属性
+		frameborder="0/1"			边框：无/有
+		scrolling="auto/yes/no"		滚动条：自动/有/无
+		*iframe不允许嵌套其他标记/内容
+
+三、自定义列表
+	江苏省
+		南京市
+		无锡市
+	安徽省
+		合肥市
+		黄山市
+
+
+	<!-- dl>(dt+dd*2)*2 -->
+	<dl>
+		<dt>江苏省</dt>
+		<dd>南京市</dd>
+		<dd>无锡市</dd>
+		<dt>安徽省</dt>
+		<dd>合肥市</dd>
+		<dd>黄山市</dd>
+	</dl>
+
+四、ctrl+/ 快捷键
+	添加/取消注释
+	<!--被注释的html内容-->
+
+第二章 CSS
+一、CSS是什么?
+	1.定义：Cascading style Sheets
+		中文：层叠样式表
+	2.修图软件 美图秀秀
+		html：标签元素
+		css：美化标签元素
+二、CSS怎么写？
+	1.语法格式
+		样式名:样式值;样式名:样式值;...
+	2.写的位置
+		A:行内样式(应用于当前标签)
+			<p style="样式名:样式值;样式名:样式值;..."></p>
+		B:内联样式(应用于当前html网页)
+			<style>
+				选择器{
+					样式名:样式值;样式名:样式值;...
+				}
+			</style>
+			<p class="p1"></p>
+		C：外联样式(应用于所有html网页)
+			新建一个css文件：comm.css
+			选择器{样式名:样式值;样式名:样式值;...}
+
+			index.html引入外部css文件
+			<link rel="stylesheet" href="comm.css">
+三、CSS样式：宽高(px必须要加)
+	1)宽	width:100px/50%;
+	1)高	height:200px/40%;
+	百分比的参照对象是父级
+四、CSS样式：边框
+	1）border-width:2px;			边框大小
+	2）border-color:red/#FF0000;	边框颜色
+	3）border-style:solid/dashed;	边框类型
+	<h2 style="border-style:solid;">solid实线</h2>
+	<h2 style="border-style:dashed;">dashed短虚线</h2>
+	<h2 style="border-style:dotted;">点虚线</h2>
+	<h2 style="border-style:double;">双边框</h2>
+	<h2 style="border-style:groove;">groove凹槽</h2>
+	<h2 style="border-style:ridge;">ridge凸槽</h2>
+	<h2 style="border-style:none;">none</h2>
+	合并方式:(值没有先后顺序)
+	border-top/bottom/left/right:1px solid red;
+	border:1px solid red;
+
+	制作一个三角形效果
+	transparent:透明色
+	p{
+			border-top:solid 200px red;
+			border-bottom:solid 200px transparent;
+			border-left:solid 200px transparent;
+			border-right:solid 200px transparent;
+			width:0px;height:0px;
+	}
+五、CSS样式：轮廓 outline
+	1）outline:1px solid red;
+	2)偏移：正值外偏移；复制内偏移
+		outline-offset:3px/-3px;
+	border和outline的区别：
+	border占位置
+	outline不占位置
+	举例：去掉输入框的外发光蓝色
+	input{
+			border:1px solid red;
+			outline:none;
+			outline:0;
+	=}
+六、CSS样式：背景
+	1.背景颜色
+	background-color:red/#ff0000/rgb(r,g,b);
+	2.背景图
+	background-image:url(img/a.gif);
+			<!-- 背景图大小 -->
+			background-size:200px;
+			<!-- 背景图平铺方式 -->
+			background-repeat:repeat
+							/repeat-x
+							/repeat-y
+							/no-repeat;
+			<!-- 背景图位置:水平位置 垂直位置; 
+				水平位置：left/center/right;
+				垂直位置：top/center/bottom;
+				位置设置：数值 
+						正值：往右下移动
+						负值：往左上移动
+				-->
+			background-position:right bottom;
+			background-position:-60px -60px;
+	3.合并方式
+	1):background:skyblue; 
+	2):background:url(img/bg_01.gif) no-repeat center bottom pink;
+	3)background:url(img/bg_01.gif) no-repeat center bottom;
+	4.固定背景图
+	body{
+			background:url(img/1.jpg) no-repeat center;
+			/* 固定位置:不会随着内容被拖走*/
+			background-attachment:fixed;
+		}
+七、CSS样式：文字修饰
+	1)font-size:16px;				字体大小：16px;
+	2)color:red;					字体颜色
+	3)font-family:'宋体/微软雅黑';	字体类型
+	text-align:left/center/right;
+	水平对齐：左/中/右
+
+八、课下练习
+	歌曲
+	word文档
+九、预习
+	1）列表修饰
+	2）选择器
+	3）文本修饰

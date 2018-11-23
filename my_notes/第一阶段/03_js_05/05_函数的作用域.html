@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//函数作用域
+		function fun1(){
+			document.write('这是fun1的函数体');
+			function fun2(){
+				document.write('这是fun2的函数体');
+			}
+			fun2();
+		}
+
+		function fun3(){
+			console.log('fun3()函数');
+			fun1();//调用全局函数
+		}
+
+		fun1();
+		//fun2();//fun2 is not defined
+		fun3();
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+<body>
+  <div id='app'></div>
+  <script>
+    /* 子组件向父组件残敌数据 
+      1.局部注册一个子组件 childComp
+      2.子组件中通过点击按钮向父组件派发一个自定义事件 $emit()
+      3.在父组件中绑定这个自定义事件 v-on
+    */
+    //注册一个局部组件
+
+    new Vue({
+      el:'#app',
+      data:{
+        msg:'Hello Vue!',
+        temp:''
+      },
+      methods:{
+        setTemp(data){
+          //在这里可以接受子组件传递过来的数据
+          console.log(data);
+          this.temp = data;
+        }
+      },
+      template:`
+        <div>
+          <p>这是父组件模板内容{{msg}}</p>
+          <p>{{temp}}</p>
+          <child-com @getTemp='setTemp'></child-com>
+        </div>
+      `,
+      components:{
+        'child-com':{
+          template:`
+            <button @click='add'>子组件按钮</button>
+          `,
+          data(){
+            return {
+              childMsg:'子组件的data'
+            }
+          },
+          methods:{
+            add(){
+              //调用@emit方法,箱父组件派发事件
+              this.$emit('getTemp',this.childMsg);
+            }
+          }
+        }
+      }
+    })
+    </script>
+</body>
+</html>

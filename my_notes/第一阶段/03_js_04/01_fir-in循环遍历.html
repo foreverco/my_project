@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//声明一个索引数组
+		var arr1 =['aa','bb','cc','dd']; 
+				//  0	 1	  2	    3
+	//声明一个关联数组
+		var student = [];
+			student['ucode'] = '0011';
+			student['uname'] = 'baby';
+			student['usex'] = '女';
+			student['uage'] = '18';
+				var num=0;
+			for(k in student){
+				document.write(student[k]);
+				document.write('<hr>');
+				num+=1;
+			}
+			document.write(num);//循环的次数，也就是元素的个数
+			document.write('<hr>');
+
+	//for循环遍历取数组元素 0-arr1.length-1
+	for(i=0;i<=arr1.length-1;i++){
+		//i:数值下标  值：arr1[i]
+		document.write('下标'+i+'-->值'+arr1[i]+'<hr>');
+	}		
+	//for..in循环遍历
+	//key是一个隐藏的指针，会自动往下移，直到取不到元素
+	for(key in arr1){
+		//key:存储的是数组元素对应的下标
+		//根据下标   arr1[key]：值
+		console.log(key);
+		document.write('下标'+i+'-->值'+arr1[key]+'<hr>');
+	}
+
+	//遍历student
+		document.write('<ul>');
+			for(key in student){
+					document.write('<li>'+key+':'+student[key]+'</li>');
+			}
+		document.write('</ul>');
+
+		//在程序里把数组形成
+		// 键：值（键值对）
+		// 0：aa
+		// 1：bb
+		// 2：cc
+
+	//思考题：获取关联数组的长度？
+
+
+	</script>
+</body>
+</html>

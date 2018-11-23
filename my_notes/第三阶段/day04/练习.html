@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      .aa{
+         background:red;
+      }
+   </style>
+   <script src='../libs/angular.min.js'></script>
+</head>
+<body ng-app = 'app'>
+   <!-- 
+      练习：
+         1.设置3个多选框，默认选中第二个
+         2.使用ng-src引用一张图片，路径通过模型层获取
+         3.使用ng-switch实现效果
+            选择html，下方列表显示：HTML初级，HTML中级，HTML高级
+            选择css，下方列表显示：css初级，css中级，css高级
+            选择js，下方列表显示：js初级，js中级，js高级
+         4.在模型层绑定数据：num，str,obj,arr,color 
+            显示num,str,obj,arr的值
+            遍历arr的所有元素，同时给第二个元素添加背景色
+            隐藏第三个元素 
+   -->
+   <ul ng-controller = 'ctrl'>
+      <li>
+         <input type="checkBox" name='likes' value='eat' ng-checked = 'likes == "eat"'>吃
+         <input type="checkBox" name='likes' value='sing' ng-checked = 'likes == "sings"'>唱歌
+         <input type="checkBox" name='likes' value='game' ng-checked = 'likes == "game"'>玩游戏
+      </li>
+      <li>
+         <img ng-src="{{imgs}}" width=400>
+      </li>
+      <li>
+         <select ng-model = 'val'>
+            <option value="1">html</option>
+            <option value="2">css</option>
+            <option value="3">js</option>
+         </select>
+      </li>
+      <li>
+         <ul ng-switch = 'val'>
+            <li ng-switch-when = '1'>HTML初级，HTML中级，HTML高级</li>
+            <li ng-switch-when ='2'>css初级，css中级，css高级</li>
+            <li ng-switch-when = '3'>js初级，js中级，js高级</li>
+         </ul>
+      </li>
+      <li>
+         {{num}},{{str}},{{obj}},{{arr}}
+      </li>
+      <li ng-repeat = 'name in arr track by $index' ng-hide = '$index == 2' >
+         <div ng-class ='{aa:$index==color}'>{{name}}</div>
+      </li>
+   </ul>
+</body>
+<script>
+   var app = angular.module('app',[]);
+   app.controller('ctrl',['$scope',function($scope){
+      $scope.likes = 'sings';
+      $scope.imgs = "../day03/1.jpg";
+      $scope.num = 6;
+      $scope.str = '詹姆斯';
+      $scope.obj = {age:30,like:'ball'};
+      $scope.arr = ['C罗','梅西','内马尔','本泽马','贝尔'];
+      $scope.color = 1;
+   }])
+
+</script>
+</html>

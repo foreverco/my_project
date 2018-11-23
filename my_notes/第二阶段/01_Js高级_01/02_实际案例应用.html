@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      //需求1：把指定的字符串转换成无序列表格式
+      //格式如下：
+      //名字：鲁班七号 职业：射手 血量：60%
+      var str = '鲁班七号@射手@60%;后裔@射手@70%;貂蝉@法师@68%;孙悟空@刺客@70%';
+      // document.write(str.split(';'));
+        console.log(str.split(';')[0].replace(/@/,'职业:').replace(/@/,'血量:'));
+
+        document.write('<ul>');
+        for(key in str.split(';')){
+          document.write('<li>名字:'+str.split(';')[key].replace(/@/,' 职业:').replace(/@/,' 血量:').split('@')+'</li>');
+        }
+        document.write('</ul>');
+
+        //需求2：写一个函数：
+        //把文章中'指定词'用'指定颜色'标记出来
+        var str = '人生就是这样，有欢笑也有泪水，一部分人主要负责欢笑，另部分人主要负责泪水。回首人生，我发现我失去了很多，但是我并不难过，因为我知道将来我会失去更多。失败并不可怕，可怕的是你还相信这句话！';
+          //使用方法：replace(old,new)
+        function colors(article,keyWords,color){
+            //在正则里使用变量
+            var reg = new RegExp(keyWords,'g');
+           return article.replace(reg,'<mark style="background:'+color+'">'+keyWords+'</mark>')
+        }
+        document.write(colors(str,'人生','red')+'<hr>');
+
+        //需求3：写一个函数：字符串去重
+        var str = '我叫腾飞，我长得贼鸡儿帅，我喜欢吃鸡，我喜欢LOL';
+                  //0125346897
+        document.write(str+'<br>');
+        console.log(str.split(''));
+        var news = '';
+          function qq(){
+            for(key in str.split('')){
+                // news += str.split('')[key];
+              if(news.search(str.split('')[key]) == -1){
+                news += str.split('')[key];
+              }
+            }
+            return news;
+          }
+          document.write(qq()+'<hr>');
+    
+    </script>
+    <script>
+      //练习案例1：去除字符串前边的空格
+      //练习案例2：去除字符串后边的空格
+      //练习案例3：去除字符串两端的空格
+      //练习案例4：去除字符串所有的空格
+      //练习案例5：将英文句子中的单词首字母变大写
+      //可能会用到数组的方法：
+      //arr.join(分隔符)：指定分隔符把数组元素拼成字符串
+      var str = 'life was likes a box of chocolates you never know what you are gonna get!';
+      var up ='';
+      document.write(str.replace(/ /g,'')+'<br>');
+      console.log(str.split(' '));
+        for(key in str.split(' ')){
+           up = str.split(' ')[key][0].toUpperCase();
+          //  console.log(up);
+          // console.log(str.split(' ')[key].slice(1));
+          document.write(str.split(' ')[key][0].toUpperCase().concat(str.split(' ')[key].slice(1),' '));
+        }
+        // document.write(str);
+     
+      
+    
+    
+    </script>
+</body>
+</html>

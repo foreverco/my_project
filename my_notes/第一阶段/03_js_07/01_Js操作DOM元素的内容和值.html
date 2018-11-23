@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.title{
+			border:1px solid blue;
+			width:400px;
+			line-height:40px;
+		}
+		.list{
+			border:1px solid blue;
+			width:400px;
+			line-height:30px;
+		}
+
+	</style>
+</head>
+<body>
+	<h3 class='title'><font>古诗词</font></h3>
+	<ul class='list'>
+		<li>百日依山尽</li>
+		<li>黄河入海流</li>
+		<li>欲穷千里目</li>
+		<li>更上一层楼</li>
+	</ul>
+
+	<form action="index.php">
+		用户名&nbsp;：<input type="text" name='uName' value='请输入用户名'><br>
+		昵&nbsp;称&nbsp;：<input type="text" name='uNick' value=''><br>
+		自我介绍：<textarea name="intro">请输入自我介绍…</textarea>
+
+	</form>
+
+	<script>
+		//1.获取到h3和ul
+		var h3_obj = document.querySelector('.title');
+		var ul_obj = document.querySelector('.list');
+		//2.控制台输出
+		console.log(h3_obj);
+		console.log(ul_obj);
+		//3.获取标签元素的内容
+		//elem.innerHTML	可识别HTML标签
+		//elem.innerText	只识别文本信息
+		console.log(h3_obj.innerHTML);
+		console.log(ul_obj.innerText);
+
+		//4.修改DOM的内容
+		h3_obj.innerHTML = '<font color=red>这是古诗文的标题区域</font>';
+		ul_obj.innerText = '<li>中国</li><li>美国</li>'
+	</script>
+
+	<script>
+		//对表单控件值得操作
+		//1.获取表单控件对象
+		var userName =document.querySelector('input[name=uName]');
+		console.log(userName);
+		var userNick =document.querySelector('input[name=uNick]');
+		console.log(userNick);
+		var userIntro = document.querySelector('textarea[name=intro]');
+		console.log(userIntro);
+
+		//2.获取控件值
+		console.log(userName.value);
+		console.log(userNick.value);
+		console.log(userIntro.value);
+
+		//3.修改控件值
+		userName.value = 'apple';
+		userNick.value = 'banana';
+		userIntro.value = 'very good';
+
+	</script>
+</body>
+</html>

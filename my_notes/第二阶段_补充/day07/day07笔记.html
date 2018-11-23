@@ -1,0 +1,75 @@
+响应式页面(bootStrap)
+1.什么是响应式页面
+  可以在各种不同的分辨率和尺寸的设备下浏览的页面,并且都有不错的浏览体验.
+
+2.如何编写响应式页面
+  1.设置 meta 标签 viewport(视口)
+  2.避免绝对单位(px),使用相对单位(%,em,auto,rem);
+  3.使用流式布局(float)
+  4.图片大小自适应:img{max-width:100%}
+  5.媒体查询 - CSS Media Query 技术
+
+3.Media Query
+  根据浏览器屏幕的特征,有选择的执行CSS样式
+  Media:媒体 - 指浏览页面的设备(pad phone PC TV 屏幕阅读器...)
+  Query: 查询 - 查询当前浏览设备的特性:宽度,高度,分辨率,类型.根据这些特性,执行不同的CSS.
+  用法:
+    @media screen and (max-width:990px) and (min-width:679px){
+    
+    }
+    @media screen and (min-width:991px) {
+
+    }
+
+Twitter - bootStrap
+  1.它是一个CSS样式框架,适用于制作移动设备优先的响应式页面
+  2.使用 bootStrap 提供的模板 -bootcss.com
+  3.Boot 主要涉及的内容
+    1.HTML:为 H5 已有标签扩展了一些自定义属性.
+            data-属性名 data-toggle='值1'
+    2.CSS :CSS Reset +上千个class
+    3.JS : 基于jQuery提供了十几个插件
+
+-全局CSS样式 - 栅格系统 Grid Layout
+  1.所有的行和列必须放在容器中( .container | .container-fluid )
+  2.容器分为多行row,一行分为12列col.
+  3.网页内容只能放在col中
+  4.col(列)中可以再嵌套row(行)
+  5.col 分为四类: col-lg/col-md/col-sm/col-xs
+  6.col-md-n : n的范围是 1~12之间 col-md-12
+  7.可以为一个列指定不同屏幕下的不同宽度
+    屏幕宽度(分辨率)               container 容器宽度
+    >1200px(超大PC)         lg      1170px; 
+    1200px~992px(普通PC)    md      970px; 
+    992px~768px(PAD)        sm      750px; 
+    < 768px(PHONE)          xs      auto; 
+
+    container-fluid                 auto;
+
+  8.隐藏col(列)
+    hidden-lg   -在超大PC下隐藏
+    hidden-md   -在普通PC下隐藏
+    hidden-sm    -在pad下隐藏
+    hidden-xs    -在phone下隐藏
+
+  9.偏移 col 
+    col-md-offset-n  n:当前偏移的列数 (1~12之间)
+
+- Bootlint 工具
+  它是一个检测工具,Boot官方提供的,用于检测Boot页面的HTML,CSS错误(默认情况下检测不出来)
+
+- 组件 - 图标字体
+  1.图标字体: boot提供了glyphicons图标字体供我们使用.250+;
+  2.图标字体本质不是图片,是字体(web字体),凡是可以用字体的地方,都可以用图标
+  3.glyphicons图标字体只能用于空元素 - 不包含子元素或者内容的元素
+    <span class='glyphicon'></span>
+
+-下拉菜单
+    html结构:
+      相对定位的父元素
+      <div>
+        <a class='btn' data-toggle='dropdown'>触发按钮</a>
+        <ul> 绝对定位
+          <li>...</li>
+        </ul>
+      </div>

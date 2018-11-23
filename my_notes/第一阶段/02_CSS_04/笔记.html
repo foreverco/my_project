@@ -1,0 +1,157 @@
+第二章 CSS
+第四节
+一、div布局实现自适应高度
+	适用情况：
+		当子元素浮动造成父元素没有高度
+	1)方法1：给父盒子加overflow:hidden;
+	<style>
+		.father{
+			overflow:hidden;
+		}
+		.left{
+			float:left;
+		}
+		.right{
+			float:right;
+		}
+	</style>
+	<div class="father">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<div class="bottom">bottom</div>
+	2)方法2：给父盒子末端添加一个子盒子
+	<style>
+		.clearBox{
+			/* 清除左右浮动影响，
+			自动在新的下一行显示 */
+			clear:both;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="left">left</div>
+			<div class="right">right</div>
+			<!-- 末端添加 -->
+			<div class="clearBox"></div>
+		</div>
+		<div class="bottom">bottom</div>
+	3)2)方法2：给父盒子末端添加一个子盒子，通过伪选择器 :after
+	<style>
+		.father:after{
+			content:"";
+			/* 本身是行元素，转成块元素 */
+			display:block;
+			clear:both;
+		}
+	</style>
+	4)布局正常，但是父盒子没有高度
+		<style>
+		.father{
+			border:5px solid red;
+			width:800px;
+		}
+		.father .left{
+			background:skyblue;
+			height:600px;
+			width:200px;
+			float:left;
+
+		}
+		.father .right{
+			background:pink;
+			height:400px;
+			width:400px;
+			float:right;
+		}
+		.bottom{
+			background:purple;
+			width:900px;
+			height:200px;
+		}
+		.clearBox{
+			clear:both;
+		}
+	</style>
+	<div class="father">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<div class="bottom clearBox">bottom</div>
+	弊端：father边框和背景是无效的
+	5)方法5：给父盒子设定固定值
+	<style>
+		.father{
+			/* 要>=最高的子元素 */
+			height:100px;
+		}
+	</style>
+
+二、CSS样式：溢出处理
+	overflow:visible;	默认显示
+	overflow:auto;		自动添加滚动条
+	overflow:hidden;	隐藏
+	案例：溢出文本以省略号显示
+		<style>
+			.list{
+			width:220px;
+			border:1px solid blue;
+			padding-left:0;
+			list-style:disc inside;
+			}
+			.list li{
+			border-bottom:1px dashed red;
+			height:40px;
+			line-height:40px;
+			/* 不能断行，不许换行 */
+			white-space:nowrap;
+			/* 溢出内容：隐藏； */
+			overflow:hidden;
+			/* 溢出文本：以省略号显示； */
+			text-overflow:ellipsis;
+			}
+		</style>
+		<ul class="list">
+			<li>人生得意须尽欢</li>
+			<li>君不见，黄河之水天上来，奔流到海不复回。</li>
+			<li>天生我材必有用</li>
+			<li>hello world hello world hello world hello world hello world hello world hello world </li>
+			<li>千金散尽还复来</li>
+			<li>君不见，高堂明镜悲白发，朝如青丝暮成雪。</li>
+		</ul>
+
+三、显示和隐藏
+	1)display显示类型
+		dispalay:none;	(不占位置)
+		display:block;
+			inline-block;
+			inline;
+	2)visibility:显示状态
+		visibility:visible;	显示
+		visibility:hidden;	隐藏(占位置)
+	3)opacity:透明度(0-1)
+		opacity:0;				(占位置)
+		opacity:1;
+
+四、CSS精灵技术（CSS Sprite）
+	原理：利用一张大图，结合background-position实现不同位置显示
+	优点：节省项目空间，优化网站加载速度
+
+	使用情况：
+	一组大小位置相同的图片，
+	处理成一张组合图
+五、左右自适应居中
+	<style>
+		div{
+			width:800px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	</style>
+六、目录结构
+	移动云目录
+		--css目录
+			--index.css
+		--images目录
+		--index.html

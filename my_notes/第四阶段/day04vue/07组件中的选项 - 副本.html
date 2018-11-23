@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+</head>
+
+<body>
+  <div id='app'>
+  </div>
+  <template id='temp01'>
+    <div>
+      <my-comp></my-comp>
+    </div>
+  </template>
+
+  <script>
+    //全局注册一个组件 myComp
+    /*组件中的data
+      1.data 必须以函数形式出现
+      2.必须得有return,返回一个对象 
+      3.因为组件会被服用,data是对象的话,一旦修改data中的值,就会影响组件之间的复用
+     */
+    Vue.component('myComp', {
+      data() {
+        return {
+          msg: '哈哈哈',
+        }
+      },
+      template: `<p style='color:red'>{{msg}}</p>`
+    })
+    //实例
+    new Vue({
+      el: '#app',
+      data: {},
+      template:'#temp01'
+    })
+  </script>
+</body>
+
+</html>

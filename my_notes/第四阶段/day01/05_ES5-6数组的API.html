@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 数组的API */
+    //forEach() 和for循环功能一样,不能使用return强制退出
+    //forEach(function(val,index,arr){})
+    const arr = [1, 2, 3];
+    arr.forEach(function (val, index, arr) {
+      arr[index] = val + 1;
+      console.log(val); //1 2 3 
+      console.log(index); //0 1 2 
+      console.log(arr); //[1,2,3]
+    })
+    console.log(arr);
+
+    //2.map()
+    //map方法一般是用来处理修改数组中的某个值,返回一个新的数组
+    //let newArr = arr.map(function(val,index,arr){})
+    let newArr = arr.map(function (val, index, arr) {
+      return val + 1;
+    })
+    console.log(newArr);//3,4,5
+
+    //3.find()
+    //这个方法是用来查找数组中的目标元素,找到返回该元素
+    let value = newArr.find(function (val, index, arr) {
+      return val > 3;
+    })
+    console.log(value); //值循环了一次
+
+    //4.findIndex()
+    //用来查找目标元素的下标,找到就返回下标,找不到,返回-1
+    let index = newArr.findIndex(function(val,index,arr){
+      return val === 5;
+    })
+    console.log(index);
+
+    //5.includes(value,index) index可以为负数
+    //余字符串的方法类似,查看数组是否包含某个元素,该方法可以代替indexOf()
+    let bool = arr.includes(2,-3);
+    console.log(bool);
+  </script>
+
+</body>
+
+</html>

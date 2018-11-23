@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐榜</title>
+	<script src='../../libs/angular.min.js'></script>
+	<script src='../../libs/angular-route.js'></script>
+</head>
+<body ng-app='music'>
+	<div class="music">
+	<!-- 导航栏 -->
+		<nav>
+			<a href="#/1">流行</a>
+			<a href="#/2">华语</a>
+			<a href="#/3">欧美</a>
+			<a href="#/4">日韩</a>
+		</nav>
+	</div>
+	<div ng-view></div>
+</body>
+	<script>
+		var music = angular.module('music',['ngRoute']);
+		music.config(['$routeProvider',function($routeProvider){
+			$routeProvider.when('/',{
+				redirectTo:'/1'
+			}).when('/:id',{
+				
+			}).
+		}])
+	
+	</script>
+</html>

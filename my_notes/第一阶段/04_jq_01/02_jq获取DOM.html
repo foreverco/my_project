@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入jquery文件 -->
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<!-- 写自己的语句 -->
+	<script>
+		$(function(){
+			//加载DOM完成
+			//h3标题-->通过原生js语句
+			var h3_obj = document.getElementById('title');
+			console.log(h3_obj);
+			//h3标题-->通过jq语句
+			$('#title')
+			console.log($('#title'));
+
+			//input
+			console.log($('input[name=uname]'));
+			//ul标签
+			console.log($('.list'));
+			//ul里的li
+			console.log($('.list li'));
+			//ul里的第一个li
+			/* 
+				console.log($('.list li:first-child'));
+				console.log($('.list li:last-child'));
+				console.log($('.list li:nth-child(2)'));
+			*/
+			console.log($('.list li:first'));
+			console.log($('.list li:last'));
+			console.log($('.list li:eq(2)'));
+			console.log($('.list li').eq(3));
+
+			//筛选奇数下标行
+			console.log($('.list li:odd'));
+			//筛选偶数下标行
+			console.log($('.list li:even'));
+		})
+
+	</script>
+</head>
+<body>
+	<form action="">
+		<h3 id='title'>用户注册</h3>
+		用户名：<input type="text" name='uname'><br>
+		密&nbsp;码：<input type="password" name='upass'><br>
+	</form>
+	<ul class='list'>
+		<li><a href="#">熊猫</a></li>
+		<li><a href="#">虎牙</a></li>
+		<li><a href="#">斗鱼</a></li>
+		<li><a href="#">全民</a></li>
+		<li><a href="#">战旗</a></li>
+		
+	</ul>
+</body>
+</html>

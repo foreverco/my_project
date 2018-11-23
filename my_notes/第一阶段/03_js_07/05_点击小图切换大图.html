@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.imgBox{
+			border:1px solid red;
+			width:500px;
+		}
+		/* 大图 */
+		.imgBox>img{
+			width:500px;
+			height:500px;
+		}
+		/* 小图 */
+		.smallBox img{
+			width:96px;
+			height:96px;
+		}
+		/* 当前小图加边框 */
+		.smallBox img.current{
+			outline:1px solid blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='imgBox'>
+		<img src="img/timg.jpg" class='bigImg'>
+	
+		<div class='smallBox'>
+			<img src="img/timg.jpg" class='current'>
+			<img src="img/afanda.jpg">
+			<img src="img/jay.jpg">
+			<img src="img/eason.jpg">
+		</div>
+	</div>
+	<script>
+	var big_obj = document.querySelector('.bigImg');
+	// console.log(big_obj);
+	var img_obj = document.querySelectorAll('.smallBox img');
+	// console.log(img_obj);
+	for(key in img_obj){
+		img_obj[key].onclick = function(e){
+			//什么是e？鼠标事件对象
+			console.log(e);
+			console.log(e['srcElement']);
+			console.log(e['target']);
+			console.log(e.target);
+			console.log(this);
+			//把被点击的小图的src赋值给大图的src
+			big_obj.src = this.src;
+			//给当前小图添加current，其他的去除
+			for(var i = 0;i<img_obj.length;i++){
+				img_obj[i].classList.remove('current');
+			}
+			this.classList.add('current');
+		}
+	}
+
+
+	</script>
+	
+</body>
+</html>

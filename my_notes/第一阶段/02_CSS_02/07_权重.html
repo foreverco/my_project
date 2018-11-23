@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* class选择器 */
+		.box1{
+			border:5px dashed green;
+		}
+		/* 标签选择器 */
+		div{
+			width:500px;
+			height:200px;
+			border:3px solid red;
+			border:4px solid blue;
+		}
+		/* 通配选择器<标签选择器<class类选择器<属性选择器<id选择器<行内 */
+
+		/* 通配选择器 */
+		*{
+			border:1px solid red;
+		}
+		/* id选择器 */
+		#box2{
+			border:3px solid orange;
+		}
+		/* 属性选择器 */
+		div[name=uname]{
+			border:3px solid pink;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box1" id="box2" name="uname" style="border:3px solid purple;">hello world!</div>
+</body>
+</html>

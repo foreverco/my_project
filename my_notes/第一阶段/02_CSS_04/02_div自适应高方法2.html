@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.father{
+			border:5px solid red;
+			width:800px;
+		}
+		.father .left{
+			background:skyblue;
+			height:600px;
+			width:200px;
+			float:left;
+
+		}
+		.father .right{
+			background:pink;
+			height:400px;
+			width:400px;
+			float:right;
+		}
+		.bottom{
+			background:purple;
+			width:900px;
+			height:200px;
+		}
+		.clearBox{
+			/* 清除左右浮动影响，
+			自动在新的下一行显示 */
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="left">left</div>
+		<div class="right">right</div>
+		<div class="clearBox"></div>
+		
+	</div>
+	<div class="bottom">bottom</div>
+</body>
+</html>

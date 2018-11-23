@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./vue/vue.js'></script>
+	<style>
+		.demo {
+			float: left;
+		}
+
+		.demo1 {
+			float: right;
+		}
+
+		.clearFix:before,
+		.clearFix:after {
+			display: table;
+			content: '';
+		}
+
+		.clearFix:after {
+			clear: both;
+		}
+
+		.search {
+			width: 320px;
+			max-height: 300px;
+			border-radius: 20px;
+			background: #ddd;
+		}
+
+		.s_box {
+			width: 300px;
+			margin: 10px auto;
+		}
+
+		.keyWord {
+			width: 230px;
+			height: 30px;
+			border-radius: 15px;
+			outline: none;
+			border: none;
+			font-size: 18px;
+			padding-left: 10px;
+		}
+
+		.go {
+			border-radius: 15px;
+			outline: none;
+			width: 50px;
+			height: 30px;
+			border: none;
+			background: #e4393c;
+		}
+
+		.listNode {
+			list-style: none;
+			padding: 0;
+			margin: 10px auto;
+			width: 300px;
+		}
+	
+
+		.listNode li {
+			padding-left: 20px;
+			color: #555;
+			line-height: 30px;
+			cursor: pointer;
+		}
+
+		.listNode li:hover {
+			background: #BDBCBC;
+		}
+
+		.style_a {
+			background: #999;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 案例HTML代码 -->
+	<div id='app'>
+		<my-comp></my-comp>
+	</div>
+</body>
+<script>
+	/*案例
+		1.全局注册一个SearchBox组件(整个demo)
+		2.ul>li部分拆分出来做一个单独的组件 liList
+		3.SearchBox中data:listArr
+			listArr:['HTML5+CSS3','javaScript','Angular','React','Vue','jQuery','node']
+		业务逻辑:
+			1.把父组件的listArr传递给子组件使用
+			2.点击输入框,切换子组件的显示和隐藏
+			3.点击每一个li,在输入框显示对应点击的内容
+
+	  */
+	Vue.component('my-comp', {
+		data() {
+			return {
+				listArr: ['HTML5+CSS3', 'javaScript', 'Angular', 'React', 'Vue', 'jQuery', 'node'],
+				isShow:true,
+				msg:''
+			}
+		},
+		template: `
+		<div class='demo'>
+				<div class='search clearFix'>
+					<div class='clearFix s_box'>
+						<input type="text" class='keyWord' @click='toggle' v-model='msg'>
+						<input type="button" value='GO' class='go'>
+					</div>
+					<ul class='listNode' v-show='isShow'>
+							<comp-son :newArr='listArr' @change='getItem'></comp-son>
+					</ul>
+			</div>
+		</div>
+			`,
+			methods:{
+				toggle(){
+					this.isShow = !this.isShow;
+					this.msg = ''
+				},
+				getItem(item){
+					console.log(item);
+					this.msg = item;
+					this.isShow = !this.isShow;
+				}
+			},
+			components:{
+				'comp-son':{
+					template:`
+					<ul>
+						<li v-for='item in newArr'  @click='add(item)'>{{ item }}</li>
+					</ul>
+					`,
+					props:{
+						'newArr':{
+							default:[],
+							type:Array
+						}
+					},
+					methods:{
+						add(item){
+							this.$emit('change',item);
+						}
+					},
+					
+				}
+			}
+	})
+
+	new Vue({
+		el: '#app',
+		data:{
+			
+		}
+	})
+</script>
+
+</html>

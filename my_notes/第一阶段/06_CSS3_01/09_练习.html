@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			border:1px solid #DFDFDD;
+			width:400px;
+			height:400px;
+			position:relative;
+			margin:20px;
+			float:left;
+			text-align: center;
+
+		}
+		.box1 img:last-child{
+			border-radius:150px;
+			position:absolute;
+			top:50%;
+			margin-top:-75px;
+			left:50%;
+			margin-left:-75px;
+			box-shadow:0 0 0 10px white;
+		}
+		.box1:hover::after{
+			content:'mmp';
+			font-size:200px;
+			box-shadow:5px 5px 10px 0 #999,-3px -3px 10px 0 #999,5px 0 100px 0 pink inset;
+			z-index: 11;
+		
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class='box1'>
+		<img src="css3/04-边框/案例/images/item_1.jpg" width="400" height='200px' alt="">
+		<img src="css3/04-边框/案例/images/logo_1.jpg" height="150" width="150" alt="">
+	</div>
+	<div class='box1'>
+		<img src="css3/04-边框/案例/images/item_2.jpg" width="400" height='200px' alt="">
+		<img src="css3/04-边框/案例/images/logo_2.jpg" height="150" width="150" alt="">
+	</div>
+	<div class='box1'>
+		<img src="css3/04-边框/案例/images/item_3.jpg" width="400" height='200px' alt="">
+		<img src="css3/04-边框/案例/images/logo_3.jpg" height="150" width="150" alt="">
+	</div>
+	<div class='box1'>
+		<img src="css3/04-边框/案例/images/item_4.jpg" width="400" height='200px' alt="">
+		<img src="css3/04-边框/案例/images/logo_4.jpg" height="150" width="150" alt="">
+	</div>
+	<div class='box1'>
+		<img src="css3/04-边框/案例/images/item_5.jpg" width="400" height='200px' alt="">
+		<img src="css3/04-边框/案例/images/logo_5.jpg" height="150" width="150" alt="">
+	</div>
+	
+</body>
+</html>

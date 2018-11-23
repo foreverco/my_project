@@ -1,0 +1,121 @@
+第二章 CSS
+第二节
+一、CSS样式：文本修饰
+	1) font-size:16px;					文字大小
+	2) color:red;						文字颜色
+	3) font-family:"宋体";				文字字体
+	4) text-align:left/center/right;	水平对齐
+	5) font-weight:bold/bolder;			文字粗体
+					normal				正常(去除加粗)
+	6) font-style:italic;				文字倾斜
+					normal				正常(去除倾斜)
+	7) 文本描述：下划线
+		text-decoration:underline/none;
+		文本描述：删除线	
+		text-decoration:line-through;
+		文本描述：上划线
+		text-decoration:overline;
+		文本描述：去除下划线 
+		text-decoration:none;
+	8) 首行缩进：
+		text-indent:20px/2em;
+	9) 设置行高：
+		line-height:100px;
+		line-height=height:垂直居中
+	10)字间距：
+		字间距：英文 单词字间距
+		word-spacing:60px;
+		字符间距：包括英文字符和中文字符
+		letter-spacing:10px;
+
+	补充：
+		p,h1-h6不能相互嵌套
+		div标记：可以随意嵌套
+
+二、CSS样式：列表修饰
+	1)列表符号类型
+	list-style-type:circle
+					/square
+					/disc
+					/none
+					/upper-alpha;	A排序
+	2)列表符号位置
+	list-style-position:outside;	外部(默认)
+						inside;		内部
+	参照对象：li
+	3)列表符号：图片
+	list-style-image:url(img/1.jpg)
+	4)合并
+	list-style:circle inside;
+	list-style:url(img/1.jpg) inside;
+
+三、CSS选择器
+	1.作用：匹配标签元素
+	2.基本类型：
+		1)通配选择器(匹配所有标签元素)
+		<style>
+			*{}
+		</style>
+		2)标签选择器
+		<style>
+			标签名{}
+			html{}
+			body{}
+			p{}
+			a{}
+			...
+		</style>
+		3)class类选择器
+		<style>
+			.className1{}
+			.className2{}
+		</style>
+		<p class="className1 className2..."></p>
+		4)id选择器(具有唯一性)
+		<style>
+			#idName{}
+
+		</style>	
+		<p id="idName"></p>
+		5)父子级选择器
+		<style>
+			1)允许隔代查找
+			父选择器 子选择器 子选择器{
+				ul li{}
+				.list1 li{}
+				#tab tr td{}
+				#table td
+			}
+			2)只允许直接子级
+			父选择器>子选择器>子选择器...{}
+				#tab tr td{}
+		</style>
+		6)属性选择器
+		<style>
+			选择器名[属性名=属性值][属性名=属性值]...{}
+			input[name=uname]{
+				border:3px solid red;
+			}
+		</style>
+		3.选择器权重 
+		<!-- /* 通配选择器<标签选择器<class类选择器<属性选择器<id选择器<行内 */ -->
+
+
+		<style>
+			/* 权重：112 */
+			#tab tr .td1 a{
+				border:1px solid red;
+			}
+			/* 权重：031 */
+			.tb2 tr .td1 .a1{
+				border:1px solid blue;
+			}
+			/* 	
+				1)看顺序
+				2)看权重
+					从最高位开始比较
+					最高位一样，再继续比较
+					最高位不一样，选择最大的
+			*/
+	
+		</style>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='./vue/vue.js'></script>
+  <style>
+    .header{
+      color:red;
+      border: 1px solid #666;
+      padding: 10px;
+    }
+    .style_A{
+      background: red;
+      padding:5px;
+    }
+    .style_B{
+      background: blue;
+      padding:50px;
+    }
+  
+  
+  </style>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- v-bind 来绑定属性 -->
+    <h2>绑定img的src</h2>
+    <img :src="imgSrc" alt="..." width=300>
+    <h2>绑定a标签的href属性</h2>
+      <a :href="baidu">百度一下,你就知道</a>
+      <h2>样式的绑定</h2>
+      <div :style='styleObj'>This is a v-bind directive</div>
+      <h2>class的绑定</h2>
+      <div :class='className'>
+        This is className 的绑定
+      </div>
+      <h3> 绑定样式并进行判断 </h3>
+      <div :class='{style_A:is_ok}'>
+          绑定样式并进行判断1
+      </div>
+      <h3> 绑定样式并进行判断2,三目运算 </h3>
+
+      <div :class='is_ok?classA:classB'>
+          绑定样式并进行判断2,三目运算
+      </div>
+
+
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        imgSrc: 'img/afanda.jpg',
+        baidu: 'https://www.baidu.com',
+        className: 'header',
+        is_ok: true,
+        classA: 'style_A',
+        classB: 'style_B',
+        styleObj: {
+          fontSize: '28px',
+          color: 'red',
+          background: '#888'
+        }
+      },
+      methods: {}
+    })
+  </script>
+</body>
+
+</html>

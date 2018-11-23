@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<!-- 练习需求7：
+			1）网站首页：网址
+			2）图片格式：（png/gif/jpeg） -->
+		<form action="index.php">
+			<p>
+				网站地址：<input type="url" placeholder='请输入网址' autofocus required pattern='^(http://www.)[\w]{3,8}(.com)$'>
+			</p>
+			<p>
+				图片格式：<input type="text" required placeholder='请输入图片' pattern='[\w]{2,8}(.jpg|.gif|.png)'>
+			</p>
+			<input type="submit">
+		</form>
+</body>
+</html>

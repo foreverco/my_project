@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //1）对象：属性+方法
+      //应用：对象.属性名；/对象['属性名']
+            //对象.方法名([参数值1,参数值2...]);
+
+      //1)方式1：json对象
+      var person ={
+         name:'apple',
+         age:18,
+         sex:'男',
+         info:function(){
+           return '名字是:'+this.name+'年龄：'+this.age+'性别是：'+this.sex;
+         }
+      }
+
+      //调用对象 person就是一个对象
+      document.write(person.name+'<br>');
+      document.write(person.age+'<br>');
+      document.write(person.sex+'<br>');
+      document.write(person.info()+'<br>');
+
+      //添加属性/方法：
+      person.likes = '篮球';
+      document.write(person.likes+"<br>");
+      person.play = function(game){
+         document.write('今天去玩游戏'+game);
+      }
+      person.play('吃鸡');
+
+      //obj只是一个单个对象:单个实际对象 李晨
+      //obj2也是一个对象：单个实际对象 邓超
+      
+      //2)创建方式2：new Object()
+      var person2 = new Object();
+      console.log(person2);
+      person2.name = 'banana';
+      console.log(person2.name);
+      person2.age = 25;
+      person2.str = '';
+      person2.isNull = function(){
+         if(person2.str.length == 0){
+            return true;
+         }else{
+            return false;
+         }
+      }
+      console.log(person2);
+      console.log(person2.isNull());
+
+
+      //工厂模式：定义一个模板
+      //制造人类
+      //属性：姓名 身份证号 性别
+      //技能：唱歌(歌曲)   玩游戏(游戏名) 自我介绍(属性)
+      function Person(name,code,sex){
+         //添加属性(构造函数通过this添加属性)
+            this.name=name;
+            this.code=code;
+            this.sex=sex;
+
+      } 
+
+      //方法:(占用内存问题)
+         //解决方案：把方法绑定到 Person原型上  
+         //原型名.prototype.方法名=function(){}
+
+            Person.prototype.sing = function(music){
+               console.log('演唱的歌曲是：'+music);
+            }
+            Person.prototype.play = function(game){
+               console.log('游戏是：'+game);
+            }
+            Person.prototype.info = function(){
+               console.log('我的名字是：'+this.name+'我的身份证号是：'+this.code+'我的性别是：'+this.sex)
+            }
+
+        // 通过对象的方式去引用Person函数
+        //new的方式-->构造函数(构造一个对象雏形)
+        //制造第一个人
+        var person1 = new Person('库里','003','男');
+        console.log(person1.code);//003
+         
+         //技能1：唱歌
+         person1.sing('燃烧你的卡路里');
+
+
+         //制造第二个人(实例)
+         var person2 = new Person('詹姆斯','006','男');
+         console.log(person2);
+         //调用属性：
+         console.log(person.name,person.sex);
+         //使用技能：
+         person2.play('吃鸡');
+         person2.info();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function User(name,pass){
+         this.name = name;
+         this.pass = pass;
+      }
+         User.prototype.info =function(){
+            return '用户名是:'+this.name+'密码是:'+this.pass;
+         }
+
+         var user1 = new User('forever',123456);
+         // document.write(user1);
+
+
+      
+
+   
+   
+   
+   </script>
+</body>
+</html>

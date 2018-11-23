@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.nav {
+			border:1px solid red;
+			overflow:hidden;
+			margin-top:50px;
+			width:800px;
+		}
+		.nav li{
+			float:left;
+			padding:10px 30px;
+			list-style:none;
+			/* border:1px solid blue; */
+		}
+		
+		.nav li a{
+			text-decoration:none;
+			font-size:14px;
+			color:black;
+			font-weight:bolder;
+		}
+	.p1{
+		border:1px solid red;
+		width:500px;
+		text-align:center;
+	}
+
+	</style>
+</head>
+<body>
+	<script>
+		//练习1：
+		var proArr = ['安徽省','海南省','浙江省','江西省','湖北省','江苏省','武汉省'];
+
+		document.write('<select>');
+			for(var i = 0;i<=proArr.length-1;i++){
+				if(proArr[i] == '江苏省'){
+					document.write('<option selected>'+proArr[i]+'<option>');
+					continue;
+				}
+				document.write('<option>'+proArr[i]+'<option>');
+			}
+		document.write('</select>');
+
+		document.write('<hr>');
+		document.write('<hr>');
+
+
+		
+		//练习2：
+		var navArr = ['首页','公司新闻','公司动态','招聘信息','友情链接','发展历程'];
+		document.write('<ul class="nav">');
+			for(var j = 0;j <= navArr.length-1;j++){
+				if(j == 0){
+					document.write('<li style="background-color:red;"><a href="#">'+navArr[j]+'</a></li>');
+					continue;
+				}
+				document.write('<li><a href="#">'+navArr[j]+'</a></li>');
+			}
+		document.write('</ul>');
+
+		document.write('<hr>');
+		document.write('<hr>');
+
+		var navArr = ['首页','公司新闻','公司动态','招聘信息','友情链接','发展历程'];
+		document.write('<ul class="nav">');
+			for(key in navArr){
+				if(navArr[key] == '首页'){
+					document.write('<li style="background-color:red;"><a href="#">'+navArr[key]+'</a></li>');
+					continue;
+				}
+				document.write('<li><a href="#">'+navArr[key]+'</a></li>');
+			}
+
+
+		document.write('</ul>');
+
+		document.write('<hr>');
+		document.write('<hr>');
+
+		//课下练习:
+//1)九九乘法口诀表
+for(i = 1;i<=9;i++){
+	for(j = 1;j<=i;j++){
+		document.write(j+'*'+i+'='+i*j);
+		document.write('&nbsp;');
+	}
+	document.write('<br>');
+}
+		document.write('<hr>');
+		document.write('<hr>');
+
+
+//2)拓展:倒金字塔
+	document.write('<p class="p1">');
+	var num = prompt('请输入行数');
+	for(i = 1;i<=num;i++){
+		for(j = 1; j<=(num-i)*2+1;j++){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+	document.write('</p>');
+
+	document.write('<hr>');
+	document.write('<hr>');
+
+	document.write('<p class="p1">');
+	var num = prompt('请输入行数');
+	for(i = num;i>=1;i--){
+		for(j = 2*i-1; j>=1;j--){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+	document.write('</p>');
+
+	document.write('<hr>');
+	document.write('<hr>');
+
+//3)百钱买百鸡:100元钱买100只鸡
+//	公鸡5元一只,母鸡3元一只,小鸡1元三只,
+//	问能买公鸡,小鸡,母鸡各多少只,有几种买法?
+	//数量  公鸡：x   母鸡：y    小鸡：z
+	
+	for(var x = 0,num = 0;x<=20;x++){
+		for(var y = 0;y<=33;y++){
+			for(var z = 0;z<=300;z++){
+				sum=5*x+3*y+z/3
+				if(sum == 100&& x+y+z==100){
+					document.write('公鸡数量是：'+x+'&nbsp;&nbsp;');
+					document.write('母鸡数量是：'+y+'&nbsp;&nbsp;');
+					document.write('小鸡数量是：'+z+'&nbsp;&nbsp;');
+					document.write('<br>');
+					num++;
+				}
+
+			}
+		}
+	}
+
+	document.write(num);
+	
+	
+
+
+	</script>
+</body>
+</html>

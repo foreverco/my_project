@@ -1,0 +1,158 @@
+第四章 Jquery
+第一节
+一、认识和了解Jquery
+	1）什么是Jquery？
+		A:是用js开发的一个简洁，轻量级的框架
+		B:是一个js文件
+	2）作用是什么？
+		提供了一些API方法，更高效，简洁的开发
+		主要对DOM元素的操作
+
+	3）文件版本
+		jquery.js
+		jquery-1.1.6.js
+		jquery-1.1.9.js
+		...
+		jquery-3.2.1.min.js 精简版
+	4）如何使用
+		1）先引入jquery文件
+			<script src='jq/jquery-1.4.js'></script>
+		2）才可以使用jquery里的方法，写jquery语句
+		<script>
+		//在这里写自己的jquery语句
+
+		</script>
+
+二、加载事件 onload事件 和 ready事件
+	1）onload事件:加载所有的页面内容，包括外部链接资源
+		window.onload = function(){
+			//加载完成...
+		}
+	2）ready事件：document.ready事件
+		加载DOM元素
+		<script>
+		jQuery(document).ready(function($){
+
+		});
+		$(document).ready(function(){
+
+		});
+		$(function(){
+
+		});
+
+		</script>
+
+	3)关系区分
+		先ready再onload
+		一个页面只能写一个onload事件
+		可以写多个ready事件
+
+三、jquery获取DOM元素(css选择器):数组集合
+	<script>
+		//1)通配选择器 *
+		$('*')
+		//2)标签选择器
+		$('div')
+		//3)Class类选择器
+		$('.navBox')
+		//4)id选择器
+		$('#box')
+		//5)属性选择器
+		$('input[name=uname]')
+		//...父子级 并集 交集
+	</script>
+	<script>
+		//筛选元素
+		//筛选第一个
+		$('ul li:first')
+		//筛选最后一个
+		$('ul li:last')
+		//筛选第n（下标）个
+		$('ul li:eq(n)')
+		$('ul li').eq(n)
+
+		//筛选奇数下标行 1 3 5
+		$('ul li:odd');
+		//筛选偶数下标行 0 2 4
+		$('ul li:even');
+
+	</script>
+
+四、jquery修饰CSS样式
+	1)行内样式 CSS()方法
+	<script>
+		//1)添加样式
+			//单个样式（2个参数）
+				$(obj).css('样式名', '样式值');
+			//多个样式（1个参数：json数组）
+				$(obj).css({
+					样式名1: '样式值1',
+					样式名2: '样式值2'
+				});
+		//2)获取样式的值 css('样式名')
+			console.log($('#title').css('border'));
+
+		//3)移除样式
+			$('#title').css('border','');
+	</script>
+	2)类名操作
+	<script>
+	//1.添加类
+	$(obj).addClass('class_name');
+	//2.移除类
+	$(obj).removeClass('class_name');
+	$(obj).removeClass();//移除所有类
+	//3.切换类(有无)
+	$(obj).toggleClass('selector')
+
+	</script>
+
+五、jq操作属性attr()方法
+	<script>
+		//1.添加属性
+			//单个属性
+			$(obj).attr('属性名', '属性值');
+			//多个属性
+			$(obj).attr({
+				属性名1: '属性值1',
+				属性名2: '属性值2'
+			});
+		//2.获取属性值
+			$(obj).attr('属性名');
+		//3.移除属性
+			$(obj).attr('属性名','');
+
+	</script>
+
+六、jquery操作内容和值
+	<script>
+	//1)内容操作
+		//A.添加内容
+		$(obj).html(值);
+		$(obj).text(值);
+		//A.获取内容
+		$(obj).html();
+		$(obj).text();
+		//C.清空内容
+		$(obj).html('');
+		$(obj).text('');
+	//2)value值操作
+		//设置value值
+		$('input[name=uname]').val('请输入用户名');
+		//获取value值
+		$('input[name=uname').val();
+		//清空value值
+		$('input[name=uname]').val('');
+
+	</script>
+
+七、课下练习
+	写一个验证码
+	显示一个验证码：显示到页面上
+	1）随机的
+	2）6位字符
+	3）可以有字母，数字
+
+	附加功能（可选）
+	验证功能

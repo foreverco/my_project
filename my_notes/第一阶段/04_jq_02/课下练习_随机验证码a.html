@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+		$(function(){
+			$('.p1').css({
+				'border':'1px solid red',
+				'width':'300px',
+				'height':'50px',
+				'line-height':'50px',
+				'margin':'0 auto 20px',
+				'text-align':'center',
+				'font-size':'30px',
+				'font-weight':'bold',
+				'color':'blue',
+
+			})
+
+			$('.p2').css({
+				// 'border':'1px solid red',
+				'margin':'0 auto',
+				'text-align':'center',
+				'font-size':'30px',
+				'font-weight':'bold',
+				'color':'blue'
+
+			})
+
+			$('.p2 input[name=utxt]').css({
+				'width':'300px',
+				'height':'30px',
+				'line-height':'30px',
+				'font-size':'30px',
+				'font-weight':'bold',
+				'color':'blue'
+			})
+
+			var str = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+			// console.log(str.indexOf('a'));
+			var bb;
+			function aa(){
+				for(i=1;i<=6;i++){
+					var num1 = parseInt(Math.random()*35);
+					var
+				}
+
+				var num1 = parseInt(Math.random()*35);
+				var num2 = parseInt(Math.random()*35);
+				var num3 = parseInt(Math.random()*35);
+				var num4 = parseInt(Math.random()*35);
+				var num5 = parseInt(Math.random()*35);
+				var num6 = parseInt(Math.random()*35);
+				// console.log(parseInt(Math.random()*35));
+				var sb1 = str[num1];
+				var sb2 = str[num2];
+				var sb3 = str[num3];
+				var sb4 = str[num4];
+				var sb5 = str[num5];
+				var sb6 = str[num6];
+				// console.log(str[num1]);
+				bb = sb1+sb2+sb3+sb4+sb5+sb6;
+				$('.p1').html(bb);
+
+			}
+			aa();
+
+				var txt_obj = $('.p2 input[name=utxt]').val();
+				console.log(txt_obj);
+				// console.log($('.p2 input[type=button]'));
+				// 
+				$('.p2 input[type=button]').click(function (){
+					console.log($('.p2 input[name=utxt]').val());
+
+					if($('.p2 input[name=utxt]').val() == bb){
+						alert('验证成功！')
+					}else{
+						alert('验证码错误！')
+					}
+				})
+
+
+
+
+		})
+
+	</script>
+</head>
+<body>
+	<p class='p1'>
+		
+	</p>
+	<p class='p2'>
+		<input type="text" name='utxt'><br>
+		<input type="button" value='提交'>
+	</p>
+</body>
+</html>
